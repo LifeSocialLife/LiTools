@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31410.223
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiTools.Helpers.Convert", "LiTools.Helpers.Convert\LiTools.Helpers.Convert.csproj", "{6ECE0D52-CD68-4139-A7D8-1609CEFCA122}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiTools.Helpers.Convert", "LiTools.Helpers.Convert\LiTools.Helpers.Convert.csproj", "{6ECE0D52-CD68-4139-A7D8-1609CEFCA122}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiTools.Helpers.Encoding", "LiTools.Helpers.Encoding\LiTools.Helpers.Encoding.csproj", "{B9B0D681-E48A-40BF-A31D-5E9DB5B186D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{6ECE0D52-CD68-4139-A7D8-1609CEFCA122}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6ECE0D52-CD68-4139-A7D8-1609CEFCA122}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6ECE0D52-CD68-4139-A7D8-1609CEFCA122}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9B0D681-E48A-40BF-A31D-5E9DB5B186D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9B0D681-E48A-40BF-A31D-5E9DB5B186D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9B0D681-E48A-40BF-A31D-5E9DB5B186D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9B0D681-E48A-40BF-A31D-5E9DB5B186D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

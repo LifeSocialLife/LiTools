@@ -7,6 +7,11 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Version>0.0.1</Version>
+    <Authors>Lennie Wennerlund</Authors>
+    <Description>Convert tools</Description>
+    <PackageProjectUrl>https://github.com/LifeSocialLife/LiTools</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
 </Project>
