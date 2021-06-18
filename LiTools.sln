@@ -7,6 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiTools.Helpers.Convert", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiTools.Helpers.Encoding", "LiTools.Helpers.Encoding\LiTools.Helpers.Encoding.csproj", "{B9B0D681-E48A-40BF-A31D-5E9DB5B186D7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{45A03D22-B391-4164-AE0F-BFBB32E00641}"
+	ProjectSection(SolutionItems) = preProject
+		BuildDoc - Convert - Release.bat = BuildDoc - Convert - Release.bat
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
