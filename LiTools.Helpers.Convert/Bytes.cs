@@ -4,6 +4,9 @@ using System.Text;
 
 namespace LiTools.Helpers.Convert
 {
+    /// <summary>
+    /// Convert Bytes into ? 
+    /// </summary>
     public static class Bytes
     {
         public static double To(FileSizeEnums data, long bytes)
