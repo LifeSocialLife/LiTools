@@ -1,5 +1,7 @@
 # FileSizeEnums enumeration
 
+Filesize types in bytes
+
 ```csharp
 public enum FileSizeEnums
 ```
@@ -8,10 +10,10 @@ public enum FileSizeEnums
 
 | name | value | description |
 | --- | --- | --- |
-| Bytes | `0` |  |
-| Kilobytes | `1` |  |
-| Megabytes | `2` |  |
-| Gigabytes | `3` |  |
+| Bytes | `0` | Bytes |
+| Kilobytes | `1` | Kilobytes |
+| Megabytes | `2` | Megabytes |
+| Gigabytes | `3` | Gigabytes |
 
 ## See Also
 

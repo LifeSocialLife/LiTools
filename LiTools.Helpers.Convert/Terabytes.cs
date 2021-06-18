@@ -17,6 +17,5 @@ namespace LiTools.Helpers.Convert
             // 1024 gigabytes in a terabyte
             return terabytes * 1024.0;
         }
-
     }
 }

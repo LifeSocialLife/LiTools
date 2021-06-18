@@ -1,8 +1,35 @@
-# Bytes.To method
+# Bytes.To method (1 of 2)
+
+Automatik convert into Gigabytes, Megabytes, Kilobyts.
+
+```csharp
+public static Tuple<FileSizeEnums, double> To(long bytes)
+```
+
+| parameter | description |
+| --- | --- |
+| bytes |  |
+
+## See Also
+
+* enum [FileSizeEnums](../FileSizeEnums.md)
+* class [Bytes](../Bytes.md)
+* namespace [LiTools.Helpers.Convert](../../LiTools.Helpers.Convert.md)
+
+---
+
+# Bytes.To method (2 of 2)
+
+Convert bytes into ?
 
 ```csharp
 public static double To(FileSizeEnums data, long bytes)
 ```
+
+| parameter | description |
+| --- | --- |
+| data | Bytes, Kilobytes, Megabytes, Gigabytes |
+| bytes | Input value in bytes |
 
 ## See Also
 

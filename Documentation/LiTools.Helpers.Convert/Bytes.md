@@ -10,10 +10,7 @@ public static class Bytes
 
 | name | description |
 | --- | --- |
-| static [To](Bytes/To.md)(…) |  |
-| static [ToGigabytes](Bytes/ToGigabytes.md)(…) |  |
-| static [ToKilobytes](Bytes/ToKilobytes.md)(…) |  |
-| static [ToMegabytes](Bytes/ToMegabytes.md)(…) |  |
+| static [To](Bytes/To.md)(…) | Automatik convert into Gigabytes, Megabytes, Kilobyts. (2 methods) |
 
 ## See Also
 
