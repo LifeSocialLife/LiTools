@@ -10,12 +10,12 @@ public static class Hardware
 
 | name | description |
 | --- | --- |
-| static [GetFrameworkDescription](Hardware/GetFrameworkDescription.md)() |  |
+| static [GetFrameworkDescription](Hardware/GetFrameworkDescription.md)() | Get framwroek description. |
 | static [GetOs](Hardware/GetOs.md)() | Get os this is running on. ex. windows, linux, osx. |
 | static [GetOSArchitecture](Hardware/GetOSArchitecture.md)() | Get Os Architecture from system. |
-| static [GetOsDescription](Hardware/GetOsDescription.md)() |  |
-| static [GetProcessorArchitecture](Hardware/GetProcessorArchitecture.md)() |  |
-| enum [ArchitectureEnum](Hardware.ArchitectureEnum.md) |  |
+| static [GetOsDescription](Hardware/GetOsDescription.md)() | Get Os Description. |
+| static [GetProcessorArchitecture](Hardware/GetProcessorArchitecture.md)() | Get Processor Architecture. |
+| enum [ArchitectureEnum](Hardware.ArchitectureEnum.md) | Architecture types. |
 | enum [PlatformOsEnum](Hardware.PlatformOsEnum.md) | Os types enums. |
 
 ## See Also

@@ -1,8 +1,14 @@
 # Hardware.GetProcessorArchitecture method
 
+Get Processor Architecture.
+
 ```csharp
 public static ArchitectureEnum GetProcessorArchitecture()
 ```
+
+## Return Value
+
+ArchitectureEnum.
 
 ## See Also
 

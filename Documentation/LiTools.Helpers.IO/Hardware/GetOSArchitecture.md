@@ -6,6 +6,10 @@ Get Os Architecture from system.
 public static ArchitectureEnum GetOSArchitecture()
 ```
 
+## Return Value
+
+ArchitectureEnum.
+
 ## See Also
 
 * enum [ArchitectureEnum](../Hardware.ArchitectureEnum.md)

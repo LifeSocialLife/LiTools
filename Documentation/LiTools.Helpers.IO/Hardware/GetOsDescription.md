@@ -1,8 +1,14 @@
 # Hardware.GetOsDescription method
 
+Get Os Description.
+
 ```csharp
 public static string GetOsDescription()
 ```
+
+## Return Value
+
+os description as string.
 
 ## See Also
 

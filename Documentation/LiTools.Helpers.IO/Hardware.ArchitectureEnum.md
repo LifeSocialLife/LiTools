@@ -1,5 +1,7 @@
 # Hardware.ArchitectureEnum enumeration
 
+Architecture types.
+
 ```csharp
 public enum ArchitectureEnum
 ```
@@ -8,11 +10,11 @@ public enum ArchitectureEnum
 
 | name | value | description |
 | --- | --- | --- |
-| none | `0` |  |
-| X86 | `1` |  |
-| X64 | `2` |  |
-| Arm | `3` |  |
-| Arm64 | `4` |  |
+| None | `0` | Unknown. |
+| X86 | `1` | X86 Architecture. |
+| X64 | `2` | X64 Architecture. |
+| Arm | `3` | Arm Architecture. |
+| Arm64 | `4` | Arm64 Architecture. |
 
 ## See Also
 

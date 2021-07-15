@@ -1,8 +1,14 @@
 # Hardware.GetFrameworkDescription method
 
+Get framwroek description.
+
 ```csharp
 public static string GetFrameworkDescription()
 ```
+
+## Return Value
+
+Net framwork version.
 
 ## See Also
 
