@@ -4,9 +4,9 @@
 
 | public type | description |
 | --- | --- |
-| static class [Bytes](LiTools.Helpers.Convert/Bytes.md) | Convert Bytes into ? |
-| enum [FileSizeEnums](LiTools.Helpers.Convert/FileSizeEnums.md) | Filesize types in bytes |
-| static class [Gigabytes](LiTools.Helpers.Convert/Gigabytes.md) |  |
+| static class [Bytes](LiTools.Helpers.Convert/Bytes.md) | Convert Bytes into ?. |
+| enum [FileSizeEnums](LiTools.Helpers.Convert/FileSizeEnums.md) | Filesize types in bytes. |
+| static class [Gigabytes](LiTools.Helpers.Convert/Gigabytes.md) | Convert Gigabytes into. |
 | static class [Kilobytes](LiTools.Helpers.Convert/Kilobytes.md) |  |
 | static class [Megabytes](LiTools.Helpers.Convert/Megabytes.md) |  |
 | static class [Terabytes](LiTools.Helpers.Convert/Terabytes.md) |  |

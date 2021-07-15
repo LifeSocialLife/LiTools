@@ -1,8 +1,18 @@
 # Gigabytes.ToMegabytes method
 
+Into Megabytes.
+
 ```csharp
 public static double ToMegabytes(double gigabytes)
 ```
+
+| parameter | description |
+| --- | --- |
+| gigabytes | Input Gigabytes as double. |
+
+## Return Value
+
+Megabytes value as double.
 
 ## See Also
 

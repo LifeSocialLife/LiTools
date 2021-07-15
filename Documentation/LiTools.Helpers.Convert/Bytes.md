@@ -1,6 +1,6 @@
 # Bytes class
 
-Convert Bytes into ?
+Convert Bytes into ?.
 
 ```csharp
 public static class Bytes

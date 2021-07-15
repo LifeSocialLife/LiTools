@@ -8,7 +8,11 @@ public static Tuple<FileSizeEnums, double> To(long bytes)
 
 | parameter | description |
 | --- | --- |
-| bytes |  |
+| bytes | input value in bytes that shod be converted. |
+
+## Return Value
+
+Value returnd as selected return type.
 
 ## See Also
 
@@ -20,7 +24,7 @@ public static Tuple<FileSizeEnums, double> To(long bytes)
 
 # Bytes.To method (2 of 2)
 
-Convert bytes into ?
+Convert bytes into ?.
 
 ```csharp
 public static double To(FileSizeEnums data, long bytes)
@@ -28,8 +32,12 @@ public static double To(FileSizeEnums data, long bytes)
 
 | parameter | description |
 | --- | --- |
-| data | Bytes, Kilobytes, Megabytes, Gigabytes |
-| bytes | Input value in bytes |
+| data | Bytes, Kilobytes, Megabytes, Gigabytes. |
+| bytes | Input value in bytes. |
+
+## Return Value
+
+Value returnd as data return type.
 
 ## See Also
 
