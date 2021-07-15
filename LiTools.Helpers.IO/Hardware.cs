@@ -1,9 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿// <summary>
+// Hardware helper.
+// </summary>
+// <copyright file="Hardware.cs" company="LiSoLi">
+// Copyright (c) LiSoLi. All rights reserved.
+// </copyright>
+// <author>Lennie Wennerlund (lempa)</author>
 
 namespace LiTools.Helpers.IO
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
     /// <summary>
     /// Get Harware information.
     /// </summary>
@@ -40,12 +48,34 @@ namespace LiTools.Helpers.IO
             Osx = 5,
         }
 
+        /// <summary>
+        /// Architecture types.
+        /// </summary>
         public enum ArchitectureEnum
         {
-            none = 0,
+            /// <summary>
+            /// Unknown.
+            /// </summary>
+            None = 0,
+
+            /// <summary>
+            /// X86 Architecture.
+            /// </summary>
             X86 = 1,
+
+            /// <summary>
+            /// X64 Architecture.
+            /// </summary>
             X64 = 2,
+
+            /// <summary>
+            /// Arm Architecture.
+            /// </summary>
             Arm = 3,
+
+            /// <summary>
+            /// Arm64 Architecture.
+            /// </summary>
             Arm64 = 4,
         }
 
@@ -73,6 +103,10 @@ namespace LiTools.Helpers.IO
             }
         }
 
+        /// <summary>
+        /// Get Os Description.
+        /// </summary>
+        /// <returns>os description as string.</returns>
         public static string GetOsDescription()
         {
             return System.Runtime.InteropServices.RuntimeInformation.OSDescription;
@@ -81,7 +115,7 @@ namespace LiTools.Helpers.IO
         /// <summary>
         /// Get Os Architecture from system.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>ArchitectureEnum.</returns>
         public static ArchitectureEnum GetOSArchitecture()
         {
             switch (System.Runtime.InteropServices.RuntimeInformation.OSArchitecture)
@@ -99,16 +133,23 @@ namespace LiTools.Helpers.IO
                     return ArchitectureEnum.Arm64;
 
                 default:
-                    return ArchitectureEnum.none;
-
+                    return ArchitectureEnum.None;
             }
         }
 
+        /// <summary>
+        /// Get framwroek description.
+        /// </summary>
+        /// <returns>Net framwork version.</returns>
         public static string GetFrameworkDescription()
         {
             return System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription;
         }
 
+        /// <summary>
+        /// Get Processor Architecture.
+        /// </summary>
+        /// <returns>ArchitectureEnum.</returns>
         public static ArchitectureEnum GetProcessorArchitecture()
         {
             switch (System.Runtime.InteropServices.RuntimeInformation.ProcessArchitecture)
@@ -126,7 +167,7 @@ namespace LiTools.Helpers.IO
                     return ArchitectureEnum.Arm64;
 
                 default:
-                    return ArchitectureEnum.none;
+                    return ArchitectureEnum.None;
             }
         }
     }

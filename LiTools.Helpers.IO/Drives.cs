@@ -1,6 +1,10 @@
-﻿// <copyright file="Drives.cs" company="LiSoLi">
+﻿// <summary>
+// Drives information.
+// </summary>
+// <copyright file="Drives.cs" company="LiSoLi">
 // Copyright (c) LiSoLi. All rights reserved.
 // </copyright>
+// <author>Lennie Wennerlund (lempa)</author>
 
 namespace LiTools.Helpers.IO
 {
@@ -14,7 +18,6 @@ namespace LiTools.Helpers.IO
     /// </summary>
     public static class Drives
     {
-
         /// <summary>
         /// Get informaton of all drives in the system.
         /// </summary>

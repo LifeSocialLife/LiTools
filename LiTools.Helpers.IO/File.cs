@@ -1,5 +1,5 @@
 ﻿// <summary>
-// Starter no Gui Worker class.
+// File Helper.
 // </summary>
 // <copyright file="File.cs" company="LiSoLi">
 // Copyright (c) LiSoLi. All rights reserved.
