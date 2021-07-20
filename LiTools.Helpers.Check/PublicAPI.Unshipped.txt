@@ -1,1 +1,3 @@
 ﻿LiTools.Helpers.Check.Strings
+static LiTools.Helpers.Check.Strings.IsIpAddress(string! input) -> bool
+static LiTools.Helpers.Check.Strings.IsIpAddress(string! input, out System.Net.IPAddress? address) -> bool
