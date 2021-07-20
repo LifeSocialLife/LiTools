@@ -18,6 +18,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiTools.Helpers.IO", "LiToo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiTools.Helpers.IO.Dev", "LiTools.Helpers.IO\LiTools.Helpers.IO.Dev.csproj", "{716CF29D-FEEB-4411-BF32-5BE3732A6F0A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiTools.Helpers.Check", "LiTools.Helpers.Check\LiTools.Helpers.Check.csproj", "{8D27E5D7-2127-46DF-8CB8-BFFC40370EAA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{716CF29D-FEEB-4411-BF32-5BE3732A6F0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{716CF29D-FEEB-4411-BF32-5BE3732A6F0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{716CF29D-FEEB-4411-BF32-5BE3732A6F0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D27E5D7-2127-46DF-8CB8-BFFC40370EAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D27E5D7-2127-46DF-8CB8-BFFC40370EAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D27E5D7-2127-46DF-8CB8-BFFC40370EAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D27E5D7-2127-46DF-8CB8-BFFC40370EAA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
