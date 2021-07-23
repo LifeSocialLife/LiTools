@@ -1,7 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>NETSTANDARD2.1;NETSTANDARD2.0;NET5.0;NET48</TargetFrameworks>
+    <TargetFrameworks>NETSTANDARD2.1;NETSTANDARD2.0;NET5.0</TargetFrameworks>
+    <!--<TargetFrameworks>NETSTANDARD2.1;NETSTANDARD2.0;NET5.0;NET48</TargetFrameworks>-->
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
@@ -18,6 +19,7 @@
 
   <ItemGroup>
     <PackageReference Include="LiTools.Helpers.Convert" Version="0.0.4" />
+    <PackageReference Include="System.Threading.Tasks" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup>
