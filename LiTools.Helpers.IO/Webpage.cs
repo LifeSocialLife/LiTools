@@ -60,6 +60,9 @@ namespace LiTools.Helpers.IO
     /// </summary>
     public class WebpageReturnAsStringModel
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebpageReturnAsStringModel"/> class.
+        /// </summary>
         public WebpageReturnAsStringModel()
         {
             this.IsWorking = false;
@@ -67,8 +70,17 @@ namespace LiTools.Helpers.IO
             this.ErrorMessage = string.Empty;
         }
 
+        /// <summary>
+        /// Is the page we are reading from working.
+        /// </summary>
         public bool IsWorking { get; set; }
+        /// <summary>
+        /// Return from page as string.
+        /// </summary>
         public string Source { get; set; }
+        /// <summary>
+        /// Do we have any error messages from page we are reading from.
+        /// </summary>
         public string ErrorMessage { get; set; }
     }
 }
