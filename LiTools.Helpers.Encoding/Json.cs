@@ -67,15 +67,9 @@ namespace LiTools.Helpers.Encoding
         /// <returns>model T.</returns>
         public static T Deserialize<T>(string json)
         {
-            if (string.IsNullOrEmpty(json))
-            {
-                throw new ArgumentNullException(nameof(json));
-            }
-
 #pragma warning disable CS8603 // Possible null reference return.
-            return JsonConvert.DeserializeObject<T>(json);
+                return JsonConvert.DeserializeObject<T>(json);
 #pragma warning restore CS8603 // Possible null reference return.
-
         }
 
         /// <summary>
