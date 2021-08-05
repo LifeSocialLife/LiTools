@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>NETSTANDARD2.1;NETSTANDARD2.0;NET5.0</TargetFrameworks>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Version>0.0.1</Version>
+    <Authors>Lennie Wennerlund</Authors>
+    <Description>LiTools Generate values</Description>
+    <PackageProjectUrl>https://github.com/LifeSocialLife/LiTools</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <SignAssembly>False</SignAssembly>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="../stylecop.json" />
+  </ItemGroup>
+  
+</Project>
