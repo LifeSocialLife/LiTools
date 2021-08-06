@@ -18,7 +18,7 @@ Tools
 
 ### LiTools.Helpers.Generate
 
-[Project documentation](/Generate.md)
+[Project documentation](/Generate.md)  
 [assembly documentation](/Documentation/LiTools.Helpers.Generate.md)
 
 ### LiTools.Helpers.IO
