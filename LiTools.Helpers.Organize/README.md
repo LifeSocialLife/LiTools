@@ -1,13 +1,16 @@
 ﻿# LiTools.Helpers.Organize
 
-[TOC]
+
+
+This packet have reference to nuget LiTools.Helpers.Generate at-lest version 0.0.1
+
 
 ## Functions
 
 ### Task organizer (ParallelTask)
 
 Organize and record of all tasks that are running or have been running.  
-[Read dokumentation for more information](/Documentation\LiTools.Helpers.Organize.ParallelTask.md)
+[Read dokumentation for more information](/Documentation/LiTools.Helpers.Organize/ParallelTask.md)
 
 ## Version Information
 
