@@ -1,5 +1,7 @@
 # Megabytes class
 
+Convert Megabytes into ??.
+
 ```csharp
 public static class Megabytes
 ```
@@ -8,8 +10,10 @@ public static class Megabytes
 
 | name | description |
 | --- | --- |
-| static [ToGigabytes](Megabytes/ToGigabytes.md)(…) |  |
-| static [ToTerabytes](Megabytes/ToTerabytes.md)(…) |  |
+| static [ToBytes](Megabytes/ToBytes.md)(…) | Convert to bytes. |
+| static [ToGigabytes](Megabytes/ToGigabytes.md)(…) | Convert megabytes to gigabytes. |
+| static [ToKiloBytes](Megabytes/ToKiloBytes.md)(…) | Convert to kilobytes. |
+| static [ToTerabytes](Megabytes/ToTerabytes.md)(…) | Convert megabytes to terabytes. |
 
 ## See Also
 

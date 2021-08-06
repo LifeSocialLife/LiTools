@@ -17,13 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiTools.Helpers.Testing", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiTools.Helpers.IO", "LiTools.Helpers.IO\LiTools.Helpers.IO.csproj", "{66BCBD2F-FCA0-402D-BCEF-EFD1462FB945}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiTools.Helpers.IO.Dev", "LiTools.Helpers.IO\LiTools.Helpers.IO.Dev.csproj", "{716CF29D-FEEB-4411-BF32-5BE3732A6F0A}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiTools.Helpers.Check", "LiTools.Helpers.Check\LiTools.Helpers.Check.csproj", "{8D27E5D7-2127-46DF-8CB8-BFFC40370EAA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiTools.Helpers.Generate", "LiTools.Helpers.Generate\LiTools.Helpers.Generate.csproj", "{7BF3A0EB-FEF8-4E1A-9483-A61F0F5BC591}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiTools.Helpers.Organize", "LiTools.Helpers.Organize\LiTools.Helpers.Organize.csproj", "{C3C7B6D8-B1FB-4DD4-95B8-853D581F16F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiTools.Helpers.Organize", "LiTools.Helpers.Organize\LiTools.Helpers.Organize.csproj", "{C3C7B6D8-B1FB-4DD4-95B8-853D581F16F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,10 +45,6 @@ Global
 		{66BCBD2F-FCA0-402D-BCEF-EFD1462FB945}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66BCBD2F-FCA0-402D-BCEF-EFD1462FB945}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66BCBD2F-FCA0-402D-BCEF-EFD1462FB945}.Release|Any CPU.Build.0 = Release|Any CPU
-		{716CF29D-FEEB-4411-BF32-5BE3732A6F0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{716CF29D-FEEB-4411-BF32-5BE3732A6F0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{716CF29D-FEEB-4411-BF32-5BE3732A6F0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{716CF29D-FEEB-4411-BF32-5BE3732A6F0A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8D27E5D7-2127-46DF-8CB8-BFFC40370EAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8D27E5D7-2127-46DF-8CB8-BFFC40370EAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D27E5D7-2127-46DF-8CB8-BFFC40370EAA}.Release|Any CPU.ActiveCfg = Release|Any CPU

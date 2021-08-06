@@ -198,7 +198,14 @@ namespace LiTools.Helpers.IO
                 return string.Empty;
             }
 
-            return Path.GetDirectoryName(file);
+            var tmpFolder = Path.GetDirectoryName(file);
+
+            if (string.IsNullOrEmpty(tmpFolder))
+            {
+                return string.Empty;
+            }
+
+            return tmpFolder;
         }
 
         /// <summary>

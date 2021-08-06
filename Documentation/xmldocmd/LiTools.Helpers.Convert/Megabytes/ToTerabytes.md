@@ -1,8 +1,18 @@
 # Megabytes.ToTerabytes method
 
+Convert megabytes to terabytes.
+
 ```csharp
 public static double ToTerabytes(double megabytes)
 ```
+
+| parameter | description |
+| --- | --- |
+| megabytes | megabytes. |
+
+## Return Value
+
+Gigabytes as double.
 
 ## See Also
 

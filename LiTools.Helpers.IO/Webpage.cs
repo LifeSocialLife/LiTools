@@ -8,13 +8,13 @@
 
 namespace LiTools.Helpers.IO
 {
+    using System;
     using System.Collections.Generic;
     using System.Diagnostics.SymbolStore;
+    using System.Net;
     using System.Net.Http;
     using System.Text;
     using System.Threading.Tasks;
-    using System;
-    using System.Net;
 
     /// <summary>
     /// Webpage helper.
@@ -24,8 +24,8 @@ namespace LiTools.Helpers.IO
         /// <summary>
         /// Read page and return as string.
         /// </summary>
-        /// <param name="url"></param>
-        /// <returns></returns>
+        /// <param name="url">page to read.</param>
+        /// <returns>page as string.</returns>
         public static async Task<WebpageReturnAsStringModel> ReturnAsString(string url)
         {
             var tmpReturn = new WebpageReturnAsStringModel();
@@ -50,37 +50,7 @@ namespace LiTools.Helpers.IO
                 tmpReturn.IsWorking = false;
             }
 
-
             return tmpReturn;
         }
-    }
-
-    /// <summary>
-    /// Webpage return as string model.
-    /// </summary>
-    public class WebpageReturnAsStringModel
-    {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WebpageReturnAsStringModel"/> class.
-        /// </summary>
-        public WebpageReturnAsStringModel()
-        {
-            this.IsWorking = false;
-            this.Source = string.Empty;
-            this.ErrorMessage = string.Empty;
-        }
-
-        /// <summary>
-        /// Is the page we are reading from working.
-        /// </summary>
-        public bool IsWorking { get; set; }
-        /// <summary>
-        /// Return from page as string.
-        /// </summary>
-        public string Source { get; set; }
-        /// <summary>
-        /// Do we have any error messages from page we are reading from.
-        /// </summary>
-        public string ErrorMessage { get; set; }
     }
 }
