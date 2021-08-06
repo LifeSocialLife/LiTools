@@ -46,10 +46,26 @@
   <ItemGroup>
     <PackageReference Include="LiTools.Helpers.Convert" Version="0.0.4" />
   </ItemGroup>
+
+  <!--<ItemGroup Condition="'$(TargetFramework)' == 'NETSTANDARD2.0'">
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework)' == 'NETSTANDARD2.1'">
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework)' == 'NET5.0'">
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />   
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'NET6.0'">
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0-preview.6.21352.12" />
+  </ItemGroup>-->
   
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
     <PackageReference Include="System.Threading.Tasks" Version="4.3.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0-preview.6.21352.12" />
   </ItemGroup>
 
 </Project>

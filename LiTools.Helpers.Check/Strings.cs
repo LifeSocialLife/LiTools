@@ -12,7 +12,6 @@ namespace LiTools.Helpers.Check
     using System.Collections.Generic;
     using System.Net;
     using System.Text;
-    using Microsoft.CodeAnalysis.CSharp.Syntax;
 
     /// <summary>
     /// Check string for diffrent data.
