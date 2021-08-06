@@ -1,9 +1,9 @@
 ﻿# LiTools.Helpers.Organize
 
-
+Don't use this!!!
+This packet is under development and functions have not been tested in QA
 
 This packet have reference to nuget LiTools.Helpers.Generate at-lest version 0.0.1
-
 
 ## Functions
 

@@ -10,6 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{45A03D22-B391-4164-AE0F-BFBB32E00641}"
 	ProjectSection(SolutionItems) = preProject
 		BuildDoc - Convert - Release.bat = BuildDoc - Convert - Release.bat
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiTools.Helpers.Testing", "LiTools.Helpers.Testing\LiTools.Helpers.Testing.csproj", "{A7C9C3B2-F176-498D-9F8B-0AC2A4F03F1A}"

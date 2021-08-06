@@ -41,6 +41,11 @@ namespace LiTools.Helpers.Organize
         /// <param name="taskname">Name of the task.</param>
         public static void Start(Func<Task> action, CancellationToken cancellationToken, ILogger? logger, string taskname = "")
         {
+            if (action == null)
+            {
+                throw new ArgumentNullException(nameof(action));
+            }
+
             if (string.IsNullOrEmpty(taskname))
             {
                 taskname = GenerateUniqueTaskname();
@@ -62,6 +67,63 @@ namespace LiTools.Helpers.Organize
                 action,
                 cancellationToken,
                 TaskCreationOptions.None,
+                TaskScheduler.Default).ContinueWith(
+                t =>
+                {
+                    if (logger != null)
+                    {
+                        logger.LogWarning(t.Exception, "Error while executing a parallel task.");
+                    }
+                },
+                TaskContinuationOptions.OnlyOnFaulted));
+        }
+
+        /// <summary>
+        /// Start longrunning Task.
+        /// </summary>
+        /// <param name="action">Function to run.</param>
+        /// <param name="cancellationToken">Token.</param>
+        /// <param name="taskname">Name of the task.</param>
+        public static void StartLongRunning(Action action, CancellationToken cancellationToken, string taskname = "")
+        {
+            LiTools.Helpers.Organize.ParallelTask.StartLongRunning(action, cancellationToken, null, taskname);
+        }
+
+        /// <summary>
+        /// Start longrunning Task.
+        /// </summary>
+        /// <param name="action">Function to run.</param>
+        /// <param name="cancellationToken">Token.</param>
+        /// <param name="logger">ILogger.</param>
+        /// <param name="taskname">Name of the task.</param>
+        public static void StartLongRunning(Action action, CancellationToken cancellationToken, ILogger? logger, string taskname = "")
+        {
+            if (action == null)
+            {
+                throw new ArgumentNullException(nameof(action));
+            }
+
+            if (string.IsNullOrEmpty(taskname))
+            {
+                taskname = GenerateUniqueTaskname();
+            }
+
+            if (tasks.ContainsKey(taskname))
+            {
+                if (logger != null)
+                {
+                    logger.LogWarning("Task already exist!!");
+                }
+
+                return;
+            }
+
+            tasks.Add(
+                taskname,
+                Task.Factory.StartNew(
+                action,
+                cancellationToken,
+                TaskCreationOptions.LongRunning,
                 TaskScheduler.Default).ContinueWith(
                 t =>
                 {
