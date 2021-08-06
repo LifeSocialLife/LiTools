@@ -21,38 +21,7 @@ namespace LiTools.Helpers.IO
     {
         private static Dictionary<string, Task> tasks = new();
 
-        /// <summary>
-        /// Start Task.
-        /// </summary>
-        /// <param name="action">Function to run.</param>
-        /// <param name="logger">ILogger.</param>
-        /// <param name="cancellationToken">Token.</param>
-        /// <param name="taskname">Name of the task.</param>
-        public static void Start(Func<Task> action, ILogger logger, CancellationToken cancellationToken, string taskname = "")
-        {
-            if (action == null)
-            {
-                throw new ArgumentNullException(nameof(action));
-            }
-
-            if (logger == null)
-            {
-                throw new ArgumentNullException(nameof(logger));
-            }
-
-            tasks.Add(
-                taskname,
-                Task.Factory.StartNew(
-                action,
-                cancellationToken,
-                TaskCreationOptions.None,
-                TaskScheduler.Default).ContinueWith(
-                t =>
-                {
-                    logger.LogWarning(t.Exception, "Error while executing a parallel task.");
-                },
-                TaskContinuationOptions.OnlyOnFaulted));
-        }
+        
 
         /// <summary>
         /// Start longrunning Task.

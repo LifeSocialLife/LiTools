@@ -6,3 +6,4 @@ xmldocmd LiTools.Helpers.IO\bin\Release\netstandard2.0\LiTools.Helpers.IO.dll Do
 
 xmldocmd LiTools.Helpers.Generate\bin\Release\netstandard2.0\LiTools.Helpers.Generate.dll Documentation --source https://github.com/LifeSocialLife/LiTools/tree/main/LiTools.Helpers.Generate
 
+xmldocmd LiTools.Helpers.Organize\bin\Release\netstandard2.0\LiTools.Helpers.Organize.dll Documentation --source https://github.com/LifeSocialLife/LiTools/tree/main/LiTools.Helpers.Organize
