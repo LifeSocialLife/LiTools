@@ -30,4 +30,5 @@ Tools
 Don't use this!!!
 This packet is under development and functions have not been tested in QA.
 
-[Project documentation](/Documentation/LiTools.Helpers.Organize.md)
+[Project documentation](/LiTools.Helpers.Organize/README.md)  
+[assembly documentation](/Documentation/LiTools.Helpers.Organize.md)
