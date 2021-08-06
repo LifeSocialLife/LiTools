@@ -8,7 +8,7 @@
 
 // https://docs.microsoft.com/en-us/dotnet/api/system.guid.tostring?view=net-5.0
 // -.
-namespace LiTools.Helpers.Generate.Dev
+namespace LiTools.Helpers.Generate
 {
     using System;
     using System.Collections.Generic;
@@ -35,6 +35,24 @@ namespace LiTools.Helpers.Generate.Dev
         public static string AsStringSeperatedByHyphens()
         {
             return System.Guid.NewGuid().ToString("D");
+        }
+
+        /// <summary>
+        /// 32 digits separated by hyphens enclosed in braces.
+        /// </summary>
+        /// <returns>32 digits separated by hyphens enclosed in braces. ex: {00000000-0000-0000-0000-000000000000} .</returns>
+        public static string AsStringSeperatedByHyphensEnclosedInBraces()
+        {
+            return System.Guid.NewGuid().ToString("B");
+        }
+
+        /// <summary>
+        /// 32 digits separated by hyphens enclosed in parentheses.
+        /// </summary>
+        /// <returns>32 digits separated by hyphens enclosed in parentheses. ex: (00000000-0000-0000-0000-000000000000) .</returns>
+        public static string AsStringSeperatedByHyphensEnclosedInParentheses()
+        {
+            return System.Guid.NewGuid().ToString("P");
         }
 
         /// <summary>
