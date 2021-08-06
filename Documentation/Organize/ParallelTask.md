@@ -63,3 +63,34 @@ ParallelTask.Start(() => nameToRun(_systemCancellationToken.Token), _systemCance
 ```
 
 ### ParallelTask.StartLongRunning
+
+```csharp
+public static void StartLongRunning(Action action, CancellationToken cancellationToken, ILogger? logger, string taskname = "")
+
+<param name="action">Function to run.</param>
+<param name="cancellationToken">Token.</param>
+<param name="logger">ILogger.</param>
+<param name="taskname">Name of the task.</param>
+
+```
+
+Exempel whitout use of ILogger.
+
+```csharp
+public static void StartLongRunning(Action action, CancellationToken cancellationToken, string taskname = "")
+```
+
+How to use / start.
+
+```csharp
+ParallelTask.StartLongRunning(runThisLongtime, _systemCancellationToken.Token, _logger, "taskname1");
+```
+
+exemple action to run.
+
+```csharp
+void runThisLongtime()
+{
+    ...
+}
+```
