@@ -1,0 +1,1353 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LiTools</title>
+    <link>https://lifesociallife.github.io/LiTools/</link>
+    <description>Recent content on LiTools</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 30 Sep 2021 11:17:26 +0200</lastBuildDate><atom:link href="https://lifesociallife.github.io/LiTools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My First Post</title>
+      <link>https://lifesociallife.github.io/LiTools/posts/my-first-post/</link>
+      <pubDate>Thu, 30 Sep 2021 11:17:26 +0200</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/posts/my-first-post/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.check/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.check/</guid>
+      <description>LiTools.Helpers.Check assembly LiTools.Helpers.Check namespace    public type description     static class Strings Check string for diffrent data.    </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.check/strings/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.check/strings/</guid>
+      <description>Strings class Check string for diffrent data.
+public static class Strings Public Members    name description     static IsIpAddress(…) Check if input string is an ipaddress. Can check both v4 and v6. (2 methods)    See Also  namespace LiTools.Helpers.Check Strings.cs  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.check/strings/isipaddress/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.check/strings/isipaddress/</guid>
+      <description>Strings.IsIpAddress method (1 of 2) Check if input string is an ipaddress. Can check both v4 and v6.
+public static bool IsIpAddress(string input)    parameter description     input string data.    Return Value True if it is an ipadress as input.
+See Also  class Strings namespace LiTools.Helpers.Check   Strings.IsIpAddress method (2 of 2) Check if input string is an ipaddress. Can check both v4 and v6.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/</guid>
+      <description>LiTools.Helpers.Convert assembly LiTools.Helpers.Convert namespace    public type description     static class Bytes Convert Bytes into ?.   enum FileSizeEnums Filesize types in bytes.   static class Gigabytes Convert Gigabytes into.   static class Kilobytes Convert Kilobytes into.   static class Megabytes Convert Megabytes into ??.   static class Terabytes Convert Terabytes into ??.    </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/bytes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/bytes/</guid>
+      <description>Bytes class Convert Bytes into ?.
+public static class Bytes Public Members    name description     static To(…) Automatik convert into Gigabytes, Megabytes, Kilobyts. (2 methods)    See Also  namespace LiTools.Helpers.Convert Bytes.cs  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/bytes/to/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/bytes/to/</guid>
+      <description>Bytes.To method (1 of 2) Automatik convert into Gigabytes, Megabytes, Kilobyts.
+public static Tuple&amp;lt;FileSizeEnums, double&amp;gt; To(long bytes)    parameter description     bytes input value in bytes that shod be converted.    Return Value Value returnd as selected return type.
+See Also  enum FileSizeEnums class Bytes namespace LiTools.Helpers.Convert   Bytes.To method (2 of 2) Convert bytes into ?.
+public static double To(FileSizeEnums data, long bytes)    parameter description     data Bytes, Kilobytes, Megabytes, Gigabytes.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/bytes/togigabytes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/bytes/togigabytes/</guid>
+      <description>Bytes.ToGigabytes method public static double ToGigabytes(long bytes) See Also  class Bytes namespace LiTools.Helpers.Convert  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/bytes/tokilobytes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/bytes/tokilobytes/</guid>
+      <description>Bytes.ToKilobytes method public static double ToKilobytes(long bytes) See Also  class Bytes namespace LiTools.Helpers.Convert  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/bytes/tomegabytes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/bytes/tomegabytes/</guid>
+      <description>Bytes.ToMegabytes method public static double ToMegabytes(long bytes) See Also  class Bytes namespace LiTools.Helpers.Convert  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/filesizeenums/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/filesizeenums/</guid>
+      <description>FileSizeEnums enumeration Filesize types in bytes.
+public enum FileSizeEnums Values    name value description     Bytes 0 Bytes.   Kilobytes 1 Kilobytes.   Megabytes 2 Megabytes.   Gigabytes 3 Gigabytes.    See Also  namespace LiTools.Helpers.Convert FileSizeEnums.cs  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/gigabytes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/gigabytes/</guid>
+      <description>Gigabytes class Convert Gigabytes into.
+public static class Gigabytes Public Members    name description     static ToMegabytes(…) Into Megabytes.   static ToTerabytes(…) To Terabytes.    See Also  namespace LiTools.Helpers.Convert Gigabytes.cs  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/gigabytes/tomegabytes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/gigabytes/tomegabytes/</guid>
+      <description>Gigabytes.ToMegabytes method Into Megabytes.
+public static double ToMegabytes(double gigabytes)    parameter description     gigabytes Input Gigabytes as double.    Return Value Megabytes value as double.
+See Also  class Gigabytes namespace LiTools.Helpers.Convert  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/gigabytes/toterabytes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/gigabytes/toterabytes/</guid>
+      <description>Gigabytes.ToTerabytes method To Terabytes.
+public static double ToTerabytes(double gigabytes)    parameter description     gigabytes Gigabytes value.    Return Value Terabytes value as double.
+See Also  class Gigabytes namespace LiTools.Helpers.Convert  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/kilobytes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/kilobytes/</guid>
+      <description>Kilobytes class Convert Kilobytes into.
+public static class Kilobytes Public Members    name description     static ToMegabytes(…) To Megabytes.    See Also  namespace LiTools.Helpers.Convert Kilobytes.cs  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/kilobytes/tomegabytes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/kilobytes/tomegabytes/</guid>
+      <description>Kilobytes.ToMegabytes method To Megabytes.
+public static double ToMegabytes(long kilobytes)    parameter description     kilobytes Kilobytes value.    Return Value Megabytes value as double.
+See Also  class Kilobytes namespace LiTools.Helpers.Convert  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/megabytes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/megabytes/</guid>
+      <description>Megabytes class Convert Megabytes into ??.
+public static class Megabytes Public Members    name description     static ToBytes(…) Convert to bytes.   static ToGigabytes(…) Convert megabytes to gigabytes.   static ToKiloBytes(…) Convert to kilobytes.   static ToTerabytes(…) Convert megabytes to terabytes.    See Also  namespace LiTools.Helpers.Convert Megabytes.cs  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/megabytes/tobytes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/megabytes/tobytes/</guid>
+      <description>Megabytes.ToBytes method Convert to bytes.
+public static double ToBytes(double megabytes)    parameter description     megabytes megabytes.    Return Value bytes as double.
+See Also  class Megabytes namespace LiTools.Helpers.Convert  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/megabytes/togigabytes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/megabytes/togigabytes/</guid>
+      <description>Megabytes.ToGigabytes method Convert megabytes to gigabytes.
+public static double ToGigabytes(double megabytes)    parameter description     megabytes megabytes.    Return Value Gigabytes as double.
+See Also  class Megabytes namespace LiTools.Helpers.Convert  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/megabytes/tokilobytes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/megabytes/tokilobytes/</guid>
+      <description>Megabytes.ToKiloBytes method Convert to kilobytes.
+public static double ToKiloBytes(double megabytes)    parameter description     megabytes megabytes.    Return Value kilobytes as double.
+See Also  class Megabytes namespace LiTools.Helpers.Convert  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/megabytes/toterabytes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/megabytes/toterabytes/</guid>
+      <description>Megabytes.ToTerabytes method Convert megabytes to terabytes.
+public static double ToTerabytes(double megabytes)    parameter description     megabytes megabytes.    Return Value Gigabytes as double.
+See Also  class Megabytes namespace LiTools.Helpers.Convert  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/terabytes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/terabytes/</guid>
+      <description>Terabytes class Convert Terabytes into ??.
+public static class Terabytes Public Members    name description     static ToGigabytes(…) Convert Terabytes to Gigabytes.   static ToMegabytes(…) Convert Terabytes to Megabytes.    See Also  namespace LiTools.Helpers.Convert Terabytes.cs  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/terabytes/togigabytes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/terabytes/togigabytes/</guid>
+      <description>Terabytes.ToGigabytes method Convert Terabytes to Gigabytes.
+public static double ToGigabytes(double terabytes)    parameter description     terabytes terabytes.    Return Value Gigabytes as double.
+See Also  class Terabytes namespace LiTools.Helpers.Convert  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/terabytes/tomegabytes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.convert/terabytes/tomegabytes/</guid>
+      <description>Terabytes.ToMegabytes method Convert Terabytes to Megabytes.
+public static double ToMegabytes(double terabytes)    parameter description     terabytes terabytes.    Return Value Megabytes as double.
+See Also  class Terabytes namespace LiTools.Helpers.Convert  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.encoding/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.encoding/</guid>
+      <description>LiTools.Helpers.Encoding assembly LiTools.Helpers.Encoding namespace    public type description     static class Json Json helper.    </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.encoding/json/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.encoding/json/</guid>
+      <description>Json class Json helper.
+public static class Json Public Members    name description     static Deserialize&amp;lt;T&amp;gt;(…) Json string to model. (2 methods)   static Serialize(…) Model to json string.    See Also  namespace LiTools.Helpers.Encoding Json.cs  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.encoding/json/deserialize/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.encoding/json/deserialize/</guid>
+      <description>Json.Deserialize&amp;lt;T&amp;gt; method (1 of 2) Json byte to model.
+public static T Deserialize&amp;lt;T&amp;gt;(byte[] data)    parameter description     T model.   data json model as byte.    Return Value Model T.
+See Also  class Json namespace LiTools.Helpers.Encoding   Json.Deserialize&amp;lt;T&amp;gt; method (2 of 2) Json string to model.
+public static T Deserialize&amp;lt;T&amp;gt;(string json)    parameter description     T model.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.encoding/json/serialize/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.encoding/json/serialize/</guid>
+      <description>Json.Serialize method Model to json string.
+public static string Serialize(object obj, bool pretty)    parameter description     obj Model.   pretty Use pretty output.    Return Value Model as json string.
+See Also  class Json namespace LiTools.Helpers.Encoding  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.generate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.generate/</guid>
+      <description>LiTools.Helpers.Generate assembly LiTools.Helpers.Generate namespace    public type description     static class Guid Generate GUID.    </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.generate/guid/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.generate/guid/</guid>
+      <description>Guid class Generate GUID.
+public static class Guid Public Members    name description     static AsString() 32 digits.   static AsStringSeperatedByHyphens() 32 digits separated by hyphens.   static AsStringSeperatedByHyphensEnclosedInBraces() 32 digits separated by hyphens enclosed in braces.   static AsStringSeperatedByHyphensEnclosedInParentheses() 32 digits separated by hyphens enclosed in parentheses.   static New() A new GUID object.    See Also  namespace LiTools.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.generate/guid/asstring/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.generate/guid/asstring/</guid>
+      <description>Guid.AsString method 32 digits.
+public static string AsString() Return Value 32 digits ex: 00000000000000000000000000000000 .
+See Also  class Guid namespace LiTools.Helpers.Generate  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.generate/guid/asstringseperatedbyhyphens/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.generate/guid/asstringseperatedbyhyphens/</guid>
+      <description>Guid.AsStringSeperatedByHyphens method 32 digits separated by hyphens.
+public static string AsStringSeperatedByHyphens() Return Value 32 digits separated by hyphens. ex: 00000000-0000-0000-0000-000000000000 .
+See Also  class Guid namespace LiTools.Helpers.Generate  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.generate/guid/asstringseperatedbyhyphensenclosedinbraces/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.generate/guid/asstringseperatedbyhyphensenclosedinbraces/</guid>
+      <description>Guid.AsStringSeperatedByHyphensEnclosedInBraces method 32 digits separated by hyphens enclosed in braces.
+public static string AsStringSeperatedByHyphensEnclosedInBraces() Return Value 32 digits separated by hyphens enclosed in braces. ex: {00000000-0000-0000-0000-000000000000} .
+See Also  class Guid namespace LiTools.Helpers.Generate  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.generate/guid/asstringseperatedbyhyphensenclosedinparentheses/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.generate/guid/asstringseperatedbyhyphensenclosedinparentheses/</guid>
+      <description>Guid.AsStringSeperatedByHyphensEnclosedInParentheses method 32 digits separated by hyphens enclosed in parentheses.
+public static string AsStringSeperatedByHyphensEnclosedInParentheses() Return Value 32 digits separated by hyphens enclosed in parentheses. ex: (00000000-0000-0000-0000-000000000000) .
+See Also  class Guid namespace LiTools.Helpers.Generate  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.generate/guid/new/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.generate/guid/new/</guid>
+      <description>Guid.New method A new GUID object.
+public static Guid New() Return Value New GUID as type GUID.
+See Also  class Guid namespace LiTools.Helpers.Generate  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/</guid>
+      <description>LiTools.Helpers.IO assembly LiTools.Helpers.IO namespace    public type description     static class Compress File compress helper class.   static class Directory Directory helper class. System.IO .   static class Drives Drives helper.   static class File File helper.   static class Hardware Get Harware information.   static class Webpage Webpage helper.   class WebpageReturnAsStringModel Webpage return as string model.    </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/compress/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/compress/</guid>
+      <description>Compress class File compress helper class.
+public static class Compress Public Members    name description     static GzipCompress(…) Compress byte.   static GzipDecompress(…) Decompress byte.    See Also  namespace LiTools.Helpers.IO Compress.cs  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/compress/gzipcompress/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/compress/gzipcompress/</guid>
+      <description>Compress.GzipCompress method Compress byte.
+public static Tuple&amp;lt;bool, byte[]&amp;gt; GzipCompress(byte[] input)    parameter description     input byte to compress.    Return Value true if compress was working | compress byte as return.
+See Also  class Compress namespace LiTools.Helpers.IO  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/compress/gzipdecompress/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/compress/gzipdecompress/</guid>
+      <description>Compress.GzipDecompress method Decompress byte.
+public static Tuple&amp;lt;bool, byte[]&amp;gt; GzipDecompress(byte[] input)    parameter description     input byte to compress.    Return Value true if decompress was working | decompress byte as return.
+See Also  class Compress namespace LiTools.Helpers.IO  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/directory/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/directory/</guid>
+      <description>Directory class Directory helper class. System.IO .
+public static class Directory Public Members    name description     static Delete(…) Delete directory.   static DirectoryCreate(…) Create directory.   static DirectoryGetSize(…) Get Size of directory.   static Exist(…) . Directory exist or not.   static GetSubdirectoryList(…) Get all directories from a directory.   static Move(…) Move directory to new place.    See Also  namespace LiTools.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/directory/delete/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/directory/delete/</guid>
+      <description>Directory.Delete method Delete directory.
+public static bool Delete(string dir, bool recursive)    parameter description     dir directory to delete.   recursive delete all child to.    Return Value true if directory deleted.
+See Also  class Directory namespace LiTools.Helpers.IO  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/directory/directorycreate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/directory/directorycreate/</guid>
+      <description>Directory.DirectoryCreate method Create directory.
+public static bool DirectoryCreate(string folder)    parameter description     folder Path to create.    Return Value true or false.
+See Also  class Directory namespace LiTools.Helpers.IO  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/directory/directorygetsize/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/directory/directorygetsize/</guid>
+      <description>Directory.DirectoryGetSize method Get Size of directory.
+public static ulong DirectoryGetSize(string dir, bool followChildren, FileSizeEnums returnAs)    parameter description     dir Path to scan.   followChildren Get space of children.   returnAs Return as value.    Return Value Size of folder.
+See Also  class Directory namespace LiTools.Helpers.IO  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/directory/exist/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/directory/exist/</guid>
+      <description>Directory.Exist method . Directory exist or not.
+public static bool Exist(string dir)    parameter description     dir Path.    Return Value True or false.
+See Also  class Directory namespace LiTools.Helpers.IO  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/directory/getsubdirectorylist/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/directory/getsubdirectorylist/</guid>
+      <description>Directory.GetSubdirectoryList method Get all directories from a directory.
+public static Tuple&amp;lt;bool, List&amp;lt;string&amp;gt;&amp;gt; GetSubdirectoryList(string directory, bool recursive)    parameter description     directory folder to scan.   recursive look inside child folders.    Return Value true if no catch.
+See Also  class Directory namespace LiTools.Helpers.IO  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/directory/move/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/directory/move/</guid>
+      <description>Directory.Move method Move directory to new place.
+public static bool Move(string from, string to)    parameter description     from current location.   to New location.    Return Value true or false.
+See Also  class Directory namespace LiTools.Helpers.IO  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/drives.getdrivesinformationreturnmodel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/drives.getdrivesinformationreturnmodel/</guid>
+      <description>Drives.GetDrivesInformationReturnModel class GetDrivesInformation Return model.
+public class GetDrivesInformationReturnModel Public Members    name description     GetDrivesInformationReturnModel() Initializes a new instance of the GetDrivesInformationReturnModel class.   AvailableFreeSpace { get; set; } Gets or sets. Indicates the amount of available free space on a drive, in bytes.   DriveFormat { get; set; } Gets or sets. Gets the name of the file system, such as NTFS or FAT32.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/drives.getdrivesinformationreturnmodel/availablefreespace/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/drives.getdrivesinformationreturnmodel/availablefreespace/</guid>
+      <description>Drives.GetDrivesInformationReturnModel.AvailableFreeSpace property Gets or sets. Indicates the amount of available free space on a drive, in bytes.
+public long AvailableFreeSpace { get; set; } See Also  class GetDrivesInformationReturnModel namespace LiTools.Helpers.IO  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/drives.getdrivesinformationreturnmodel/driveformat/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/drives.getdrivesinformationreturnmodel/driveformat/</guid>
+      <description>Drives.GetDrivesInformationReturnModel.DriveFormat property Gets or sets. Gets the name of the file system, such as NTFS or FAT32.
+public string DriveFormat { get; set; } See Also  class GetDrivesInformationReturnModel namespace LiTools.Helpers.IO  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/drives.getdrivesinformationreturnmodel/drivetype/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/drives.getdrivesinformationreturnmodel/drivetype/</guid>
+      <description>Drives.GetDrivesInformationReturnModel.DriveType property Gets or sets the drive type, such as CD-ROM, removable, network, or fixed.
+public DriveType DriveType { get; set; } See Also  class GetDrivesInformationReturnModel namespace LiTools.Helpers.IO  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/drives.getdrivesinformationreturnmodel/getdrivesinformationreturnmodel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/drives.getdrivesinformationreturnmodel/getdrivesinformationreturnmodel/</guid>
+      <description>Drives.GetDrivesInformationReturnModel constructor Initializes a new instance of the GetDrivesInformationReturnModel class.
+public GetDrivesInformationReturnModel() See Also  class GetDrivesInformationReturnModel namespace LiTools.Helpers.IO  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/drives.getdrivesinformationreturnmodel/isready/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/drives.getdrivesinformationreturnmodel/isready/</guid>
+      <description>Drives.GetDrivesInformationReturnModel.IsReady property Gets or sets a value indicating whether gets a value that indicates whether a drive is ready.
+public bool IsReady { get; set; } See Also  class GetDrivesInformationReturnModel namespace LiTools.Helpers.IO  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/drives.getdrivesinformationreturnmodel/name/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/drives.getdrivesinformationreturnmodel/name/</guid>
+      <description>Drives.GetDrivesInformationReturnModel.Name property Gets or sets the name of a drive, such as C:.
+public string Name { get; set; } See Also  class GetDrivesInformationReturnModel namespace LiTools.Helpers.IO  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/drives.getdrivesinformationreturnmodel/totalfreespace/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/drives.getdrivesinformationreturnmodel/totalfreespace/</guid>
+      <description>Drives.GetDrivesInformationReturnModel.TotalFreeSpace property Gets or sets the total size of storage space on a drive, in bytes.
+public long TotalFreeSpace { get; set; } See Also  class GetDrivesInformationReturnModel namespace LiTools.Helpers.IO  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/drives.getdrivesinformationreturnmodel/totalsize/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/drives.getdrivesinformationreturnmodel/totalsize/</guid>
+      <description>Drives.GetDrivesInformationReturnModel.TotalSize property Gets or sets the total size of storage space on a drive, in bytes.
+public long TotalSize { get; set; } See Also  class GetDrivesInformationReturnModel namespace LiTools.Helpers.IO  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/drives.getdrivesinformationreturnmodel/volumelabel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/drives.getdrivesinformationreturnmodel/volumelabel/</guid>
+      <description>Drives.GetDrivesInformationReturnModel.VolumeLabel property Gets or sets the volume label of a driv.
+public string VolumeLabel { get; set; } See Also  class GetDrivesInformationReturnModel namespace LiTools.Helpers.IO  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/drives/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/drives/</guid>
+      <description>Drives class Drives helper.
+public static class Drives Public Members    name description     static GetDrivesInformation(…) Get informaton of all drives in the system.   class GetDrivesInformationReturnModel GetDrivesInformation Return model.    See Also  namespace LiTools.Helpers.IO Drives.cs  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/drives/getdrivesinformation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/drives/getdrivesinformation/</guid>
+      <description>Drives.GetDrivesInformation method Get informaton of all drives in the system.
+public static List&amp;lt;GetDrivesInformationReturnModel&amp;gt; GetDrivesInformation( bool getOnlyFixedDrives = false, bool getOnlyReadyDrives = true)    parameter description     getOnlyFixedDrives Show only fixed drives.   getOnlyReadyDrives Show only ready drives.    Return Value GetDrivesInformationReturnModel as list.
+See Also  class GetDrivesInformationReturnModel class Drives namespace LiTools.Helpers.IO  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/file/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/file/</guid>
+      <description>File class File helper.
+public static class File Public Members    name description     static DeleteFile(…) Delete file.   static Exist(…) Check if a file exist.   static FileExists(…) Do file exist?.   static GetFolderFromFilePath(…) Get Directory Path from file path.   static ReadBinaryFile(…) Read file as byte. (2 methods)   static ReadTextFile(…) Read file as string.   static VerifyFileReadAccess(…) Do we have read acess to this file.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/file/deletefile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/file/deletefile/</guid>
+      <description>File.DeleteFile method Delete file.
+public static bool DeleteFile(string filename)    parameter description     filename path to file.    Return Value true if file was removed.
+See Also  class File namespace LiTools.Helpers.IO  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/file/exist/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/file/exist/</guid>
+      <description>File.Exist method Check if a file exist.
+public static bool Exist(string file)    parameter description     file file path.    Return Value true or false.
+See Also  class File namespace LiTools.Helpers.IO  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/file/fileexists/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/file/fileexists/</guid>
+      <description>File.FileExists method Do file exist?.
+public static bool FileExists(string filename)    parameter description     filename Path to file.    Return Value true if the file exist.
+See Also  class File namespace LiTools.Helpers.IO  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/file/getfolderfromfilepath/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/file/getfolderfromfilepath/</guid>
+      <description>File.GetFolderFromFilePath method Get Directory Path from file path.
+public static string GetFolderFromFilePath(string file)    parameter description     file path to file.    Return Value Path to directory.
+See Also  class File namespace LiTools.Helpers.IO  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/file/readbinaryfile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/file/readbinaryfile/</guid>
+      <description>File.ReadBinaryFile method (1 of 2) Read file as byte.
+public static byte[]? ReadBinaryFile(string filename)    parameter description     filename filename to read.    Return Value return as byte.
+See Also  class File namespace LiTools.Helpers.IO   File.ReadBinaryFile method (2 of 2) Read file as byte. Start reading from input pos.
+public static Tuple&amp;lt;bool, byte[]&amp;gt; ReadBinaryFile(string filename, int from, int len)    parameter description     filename Filename to read.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/file/readtextfile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/file/readtextfile/</guid>
+      <description>File.ReadTextFile method Read file as string.
+public static Tuple&amp;lt;bool, string&amp;gt; ReadTextFile(string filename)    parameter description     filename filename to file to read.    Return Value true if file is read | data as string.
+See Also  class File namespace LiTools.Helpers.IO  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/file/verifyfilereadaccess/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/file/verifyfilereadaccess/</guid>
+      <description>File.VerifyFileReadAccess method Do we have read acess to this file.
+public static bool VerifyFileReadAccess(string filename)    parameter description     filename filename.    Return Value True = yes. we have read acess.
+See Also  class File namespace LiTools.Helpers.IO  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/file/writefile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/file/writefile/</guid>
+      <description>File.WriteFile method (1 of 4) Write file.
+public static bool WriteFile(string filename, byte[] content)    parameter description     filename Name of file.   content data as byte[].    Return Value true if everthing was ok.
+See Also  class File namespace LiTools.Helpers.IO   File.WriteFile method (2 of 4) Write file.
+public static bool WriteFile(FileInfo filename, string content, bool append)    parameter description     filename FileInfo.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/hardware.architectureenum/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/hardware.architectureenum/</guid>
+      <description>Hardware.ArchitectureEnum enumeration Architecture types.
+public enum ArchitectureEnum Values    name value description     None 0 Unknown.   X86 1 X86 Architecture.   X64 2 X64 Architecture.   Arm 3 Arm Architecture.   Arm64 4 Arm64 Architecture.    See Also  class Hardware namespace LiTools.Helpers.IO  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/hardware/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/hardware/</guid>
+      <description>Hardware class Get Harware information.
+public static class Hardware Public Members    name description     static GetFrameworkDescription() Get framwroek description.   static GetOs() Get os this is running on. ex. windows, linux, osx.   static GetOSArchitecture() Get Os Architecture from system.   static GetOsDescription() Get Os Description.   static GetProcessorArchitecture() Get Processor Architecture.   enum ArchitectureEnum Architecture types.   enum PlatformOsEnum Os types enums.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/hardware.platformosenum/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/hardware.platformosenum/</guid>
+      <description>Hardware.PlatformOsEnum enumeration Os types enums.
+public enum PlatformOsEnum Values    name value description     None 0 None. no value is set.   Unknown 1 Unknown. Dont know what os this is.   Windows 3 Windows.   Linux 4 Linux.   Osx 5 Osx.    See Also  class Hardware namespace LiTools.Helpers.IO  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/hardware/getframeworkdescription/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/hardware/getframeworkdescription/</guid>
+      <description>Hardware.GetFrameworkDescription method Get framwroek description.
+public static string GetFrameworkDescription() Return Value Net framwork version.
+See Also  class Hardware namespace LiTools.Helpers.IO  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/hardware/getos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/hardware/getos/</guid>
+      <description>Hardware.GetOs method Get os this is running on. ex. windows, linux, osx.
+public static PlatformOsEnum GetOs() Return Value PlatformOsEnum.
+See Also  enum PlatformOsEnum class Hardware namespace LiTools.Helpers.IO  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/hardware/getosarchitecture/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/hardware/getosarchitecture/</guid>
+      <description>Hardware.GetOSArchitecture method Get Os Architecture from system.
+public static ArchitectureEnum GetOSArchitecture() Return Value ArchitectureEnum.
+See Also  enum ArchitectureEnum class Hardware namespace LiTools.Helpers.IO  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/hardware/getosdescription/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/hardware/getosdescription/</guid>
+      <description>Hardware.GetOsDescription method Get Os Description.
+public static string GetOsDescription() Return Value os description as string.
+See Also  class Hardware namespace LiTools.Helpers.IO  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/hardware/getprocessorarchitecture/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/hardware/getprocessorarchitecture/</guid>
+      <description>Hardware.GetProcessorArchitecture method Get Processor Architecture.
+public static ArchitectureEnum GetProcessorArchitecture() Return Value ArchitectureEnum.
+See Also  enum ArchitectureEnum class Hardware namespace LiTools.Helpers.IO  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/webpage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/webpage/</guid>
+      <description>Webpage class Webpage helper.
+public static class Webpage Public Members    name description     static ReturnAsString(…) Read page and return as string.    See Also  namespace LiTools.Helpers.IO Webpage.cs  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/webpage/returnasstring/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/webpage/returnasstring/</guid>
+      <description>Webpage.ReturnAsString method Read page and return as string.
+public static Task&amp;lt;WebpageReturnAsStringModel&amp;gt; ReturnAsString(string url)    parameter description     url page to read.    Return Value page as string.
+See Also  class WebpageReturnAsStringModel class Webpage namespace LiTools.Helpers.IO  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/webpagereturnasstringmodel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/webpagereturnasstringmodel/</guid>
+      <description>WebpageReturnAsStringModel class Webpage return as string model.
+public class WebpageReturnAsStringModel Public Members    name description     WebpageReturnAsStringModel() Initializes a new instance of the WebpageReturnAsStringModel class.   ErrorMessage { get; set; } Gets or sets do we have any error messages from page we are reading from.   IsWorking { get; set; } Gets or sets a value indicating whether is the page we are reading from working.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/webpagereturnasstringmodel/errormessage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/webpagereturnasstringmodel/errormessage/</guid>
+      <description>WebpageReturnAsStringModel.ErrorMessage property Gets or sets do we have any error messages from page we are reading from.
+public string ErrorMessage { get; set; } See Also  class WebpageReturnAsStringModel namespace LiTools.Helpers.IO  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/webpagereturnasstringmodel/isworking/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/webpagereturnasstringmodel/isworking/</guid>
+      <description>WebpageReturnAsStringModel.IsWorking property Gets or sets a value indicating whether is the page we are reading from working.
+public bool IsWorking { get; set; } See Also  class WebpageReturnAsStringModel namespace LiTools.Helpers.IO  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/webpagereturnasstringmodel/source/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/webpagereturnasstringmodel/source/</guid>
+      <description>WebpageReturnAsStringModel.Source property Gets or sets return from page as string.
+public string Source { get; set; } See Also  class WebpageReturnAsStringModel namespace LiTools.Helpers.IO  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/webpagereturnasstringmodel/webpagereturnasstringmodel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.io/webpagereturnasstringmodel/webpagereturnasstringmodel/</guid>
+      <description>WebpageReturnAsStringModel constructor Initializes a new instance of the WebpageReturnAsStringModel class.
+public WebpageReturnAsStringModel() See Also  class WebpageReturnAsStringModel namespace LiTools.Helpers.IO  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/</guid>
+      <description>LiTools.Helpers.Organize assembly LiTools.Helpers.Organize namespace    public type description     class BackgroundWorkModel Allow own userdata to check and handling task. background work.   class BackgroundWorkService Background work service.   static class ParallelTask Task helper to start and organize tasks.   enum TaskRunTypeEnum Task work types. short running or long running background work.   class TaskService Service to handle all background work - Task running on software.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/backgroundworkmodel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/backgroundworkmodel/</guid>
+      <description>BackgroundWorkModel class Allow own userdata to check and handling task. background work.
+public class BackgroundWorkModel Public Members    name description     BackgroundWorkModel() Initializes a new instance of the BackgroundWorkModel class.   AutoDeleteWhenDone { get; set; } Gets or sets a value indicating whether shod this task be deleted when done.   BackgroundTaskRunning { get; set; } Gets or sets a value indicating whether is background task runinng?</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/backgroundworkmodel/autodeletewhendone/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/backgroundworkmodel/autodeletewhendone/</guid>
+      <description>BackgroundWorkModel.AutoDeleteWhenDone property Gets or sets a value indicating whether shod this task be deleted when done.
+public bool AutoDeleteWhenDone { get; set; } See Also  class BackgroundWorkModel namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/backgroundworkmodel/backgroundtaskrunning/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/backgroundworkmodel/backgroundtaskrunning/</guid>
+      <description>BackgroundWorkModel.BackgroundTaskRunning property Gets or sets a value indicating whether is background task runinng?.
+public bool BackgroundTaskRunning { get; set; } See Also  class BackgroundWorkModel namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/backgroundworkmodel/backgroundtaskshodberunning/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/backgroundworkmodel/backgroundtaskshodberunning/</guid>
+      <description>BackgroundWorkModel.BackgroundTaskShodbeRunning property Gets or sets a value indicating whether shod background task be running?.
+public bool BackgroundTaskShodbeRunning { get; set; } See Also  class BackgroundWorkModel namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/backgroundworkmodel/backgroundworkmodel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/backgroundworkmodel/backgroundworkmodel/</guid>
+      <description>BackgroundWorkModel constructor Initializes a new instance of the BackgroundWorkModel class.
+public BackgroundWorkModel() See Also  class BackgroundWorkModel namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/backgroundworkmodel/dtlastcheckt/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/backgroundworkmodel/dtlastcheckt/</guid>
+      <description>BackgroundWorkModel.DtLastCheckt property Gets or sets when was this task last checket.
+public DateTime DtLastCheckt { get; set; } See Also  class BackgroundWorkModel namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/backgroundworkmodel/dttaskcreated/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/backgroundworkmodel/dttaskcreated/</guid>
+      <description>BackgroundWorkModel.DtTaskCreated property Gets or sets when was this task created.
+public DateTime DtTaskCreated { get; set; } See Also  class BackgroundWorkModel namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/backgroundworkmodel/dtwhilelastrun/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/backgroundworkmodel/dtwhilelastrun/</guid>
+      <description>BackgroundWorkModel.DtWhileLastRun property Gets or sets when was the background task last run?.
+public DateTime DtWhileLastRun { get; set; } See Also  class BackgroundWorkModel namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/backgroundworkmodel/name/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/backgroundworkmodel/name/</guid>
+      <description>BackgroundWorkModel.Name property Gets or sets name of this task.
+public string Name { get; set; } See Also  class BackgroundWorkModel namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/backgroundworkmodel/taskaction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/backgroundworkmodel/taskaction/</guid>
+      <description>BackgroundWorkModel.TaskAction property Gets or sets Action that this background work shod do inside while loop.
+public Action? TaskAction { get; set; } See Also  class BackgroundWorkModel namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/backgroundworkmodel/tasktype/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/backgroundworkmodel/tasktype/</guid>
+      <description>BackgroundWorkModel.TaskType property Gets or sets task is longrunning or shortrunning background work.
+public TaskRunTypeEnum TaskType { get; set; } See Also  enum TaskRunTypeEnum class BackgroundWorkModel namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/backgroundworkmodel/taskwork/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/backgroundworkmodel/taskwork/</guid>
+      <description>BackgroundWorkModel.Taskwork property Gets or sets task to be run.
+public Task? Taskwork { get; set; } See Also  class BackgroundWorkModel namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/backgroundworkmodel/token/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/backgroundworkmodel/token/</guid>
+      <description>BackgroundWorkModel.Token property Gets or sets token to control this task.
+public CancellationTokenSource Token { get; set; } See Also  class BackgroundWorkModel namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/backgroundworkmodel/whileinterval/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/backgroundworkmodel/whileinterval/</guid>
+      <description>BackgroundWorkModel.WhileInterval property Gets or sets when shod it be run. time in milleseconds.
+public ushort WhileInterval { get; set; } See Also  class BackgroundWorkModel namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/backgroundworkservice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/backgroundworkservice/</guid>
+      <description>BackgroundWorkService class Background work service.
+public class BackgroundWorkService Public Members    name description     BackgroundWorkService() Initializes a new instance of the BackgroundWorkService class.   Start(…) Start new background work.   TaskExists(…) Do the taskname exist?.    See Also  namespace LiTools.Helpers.Organize BackgroundWorkService.cs  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/backgroundworkservice/backgroundworkservice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/backgroundworkservice/backgroundworkservice/</guid>
+      <description>BackgroundWorkService constructor Initializes a new instance of the BackgroundWorkService class.
+public BackgroundWorkService() See Also  class BackgroundWorkService namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/backgroundworkservice/start/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/backgroundworkservice/start/</guid>
+      <description>BackgroundWorkService.Start method Start new background work.
+public string Start(BackgroundWorkModel data)    parameter description     data BackgroundWorkModel model.    Return Value name of the task. (data.name) as string.
+See Also  class BackgroundWorkModel class BackgroundWorkService namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/backgroundworkservice/taskexists/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/backgroundworkservice/taskexists/</guid>
+      <description>BackgroundWorkService.TaskExists method Do the taskname exist?.
+public bool TaskExists(string taskname)    parameter description     taskname Name of task.    Return Value true or false. if the taskname exist return is true.
+See Also  class BackgroundWorkService namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/paralleltask/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/paralleltask/</guid>
+      <description>ParallelTask class Task helper to start and organize tasks.
+public static class ParallelTask Public Members    name description     static Token Token.   static GenerateUniqueTaskname() Generate a unice Taskname.   static Start(…) Start Task.   static StartLongRunning(…) Start longrunning Task.    See Also  namespace LiTools.Helpers.Organize ParallelTask.cs  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/paralleltask/exist/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/paralleltask/exist/</guid>
+      <description>ParallelTask.Exist method Do task exist?.
+public static bool Exist(string taskName)    parameter description     taskName Task id.    Return Value true if it exist.
+See Also  class ParallelTask namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/paralleltask/generateuniquetaskname/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/paralleltask/generateuniquetaskname/</guid>
+      <description>ParallelTask.GenerateUniqueTaskname method Generate a unice Taskname.
+public static string GenerateUniqueTaskname() Return Value taskname as string.
+See Also  class ParallelTask namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/paralleltask/start/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/paralleltask/start/</guid>
+      <description>ParallelTask.Start method Start Task.
+public static void Start(Func&amp;lt;Task&amp;gt; action, CancellationToken cancellationToken)    parameter description     action Function to run.   cancellationToken Token.    See Also  class ParallelTask namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/paralleltask/startlongrunning/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/paralleltask/startlongrunning/</guid>
+      <description>ParallelTask.StartLongRunning method Start longrunning Task.
+public static void StartLongRunning(Action action, CancellationToken cancellationToken)    parameter description     action Function to run.   cancellationToken Token.    See Also  class ParallelTask namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/paralleltask/token/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/paralleltask/token/</guid>
+      <description>ParallelTask.Token field Token.
+public static CancellationTokenSource Token; See Also  class ParallelTask namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskruntypeenum/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskruntypeenum/</guid>
+      <description>TaskRunTypeEnum enumeration Task work types. short running or long running background work.
+public enum TaskRunTypeEnum Values    name value description     None 0 only do define.   Short 1 This is a short running work.   Long 2 This is a long running work.    See Also  namespace LiTools.Helpers.Organize TaskRunTypeEnum.cs  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservice/</guid>
+      <description>TaskService class Service to handle all background work - Task running on software.
+public class TaskService Public Members    name description     TaskService() Initializes a new instance of the TaskService class.   BackgroundTaskLastRun { get; set; } Gets or sets when was the background task last run?.   BackgroundTaskRunning { get; set; } Gets or sets a value indicating whether is background task runinng?</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservice/backgroundtaskchecker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservice/backgroundtaskchecker/</guid>
+      <description>TaskService.BackgroundTaskChecker method Background woker checker.
+public void BackgroundTaskChecker() See Also  class TaskService namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservice/backgroundtasklastrun/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservice/backgroundtasklastrun/</guid>
+      <description>TaskService.BackgroundTaskLastRun property Gets or sets when was the background task last run?.
+public DateTime BackgroundTaskLastRun { get; set; } See Also  class TaskService namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservice/backgroundtaskrunning/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservice/backgroundtaskrunning/</guid>
+      <description>TaskService.BackgroundTaskRunning property Gets or sets a value indicating whether is background task runinng?.
+public bool BackgroundTaskRunning { get; set; } See Also  class TaskService namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservice/backgroundtaskshodberunning/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservice/backgroundtaskshodberunning/</guid>
+      <description>TaskService.BackgroundTaskShodbeRunning property Gets or sets a value indicating whether shod background task be running?.
+public bool BackgroundTaskShodbeRunning { get; set; } See Also  class TaskService namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservice/canceltask/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservice/canceltask/</guid>
+      <description>TaskService.CancelTask method Cancel task.
+public void CancelTask(string taskname)    parameter description     taskname name of task to cancel.    See Also  class TaskService namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservice/check/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservice/check/</guid>
+      <description>TaskService.Check method Check a task. if the task is done. remove it from dictonary.
+public void Check(string taskname)    parameter description     taskname name of task.    See Also  class TaskService namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservice/getstatus/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservice/getstatus/</guid>
+      <description>TaskService.GetStatus method Get status of a task.
+public TaskStatus GetStatus(string taskname)    parameter description     taskname name of task.    Return Value model TaskStatus.
+See Also  class TaskService namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservice/initdone/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservice/initdone/</guid>
+      <description>TaskService.InitDone property Gets or sets a value indicating whether is init done on this service?.
+public bool InitDone { get; set; } See Also  class TaskService namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservice/iscancellationrequested/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservice/iscancellationrequested/</guid>
+      <description>TaskService.IsCancellationRequested method Shod this task be cancel?.
+public bool IsCancellationRequested(string taskname)    parameter description     taskname name of task.    Return Value true or false.
+See Also  class TaskService namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservice/startnew/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservice/startnew/</guid>
+      <description>TaskService.StartNew method Start a new task to run.
+public string StartNew(Action action, TaskRunTypeEnum tasktype, string taskname = &amp;#34;&amp;#34;, bool autoDeleteWhenDone = true)    parameter description     action What shod be running?.   tasktype Type of task this is.   taskname Task name.   autoDeleteWhenDone Delete task when it is done.    Return Value Name of the work. if null. error starting background work.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservice/taskexists/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservice/taskexists/</guid>
+      <description>TaskService.TaskExists method Do the taskname exist?.
+public bool TaskExists(string taskname)    parameter description     taskname Name of task.    Return Value true or false. if the taskname exist return is true.
+See Also  class TaskService namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservice/taskservice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservice/taskservice/</guid>
+      <description>TaskService constructor Initializes a new instance of the TaskService class.
+public TaskService() See Also  class TaskService namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservicerunmodel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservicerunmodel/</guid>
+      <description>TaskServiceRunModel class Handler model for task works.
+public class TaskServiceRunModel Public Members    name description     TaskServiceRunModel() Initializes a new instance of the TaskServiceRunModel class.   AutoDeleteWhenDone { get; set; } Gets or sets a value indicating whether shod this task be deleted when done.   TaskCreated { get; set; } Gets or sets when was this task created.   TaskLastCheckt { get; set; } Gets or sets when was this task last checket.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservicerunmodel/autodeletewhendone/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservicerunmodel/autodeletewhendone/</guid>
+      <description>TaskServiceRunModel.AutoDeleteWhenDone property Gets or sets a value indicating whether shod this task be deleted when done.
+public bool AutoDeleteWhenDone { get; set; } See Also  class TaskServiceRunModel namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservicerunmodel/taskcreated/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservicerunmodel/taskcreated/</guid>
+      <description>TaskServiceRunModel.TaskCreated property Gets or sets when was this task created.
+public DateTime TaskCreated { get; set; } See Also  class TaskServiceRunModel namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservicerunmodel/tasklastcheckt/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservicerunmodel/tasklastcheckt/</guid>
+      <description>TaskServiceRunModel.TaskLastCheckt property Gets or sets when was this task last checket.
+public DateTime TaskLastCheckt { get; set; } See Also  class TaskServiceRunModel namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservicerunmodel/taskname/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservicerunmodel/taskname/</guid>
+      <description>TaskServiceRunModel.TaskName property Gets or sets name of this task.
+public string TaskName { get; set; } See Also  class TaskServiceRunModel namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservicerunmodel/taskservicerunmodel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservicerunmodel/taskservicerunmodel/</guid>
+      <description>TaskServiceRunModel constructor Initializes a new instance of the TaskServiceRunModel class.
+public TaskServiceRunModel() See Also  class TaskServiceRunModel namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservicerunmodel/tasktoken/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservicerunmodel/tasktoken/</guid>
+      <description>TaskServiceRunModel.TaskToken property Gets or sets token to control this task.
+public CancellationTokenSource TaskToken { get; set; } See Also  class TaskServiceRunModel namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservicerunmodel/tasktype/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservicerunmodel/tasktype/</guid>
+      <description>TaskServiceRunModel.TaskType property Gets or sets task is longrunning or shortrunning background work.
+public TaskRunTypeEnum TaskType { get; set; } See Also  enum TaskRunTypeEnum class TaskServiceRunModel namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservicerunmodel/taskwork/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/xmldocmd/litools.helpers.organize/taskservicerunmodel/taskwork/</guid>
+      <description>TaskServiceRunModel.Taskwork property Gets or sets task to be run.
+public Task? Taskwork { get; set; } See Also  class TaskServiceRunModel namespace LiTools.Helpers.Organize  </description>
+    </item>
+    
+  </channel>
+</rss>
