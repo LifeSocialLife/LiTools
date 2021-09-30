@@ -1,0 +1,5 @@
+baseURL = 'https://lifesociallife.github.io/LiTools/'
+languageCode = 'en-us'
+title = 'LiTools'
+theme = "ananke" 
+#publishdir = '../docs'
