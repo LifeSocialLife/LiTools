@@ -1,7 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>NETSTANDARD2.1;NETSTANDARD2.0;NET5.0;NET6.0</TargetFrameworks>
+    <TargetFramework>NETSTANDARD2.0</TargetFramework>
+    <!--<TargetFrameworks>NETSTANDARD2.1;NETSTANDARD2.0;NET5.0;NET6.0</TargetFrameworks>-->
     <Nullable>enable</Nullable>
     <LangVersion>preview</LangVersion>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
@@ -16,12 +17,11 @@
     <SignAssembly>False</SignAssembly>
   </PropertyGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'NET6.0'">
-    <PackageReference Include="Microsoft.CodeAnalysis" Version="4.0.0-3.final" />
-    <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.0.0-3.final" />
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.0.0-3.final" />
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.0.0-3.final" />
-    <PackageReference Include="Microsoft.CodeAnalysis.Razor" Version="6.0.0-preview.7.21378.6" />
+  <ItemGroup Condition="'$(Configuration)' == 'Debug'">
+    <PackageReference Include="Microsoft.CodeAnalysis" Version="4.0.0-4.final" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.0.0-4.final" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.0.0-4.final" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.0.0-4.final" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.354">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
