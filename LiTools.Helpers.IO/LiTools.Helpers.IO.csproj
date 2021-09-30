@@ -16,6 +16,7 @@
     <RepositoryType>git</RepositoryType>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <SignAssembly>False</SignAssembly>
+    <RepositoryUrl>https://github.com/LifeSocialLife/LiTools</RepositoryUrl>
   </PropertyGroup>
 
 

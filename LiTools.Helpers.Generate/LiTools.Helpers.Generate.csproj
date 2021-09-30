@@ -1,7 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>NETSTANDARD2.1;NETSTANDARD2.0;NET5.0</TargetFrameworks>
+    <TargetFramework>NETSTANDARD2.0</TargetFramework>
+    <!--<TargetFrameworks>NETSTANDARD2.1;NETSTANDARD2.0;NET5.0</TargetFrameworks>-->
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
