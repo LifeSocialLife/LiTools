@@ -3,7 +3,7 @@
 
 
 
-## Projects
+## Projects.
 
 
 
