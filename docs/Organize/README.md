@@ -1,9 +1,9 @@
-﻿﻿﻿﻿﻿﻿﻿# LiTools.Helpers.Organize
+﻿﻿﻿﻿﻿﻿﻿﻿﻿# LiTools.Helpers.Organize
 
 
 This packet have reference to nuget packet LiTools.Helpers.Generate at-lest version 0.0.1
 
-[XmlDoc is available.](/Documentation/xmldocmd/LiTools.Helpers.Organize.md)
+[XmlDoc is available.](/../xmldocmd/LiTools.Helpers.Organize.md)
 
 ## Functions
 
@@ -11,9 +11,9 @@ This packet have reference to nuget packet LiTools.Helpers.Generate at-lest vers
 
 This is a helper. It will start a new task for you to run you code in.
 
-[Documentation.](/Documentation/Organize/ParallelTask.md)
+[Documentation.](/Organize/ParallelTask.md)
 
-[XmlDoc..](/Documentation/xmldocmd/LiTools.Helpers.Organize/ParallelTask.md)
+[XmlDoc..](/../xmldocmd/LiTools.Helpers.Organize/ParallelTask.md)
 
 
 
