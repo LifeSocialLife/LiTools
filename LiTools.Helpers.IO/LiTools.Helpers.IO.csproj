@@ -1,30 +1,45 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>NETSTANDARD2.1;NETSTANDARD2.0;NET5.0</TargetFrameworks>
+    <TargetFramework>NETSTANDARD2.1</TargetFramework>
+    <!--<TargetFrameworks>NETSTANDARD2.1;NETSTANDARD2.0;NET5.0;NET6.0</TargetFrameworks>-->
     <!--<TargetFrameworks>NETSTANDARD2.1;NETSTANDARD2.0;NET5.0;NET48</TargetFrameworks>-->
     <Nullable>enable</Nullable>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>preview</LangVersion>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Version>0.0.1</Version>
+    <Version>0.0.2-rc.1</Version>
     <Authors>Lennie Wennerlund</Authors>
     <Description>IO Helper - tools</Description>
     <PackageProjectUrl>https://github.com/LifeSocialLife/LiTools</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <SignAssembly>False</SignAssembly>
+    <RepositoryUrl>https://github.com/LifeSocialLife/LiTools</RepositoryUrl>
   </PropertyGroup>
 
-  <ItemGroup>
+
+  <ItemGroup Condition="'$(Configuration)' == 'Debug'">
+    <PackageReference Include="Microsoft.CodeAnalysis" Version="4.0.0-4.final" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.0.0-4.final" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.354">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <ProjectReference Include="..\LiTools.Helpers.Convert\LiTools.Helpers.Convert.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(Configuration)' == 'Release'">
     <PackageReference Include="LiTools.Helpers.Convert" Version="0.0.4" />
-    <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
-    <PackageReference Include="System.Threading.Tasks" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup>
     <AdditionalFiles Include="../stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Threading.Tasks" Version="4.3.0" />
   </ItemGroup>
 
 </Project>

@@ -13,6 +13,11 @@ namespace LiTools.Helpers.Convert
     /// </summary>
     public static class Gigabytes
     {
+        /// <summary>
+        /// To Terabytes.
+        /// </summary>
+        /// <param name="gigabytes">Gigabytes value.</param>
+        /// <returns>Terabytes value as double.</returns>
         public static double ToTerabytes(double gigabytes) // SMALLER
         {
             // 1024 gigabytes in a terabyte
@@ -29,8 +34,5 @@ namespace LiTools.Helpers.Convert
             // 1024 gigabytes in a terabyte
             return gigabytes * 1024.0;
         }
-
-
-
     }
 }

@@ -1,7 +1,13 @@
-﻿
+﻿// <summary>
+// Convert Megabytes into.
+// </summary>
+// <copyright file="Megabytes.cs" company="LiSoLi">
+// Copyright (c) LiSoLi. All rights reserved.
+// </copyright>
+// <author>Lennie Wennerlund (lempa)</author>
+
 namespace LiTools.Helpers.Convert
 {
-
     using System;
     using System.Collections.Generic;
     using System.Text;
@@ -36,7 +42,6 @@ namespace LiTools.Helpers.Convert
         /// </summary>
         /// <param name="megabytes">megabytes.</param>
         /// <returns>Gigabytes as double.</returns>
-
         public static double ToGigabytes(double megabytes)
         {
             // 1024 megabyte in a gigabyte
@@ -53,6 +58,5 @@ namespace LiTools.Helpers.Convert
             // 1024 * 1024 megabytes in a terabyte
             return megabytes / (1024.0 * 1024.0);
         }
-
     }
 }

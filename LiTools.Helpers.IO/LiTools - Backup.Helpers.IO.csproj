@@ -1,0 +1,63 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!--<TargetFramework>NETSTANDARD2.1</TargetFramework>-->
+    <TargetFrameworks>NETSTANDARD2.1;NETSTANDARD2.0;NET5.0;NET6.0</TargetFrameworks>
+    <!--<TargetFrameworks>NETSTANDARD2.1;NETSTANDARD2.0;NET5.0;NET48</TargetFrameworks>-->
+    <Nullable>enable</Nullable>
+    <LangVersion>preview</LangVersion>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Version>0.0.1</Version>
+    <Authors>Lennie Wennerlund</Authors>
+    <Description>IO Helper - tools</Description>
+    <PackageProjectUrl>https://github.com/LifeSocialLife/LiTools</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <SignAssembly>False</SignAssembly>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'NET6.0'">
+    <PackageReference Include="Microsoft.CodeAnalysis" Version="4.0.0-3.final" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.0.0-3.final" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.0.0-3.final" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.0.0-3.final" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Razor" Version="6.0.0-preview.7.21378.6" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.354">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  
+
+  <ItemGroup>
+    <AdditionalFiles Include="../stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LiTools.Helpers.Convert" Version="0.0.4" />
+  </ItemGroup>
+
+  <!--<ItemGroup Condition="'$(TargetFramework)' == 'NETSTANDARD2.0'">
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework)' == 'NETSTANDARD2.1'">
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework)' == 'NET5.0'">
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />   
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'NET6.0'">
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0-preview.6.21352.12" />
+  </ItemGroup>-->
+  
+  <ItemGroup>
+    <PackageReference Include="System.Threading.Tasks" Version="4.3.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0-preview.7.21377.19" />
+  </ItemGroup>
+
+</Project>
