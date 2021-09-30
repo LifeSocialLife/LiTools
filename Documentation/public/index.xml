@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LiTools</title>
+    <link>https://lifesociallife.github.io/LiTools/</link>
+    <description>Recent content on LiTools</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 30 Sep 2021 11:17:26 +0200</lastBuildDate><atom:link href="https://lifesociallife.github.io/LiTools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My First Post</title>
+      <link>https://lifesociallife.github.io/LiTools/posts/my-first-post/</link>
+      <pubDate>Thu, 30 Sep 2021 11:17:26 +0200</pubDate>
+      
+      <guid>https://lifesociallife.github.io/LiTools/posts/my-first-post/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
