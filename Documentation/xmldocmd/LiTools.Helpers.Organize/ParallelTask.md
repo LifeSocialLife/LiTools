@@ -6,6 +6,15 @@ Task helper to start and organize tasks.
 public static class ParallelTask
 ```
 
+## Public Members
+
+| name | description |
+| --- | --- |
+| static [Token](ParallelTask/Token.md) | Token. |
+| static [GenerateUniqueTaskname](ParallelTask/GenerateUniqueTaskname.md)() | Generate a unice Taskname. |
+| static [Start](ParallelTask/Start.md)(…) | Start Task. |
+| static [StartLongRunning](ParallelTask/StartLongRunning.md)(…) | Start longrunning Task. |
+
 ## See Also
 
 * namespace [LiTools.Helpers.Organize](../LiTools.Helpers.Organize.md)
