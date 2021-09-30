@@ -1,6 +1,6 @@
-﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿# LiTools.Helpers.IO
+﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿# LiTools.Helpers.IO
 
-[XmlDoc is available.](/Documentation/xmldocmd/LiTools.Helpers.IO.md)
+[XmlDoc is available.](/docs/xmldocmd/LiTools.Helpers.IO.md)
 
 ## Functions
 
