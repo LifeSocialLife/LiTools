@@ -1,9 +1,9 @@
-﻿﻿﻿﻿﻿﻿﻿﻿﻿# LiTools.Helpers.Organize
+﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿# LiTools.Helpers.Organize
 
+[XmlDoc](/../xmldocmd/LiTools.Helpers.Organize.md)
 
-This packet have reference to nuget packet LiTools.Helpers.Generate at-lest version 0.0.1
-
-[XmlDoc is available.](/../xmldocmd/LiTools.Helpers.Organize.md)
+Organize project is build to help you organize you code.
+Build in in task helper that will help you start and maintain task inside you project.
 
 ## Functions
 
@@ -22,13 +22,14 @@ This is a helper. It will start a new task for you to run you code in.
 Task Organize and record of all tasks that are running or have been running.  
 This is build to be running as a service.
 
-[XmlDoc.](/Documentation/xmldocmd/LiTools.Helpers.Organize/TaskService.md)
+[XmlDoc.](../xmldocmd/LiTools.Helpers.Organize/TaskService.md)
 
 
 ### Background Work Service
 
 This is under development and is only used internal right now.
 Don't use it if you don’t know what you are doing!!
+
 
 ## Version Information
 
@@ -50,3 +51,7 @@ Task Starter
 Task Service
 
 Background worker service. (WIP)
+
+## Dependencies
+
+This packet have reference to nuget packet LiTools.Helpers.Generate at-lest version 0.0.1
