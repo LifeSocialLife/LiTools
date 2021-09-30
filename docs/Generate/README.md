@@ -5,7 +5,7 @@
 ### Guid
 
 Generate GUID.
-[Read dokumentation](/Documentation/LiTools.Helpers.Generate/Guid.md)
+[XmlDoc](/xmldocmd/LiTools.Helpers.Generate/Guid.md)
 
 ## Version Information
 
