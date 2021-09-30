@@ -18,7 +18,6 @@ namespace LiTools.Helpers.IO
     /// <summary>
     /// File helper.
     /// </summary>
-    [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1124:DoNotUseRegions", Justification = "Reviewed.")]
     public static class File
     {
         #region Read
@@ -187,6 +186,94 @@ namespace LiTools.Helpers.IO
         }
 
         /// <summary>
+        /// Move file to new location.
+        /// </summary>
+        /// <param name="from">path to file.</param>
+        /// <param name="to">path to move the file info.</param>
+        /// <returns>true or false.</returns>
+        public static bool Move(string from, string to)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(from))
+                {
+                    return false;
+                }
+
+                if (string.IsNullOrEmpty(to))
+                {
+                    return false;
+                }
+
+                if (string.Compare(from, to) == 0)
+                {
+                    return true;
+                }
+
+                // File.Move(from, to);
+                System.IO.File.Move(from, to);
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Rename file.
+        /// </summary>
+        /// <param name="from">path to file.</param>
+        /// <param name="to">New name whit path.</param>
+        /// <returns>true or false.</returns>
+        public static bool Rename(string from, string to)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(from))
+                {
+                    return false;
+                }
+
+                if (string.IsNullOrEmpty(to))
+                {
+                    return false;
+                }
+
+                if (string.Compare(from, to) == 0)
+                {
+                    return true;
+                }
+
+                System.IO.File.Move(from, to);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Delete file.
+        /// </summary>
+        /// <param name="filename">path to file.</param>
+        /// <returns>true if file was removed.</returns>
+        public static bool DeleteFile(string filename)
+        {
+            try
+            {
+                System.IO.File.Delete(@filename);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
         /// Get Directory Path from file path.
         /// </summary>
         /// <param name="file">path to file.</param>
@@ -209,34 +296,6 @@ namespace LiTools.Helpers.IO
         }
 
         /// <summary>
-        /// Delete file.
-        /// </summary>
-        /// <param name="filename">path to file.</param>
-        /// <returns>true if file was removed.</returns>
-        public static bool DeleteFile(string filename)
-        {
-            try
-            {
-                System.IO.File.Delete(@filename);
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
-
-        /// <summary>
-        /// Do file exist?.
-        /// </summary>
-        /// <param name="filename">Path to file.</param>
-        /// <returns>true if the file exist.</returns>
-        public static bool FileExists(string filename)
-        {
-            return System.IO.File.Exists(filename);
-        }
-
-        /// <summary>
         /// Do we have read acess to this file.
         /// </summary>
         /// <param name="filename">filename.</param>
@@ -251,6 +310,28 @@ namespace LiTools.Helpers.IO
             catch (IOException)
             {
                 return false;
+            }
+        }
+
+        /// <summary>
+        /// Get file extension.
+        /// </summary>
+        /// <param name="filename">Path to file.</param>
+        /// <returns>extension of file.</returns>
+        public static string GetFileExtension(string filename)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(filename))
+                {
+                    return string.Empty;
+                }
+
+                return Path.GetExtension(filename);
+            }
+            catch (Exception)
+            {
+                return string.Empty;
             }
         }
 

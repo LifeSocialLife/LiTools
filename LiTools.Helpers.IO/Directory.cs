@@ -10,6 +10,7 @@ namespace LiTools.Helpers.IO
 {
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
     using System.Text;
 
@@ -49,6 +50,40 @@ namespace LiTools.Helpers.IO
                 //    folderList.Add(folder);
                 // }
                 return new Tuple<bool, List<string>>(true, folderList);
+            }
+            catch (Exception)
+            {
+                return new Tuple<bool, List<string>>(false, new List<string>());
+            }
+        }
+
+        /// <summary>
+        /// Get all files inside directory.
+        /// </summary>
+        /// <param name="directory">Directory to scan.</param>
+        /// <param name="returnCompletPath">Return whit directory information or not.</param>
+        /// <returns>true if try work or false if catch happends. filelist as list.</returns>
+        public static Tuple<bool, List<string>> GetFilesInsideDirectory(string directory, bool returnCompletPath)
+        {
+            try
+            {
+                DirectoryInfo info = new DirectoryInfo(directory);
+                FileInfo[] files = info.GetFiles().OrderBy(p => p.CreationTime).ToArray();
+                List<string> fileList = new();
+
+                foreach (FileInfo file in files)
+                {
+                    if (returnCompletPath)
+                    {
+                        fileList.Add(directory + "/" + file.Name);
+                    }
+                    else
+                    {
+                        fileList.Add(file.Name);
+                    }
+                }
+
+                return new Tuple<bool, List<string>>(true, fileList);
             }
             catch (Exception)
             {
@@ -109,6 +144,17 @@ namespace LiTools.Helpers.IO
             }
         }
 
+        /// <summary>
+        /// Rename directory. this is the same as Move. Use move insted.
+        /// </summary>
+        /// <param name="from">current location.</param>
+        /// <param name="to">New location.</param>
+        /// <returns>true or false.</returns>
+        public static bool Rename(string from, string to)
+        {
+            return LiTools.Helpers.IO.Directory.Move(from, to);
+        }
+
         /// <summary>.
         /// Directory exist or not.
         /// </summary>
@@ -136,7 +182,18 @@ namespace LiTools.Helpers.IO
         /// </summary>
         /// <param name="folder">Path to create.</param>
         /// <returns>true or false.</returns>
+        [Obsolete("DirectoryCreate is deprecated, please use Create instead.")]
         public static bool DirectoryCreate(string folder)
+        {
+            return Directory.Create(folder);
+        }
+
+        /// <summary>
+        /// Create directory.
+        /// </summary>
+        /// <param name="folder">Path to create.</param>
+        /// <returns>true or false.</returns>
+        public static bool Create(string folder)
         {
             try
             {
