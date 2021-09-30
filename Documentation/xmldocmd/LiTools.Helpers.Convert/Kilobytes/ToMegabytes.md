@@ -1,8 +1,18 @@
 # Kilobytes.ToMegabytes method
 
+To Megabytes.
+
 ```csharp
 public static double ToMegabytes(long kilobytes)
 ```
+
+| parameter | description |
+| --- | --- |
+| kilobytes | Kilobytes value. |
+
+## Return Value
+
+Megabytes value as double.
 
 ## See Also
 

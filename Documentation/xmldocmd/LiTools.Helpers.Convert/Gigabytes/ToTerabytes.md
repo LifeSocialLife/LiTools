@@ -1,8 +1,18 @@
 # Gigabytes.ToTerabytes method
 
+To Terabytes.
+
 ```csharp
 public static double ToTerabytes(double gigabytes)
 ```
+
+| parameter | description |
+| --- | --- |
+| gigabytes | Gigabytes value. |
+
+## Return Value
+
+Terabytes value as double.
 
 ## See Also
 

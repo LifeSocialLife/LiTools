@@ -1,5 +1,7 @@
 # Kilobytes class
 
+Convert Kilobytes into.
+
 ```csharp
 public static class Kilobytes
 ```
@@ -8,7 +10,7 @@ public static class Kilobytes
 
 | name | description |
 | --- | --- |
-| static [ToMegabytes](Kilobytes/ToMegabytes.md)(…) |  |
+| static [ToMegabytes](Kilobytes/ToMegabytes.md)(…) | To Megabytes. |
 
 ## See Also
 

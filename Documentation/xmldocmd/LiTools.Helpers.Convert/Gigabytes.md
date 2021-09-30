@@ -11,7 +11,7 @@ public static class Gigabytes
 | name | description |
 | --- | --- |
 | static [ToMegabytes](Gigabytes/ToMegabytes.md)(…) | Into Megabytes. |
-| static [ToTerabytes](Gigabytes/ToTerabytes.md)(…) |  |
+| static [ToTerabytes](Gigabytes/ToTerabytes.md)(…) | To Terabytes. |
 
 ## See Also
 
