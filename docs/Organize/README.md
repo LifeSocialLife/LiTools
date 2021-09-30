@@ -11,9 +11,9 @@ This packet have reference to nuget packet LiTools.Helpers.Generate at-lest vers
 
 This is a helper. It will start a new task for you to run you code in.
 
-[Documentation.](/Organize/ParallelTask.md)
+[Documentation.](ParallelTask.md)
 
-[XmlDoc..](/../xmldocmd/LiTools.Helpers.Organize/ParallelTask.md)
+[XmlDoc..](../xmldocmd/LiTools.Helpers.Organize/ParallelTask.md)
 
 
 
