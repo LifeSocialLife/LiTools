@@ -15,3 +15,7 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("StyleCop.CSharp.NamingRules", "SA1309:Field names should not begin with underscore", Justification = "Reviewed.", Scope = "member", Target = "~F:ExampleCode.Worker._bgwork")]
 [assembly: SuppressMessage("StyleCop.CSharp.NamingRules", "SA1309:Field names should not begin with underscore", Justification = "Reviewed.", Scope = "member", Target = "~F:ExampleCode.Worker._task")]
 [assembly: SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1124:Do not use regions", Justification = "Reviewed.", Scope = "member", Target = "~M:ExampleCode.Worker.OrganizeBackgroundServiceTest")]
+[assembly: SuppressMessage("Performance", "CA1822:Mark members as static", Justification = "Reviewed.", Scope = "member", Target = "~M:ExampleCode.Worker.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)")]
+[assembly: SuppressMessage("StyleCop.CSharp.NamingRules", "SA1300:Element should begin with upper-case letter", Justification = "Reviewed.", Scope = "member", Target = "~P:ExampleCode.Worker.zzDebug")]
+[assembly: SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Reviewed.", Scope = "member", Target = "~P:ExampleCode.Worker.zzDebug")]
+[assembly: SuppressMessage("CodeQuality", "IDE0051:Remove unused private members", Justification = "Reviewed.", Scope = "member", Target = "~M:ExampleCode.Worker.Sleep")]

@@ -26,9 +26,9 @@ namespace LiTools.Helpers.Organize
         /// <summary>
         /// Token.
         /// </summary>
-        private CancellationTokenSource tokenMain = new CancellationTokenSource();
+        // private readonly CancellationTokenSource tokenMain = new();
 
-        private Dictionary<string, TaskServiceRunModel> tasks = new();
+        private readonly Dictionary<string, TaskServiceRunModel> tasks = new();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TaskService"/> class.

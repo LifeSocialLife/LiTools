@@ -12,6 +12,7 @@ namespace LiTools.Helpers.Organize
     using System.Collections.Generic;
     using System.Diagnostics;
     using System.Diagnostics.CodeAnalysis;
+    using System.Reflection;
     using System.Text;
     using System.Threading;
     using System.Threading.Tasks;
@@ -26,9 +27,9 @@ namespace LiTools.Helpers.Organize
         /// <summary>
         /// Token.
         /// </summary>
-        private CancellationTokenSource tokenMain = new CancellationTokenSource();
+        // private readonly CancellationTokenSource tokenMain = new();
 
-        private Dictionary<string, BackgroundWorkModel> tasks = new();
+        private readonly Dictionary<string, BackgroundWorkModel> tasks = new();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BackgroundWorkService"/> class.
@@ -42,8 +43,6 @@ namespace LiTools.Helpers.Organize
             this._lockKey = new object();
         }
 
-        [SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Reviewed.")]
-        [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1300:ElementMustBeginWithUpperCaseLetter", Justification = "Reviewed.")]
         private string zzDebug { get; set; }
 
         /// <summary>
@@ -62,6 +61,60 @@ namespace LiTools.Helpers.Organize
             }
 
             return false;
+        }
+
+        /// <summary>
+        /// Get all data from one running task.
+        /// </summary>
+        /// <param name="taskname">Name of task.</param>
+        /// <returns>model BackgroundWorkModel - or null if task dont exist.</returns>
+        public BackgroundWorkModel? GetTaskModel(string taskname)
+        {
+            if (!this.TaskExists(taskname))
+            {
+                return null;
+            }
+
+            // Get model and return.
+            lock (this._lockKey)
+            {
+                return this.tasks[taskname];
+            }
+        }
+
+        /// <summary>
+        /// Get a list of all tasks in background work service.
+        /// </summary>
+        /// <returns>BackgroundWorkModel as list.</returns>
+        public List<BackgroundWorkModel> GetAllTasksAsList()
+        {
+            var hej = new List<BackgroundWorkModel>();
+
+            lock (this._lockKey)
+            {
+                hej = new List<BackgroundWorkModel>(this.tasks.Values);
+            }
+
+            this.zzDebug = "sdfdsf";
+            return hej;
+        }
+
+        /// <summary>
+        /// Cancel task.
+        /// </summary>
+        /// <param name="taskname">name of task to cancel.</param>
+        public void Cancel(string taskname)
+        {
+            if (this.TaskExists(taskname))
+            {
+                lock (this._lockKey)
+                {
+                    this.tasks[taskname].Enabled = false;
+                    this.tasks[taskname].BackgroundTaskShodbeRunning = false;
+                    this.tasks[taskname].Token.Cancel();
+                    this.zzDebug = "sdfds";
+                }
+            }
         }
 
         /// <summary>
@@ -108,7 +161,7 @@ namespace LiTools.Helpers.Organize
                     tmpdatatasktype = TaskCreationOptions.LongRunning;
                 }
 
-                this.tasks[data.Name].Taskwork = Task.Factory.StartNew(() => this.StartNewInsideWhileRunner(data), this.tasks[data.Name].Token.Token, tmpdatatasktype, TaskScheduler.Default)
+                this.tasks[data.Name].Taskwork = Task.Factory.StartNew(() => this.StartNewInsideWhileRunner(data), data.Token.Token, tmpdatatasktype, TaskScheduler.Default)
                     .ContinueWith(
                 t =>
                 {
@@ -119,7 +172,7 @@ namespace LiTools.Helpers.Organize
             return data.Name;
         }
 
-        private void StartNewInsideWhileRunner(BackgroundWorkModel data)
+        private async Task StartNewInsideWhileRunner(BackgroundWorkModel data)
         {
             if (data == null)
             {
@@ -135,10 +188,38 @@ namespace LiTools.Helpers.Organize
             {
                 data.DtWhileLastRun = DateTime.UtcNow;
                 data.BackgroundTaskRunning = true;
+                this.zzDebug = "sdfdsf";
+
+                DateTime tmpStart = DateTime.UtcNow;
+                data.TaskActionIsRunnig = true;
 
                 data.TaskAction();
 
-                System.Threading.Thread.Sleep(data.WhileInterval);
+                data.TaskActionIsRunnig = false;
+                data.TaskActionLastRunTime = DateTime.UtcNow - tmpStart;
+
+                this.zzDebug = "sdfdsf";
+
+                try
+                {
+                    await Task.Delay(data.WhileInterval, data.Token.Token);
+                }
+                catch (OperationCanceledException)
+                {
+                    continue;
+                }
+
+                // System.Threading.Thread.Sleep(data.WhileInterval);
+                // Task.Delay(data.WhileInterval, data.Token.Token);
+
+                // Task.WaitAny()
+                // await Task.Delay(1000, stoppingToken);
+                this.zzDebug = "sdfdsf";
+            }
+
+            if (Debugger.IsAttached)
+            {
+                Debugger.Break();
             }
 
             this.zzDebug = "sdfdsf";
@@ -181,7 +262,7 @@ namespace LiTools.Helpers.Organize
     /// <summary>
     /// Allow own userdata to check and handling task. background work.
     /// </summary>
-    public class BackgroundWorkModel
+    public class BackgroundWorkModel // : BackgroundWorkPart1Model
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BackgroundWorkModel"/> class.
@@ -189,10 +270,14 @@ namespace LiTools.Helpers.Organize
         public BackgroundWorkModel()
         {
             this.Name = string.Empty;
+            this.Enabled = true;
             this.Token = new CancellationTokenSource();
 
+            this.TaskActionIsRunnig = false;
+            this.TaskActionLastRunTime = default;
+
             this.DtLastCheckt = Convert.ToDateTime("2000-01-01 00:00:00");
-            this.DtTaskCreated = Convert.ToDateTime("2000-01-01 00:00:00");
+            this.DtTaskCreated = DateTime.UtcNow;
             this.DtWhileLastRun = Convert.ToDateTime("2000-01-01 00:00:00");
 
             this.BackgroundTaskRunning = false;
@@ -203,12 +288,20 @@ namespace LiTools.Helpers.Organize
             this.BackgroundTaskRunning = false;
             this.BackgroundTaskShodbeRunning = false;
             this.WhileInterval = 5000;
+            this.WhileIntervalNoticInSek = 0;           // 0 min = not active.
+            this.WhileIntervalWarningInSek = 0;   // 0 min = not active.
+            this.WhileIntervalErrorInSek = 0;     // 0 min = not active.
         }
 
         /// <summary>
         /// Gets or sets name of this task.
         /// </summary>
         public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether is this work enabled or not?.
+        /// </summary>
+        public bool Enabled { get; set; }
 
         /// <summary>
         /// Gets or sets token to control this task.
@@ -224,6 +317,16 @@ namespace LiTools.Helpers.Organize
         /// Gets or sets Action that this background work shod do inside while loop.
         /// </summary>
         public Action? TaskAction { get; set; }
+
+        /// <summary>
+        /// Gets or sets how long takes it for the work to run.
+        /// </summary>
+        public TimeSpan TaskActionLastRunTime { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether is the action running right now. or is it in waiting mode.
+        /// </summary>
+        public bool TaskActionIsRunnig { get; set; }
 
         /// <summary>
         /// Gets or sets when was this task last checket.
@@ -263,6 +366,47 @@ namespace LiTools.Helpers.Organize
         /// <summary>
         /// Gets or sets when shod it be run. time in milleseconds.
         /// </summary>
-        public ushort WhileInterval { get; set; }
+        public int WhileInterval { get; set; }
+
+        /// <summary>
+        /// Gets or sets when shod a notic be trigger if DtWhileLastRun have not updated befor this time has passed.
+        /// </summary>
+        public ushort WhileIntervalNoticInSek { get; set; }
+
+        /// <summary>
+        /// Gets or sets when shod a Warning be trigger if DtWhileLastRun have not updated befor this time has passed.
+        /// </summary>
+        public ushort WhileIntervalWarningInSek { get; set; }
+
+        /// <summary>
+        /// Gets or sets when shod a Error be trigger if DtWhileLastRun have not updated befor this time has passed.
+        /// </summary>
+        public ushort WhileIntervalErrorInSek { get; set; }
+
+        /// <summary>
+        /// Gets or sets code that shod be run if notic is trigger.
+        /// </summary>
+        public Action? WhileIntervalNoticAction { get; set; }
+
+        /// <summary>
+        /// Gets or sets code that shod be run if Warning is trigger.
+        /// </summary>
+        public Action? WhileIntervalWarningAction { get; set; }
+
+        /// <summary>
+        /// Gets or sets code that shod be run if Error is trigger.
+        /// </summary>
+        public Action? WhileIntervalErrorAction { get; set; }
     }
+
+    /*
+    public class BackgroundWorkPart1Model
+    {
+        public BackgroundWorkPart1Model()
+        {
+            this.Name = string.Empty;
+            this.Enabled = true;
+        }
+    }
+    */
 }
