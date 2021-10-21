@@ -1,6 +1,10 @@
-﻿// <copyright file="Enums.cs" company="LiSoLi">
+﻿// <summary>
+// Enum.
+// </summary>
+// <copyright file="Enums.cs" company="LiSoLi">
 // Copyright (c) LiSoLi. All rights reserved.
 // </copyright>
+// <author>Lennie Wennerlund (lempa)</author>
 
 namespace LiTools.Helpers.Convert
 {
@@ -12,7 +16,6 @@ namespace LiTools.Helpers.Convert
     /// <summary>
     /// Filesize types in bytes.
     /// </summary>
-    [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1649:FileNameMustMatchTypeName", Justification = "Reviewed.")]
     public enum FileSizeEnums
     {
         /// <summary>Bytes.</summary>
@@ -28,37 +31,51 @@ namespace LiTools.Helpers.Convert
         Gigabytes = 3,
     }
 
-    // https://www.nottingham.ac.uk/manuscriptsandspecialcollections/researchguidance/weightsandmeasures/measurements.aspx
-
-    public enum MeasurementsEnums
+    /// <summary>
+    /// Measurments Lrngth, Hright and Distance.
+    /// </summary>
+    public enum DistanceEnums
     {
-        /// <summary>3 barleycorns	1 inch.</summary>
-        Barleycorns = 1,
-        /// <summary>Gigabytes.</summary>
-        Inches = 2,
-        /// <summary>Gigabytes.</summary>
-        Yards = 3,
-        /// <summary>Gigabytes.</summary>
-        Poles = 4,
-        /// <summary>Gigabytes.</summary>
-        Furlongs = 5,
-        /// <summary>Gigabytes.</summary>
-        Miles = 6,
+        /// <summary>Kilometer.</summary>
+        Kilometer = 1,
 
+        /// <summary>Meter.</summary>
+        Meter = 2,
 
+        /// <summary>Centimeter.</summary>
+        Centimeter = 3,
 
+        /// <summary>Millimeter.</summary>
+        Millimeter = 4,
+
+        /// <summary>Angstrom.</summary>
+        Angstrom = 5,
+
+        /// <summary>Mile.</summary>
+        Mile = 6,
+
+        /// <summary>Fathom.</summary>
+        Fathom = 7,
+
+        /// <summary>Yard.</summary>
+        Yard = 8,
+
+        /// <summary>Foot.</summary>
+        Foot = 9,
+
+        /// <summary>Hand.</summary>
+        Hand = 10,
+
+        /// <summary>Inch.</summary>
+        Inch = 11,
+
+        /// <summary>Finger.</summary>
+        Finger = 12,
+
+        /// <summary>Bamboo.</summary>
+        Bamboo = 13,
+
+        /// <summary>3 barleycorns = 1 inch.</summary>
+        Barleycorn = 14,
     }
-
-    /* for multi line comments
-     * /// <summary>Gigabytes.</summary>
-  (in or ")
-12 inches	1 foot (ft or ')
-3 feet	1 yard (yd)
-5½ yards	1 perch, pole or rod
-40 poles	1 furlong
-8 furlongs	1 mile
-3 miles	1 league
-
- */
-
 }

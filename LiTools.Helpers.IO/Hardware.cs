@@ -152,28 +152,5 @@ namespace LiTools.Helpers.IO
                 _ => ArchitectureEnum.None,
             };
         }
-        /*
-         * 
-         * public static ArchitectureEnum GetProcessorArchitecture()
-        {
-            switch (System.Runtime.InteropServices.RuntimeInformation.ProcessArchitecture)
-            {
-                case System.Runtime.InteropServices.Architecture.X64:
-                    return ArchitectureEnum.X64;
-
-                case System.Runtime.InteropServices.Architecture.X86:
-                    return ArchitectureEnum.X86;
-
-                case System.Runtime.InteropServices.Architecture.Arm:
-                    return ArchitectureEnum.Arm;
-
-                case System.Runtime.InteropServices.Architecture.Arm64:
-                    return ArchitectureEnum.Arm64;
-
-                default:
-                    return ArchitectureEnum.None;
-            }
-        }
-         * */
     }
 }

@@ -21,4 +21,4 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Reviewed.", Scope = "member", Target = "~P:LiTools.Helpers.Organize.TimeHelper.zzDebug")]
 [assembly: SuppressMessage("CodeQuality", "IDE0052:Remove unread private members", Justification = "Reviewed.", Scope = "member", Target = "~P:LiTools.Helpers.Organize.BackgroundWorkService.zzDebug")]
 [assembly: SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Reviewed.", Scope = "member", Target = "~P:LiTools.Helpers.Organize.BackgroundWorkService.zzDebug")]
-[assembly: SuppressMessage("StyleCop.CSharp.NamingRules", "SA1300:Element should begin with upper-case letter", Justification = "<Pending>", Scope = "member", Target = "~P:LiTools.Helpers.Organize.BackgroundWorkService.zzDebug")]
+[assembly: SuppressMessage("StyleCop.CSharp.NamingRules", "SA1300:Element should begin with upper-case letter", Justification = "Reviewed.", Scope = "member", Target = "~P:LiTools.Helpers.Organize.BackgroundWorkService.zzDebug")]
