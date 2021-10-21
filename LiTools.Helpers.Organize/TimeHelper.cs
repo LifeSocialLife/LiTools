@@ -74,15 +74,25 @@ namespace LiTools.Helpers.Organize
             }
 
             if (time == TimeValuesEnum.Days && (DateTime.UtcNow - lastrun).TotalDays >= interval)
+            {
                 return true;
+            }
             else if (time == TimeValuesEnum.Hours && (DateTime.UtcNow - lastrun).TotalHours >= interval)
+            {
                 return true;
+            }
             else if (time == TimeValuesEnum.Minutes && (DateTime.UtcNow - lastrun).TotalMinutes >= interval)
+            {
                 return true;
+            }
             else if (time == TimeValuesEnum.Seconds && (DateTime.UtcNow - lastrun).TotalSeconds >= interval)
+            {
                 return true;
+            }
             else if (time == TimeValuesEnum.Milliseconds && (DateTime.UtcNow - lastrun).TotalMilliseconds >= interval)
+            {
                 return true;
+            }
 
             return false;
         }

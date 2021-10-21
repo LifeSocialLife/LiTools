@@ -23,11 +23,11 @@ namespace LiTools.Helpers.Organize
     {
         private readonly object _lockKey;
 
+        // private readonly CancellationTokenSource tokenMain = new();
+
         /// <summary>
         /// Token.
         /// </summary>
-        // private readonly CancellationTokenSource tokenMain = new();
-
         private readonly Dictionary<string, TaskServiceRunModel> tasks = new();
 
         /// <summary>
