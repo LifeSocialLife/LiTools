@@ -1,5 +1,5 @@
 ﻿// <summary>
-// Webpage IO helper.
+// Webpage IO helper..
 // </summary>
 // <copyright file="Terabytes.cs" company="LiSoLi">
 // Copyright (c) LiSoLi. All rights reserved.
