@@ -61,7 +61,7 @@ namespace LiTools.Helpers.IO
                 }
 
                 byte[] ret = new byte[len];
-                using (BinaryReader reader = new BinaryReader(new FileStream(filename, System.IO.FileMode.Open)))
+                using (BinaryReader reader = new(new FileStream(filename, System.IO.FileMode.Open)))
                 {
                     reader.BaseStream.Seek(from, SeekOrigin.Begin);
                     reader.Read(ret, 0, len);
@@ -106,7 +106,7 @@ namespace LiTools.Helpers.IO
         /// <returns>true if everthing was ok.</returns>
         public static bool WriteFile(string filename, string content, bool append)
         {
-            using (StreamWriter writer = new StreamWriter(filename, append))
+            using (StreamWriter writer = new(filename, append))
             {
                 writer.WriteLine(content);
             }

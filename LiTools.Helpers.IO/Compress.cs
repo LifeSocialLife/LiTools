@@ -34,8 +34,8 @@ namespace LiTools.Helpers.IO
                 return new Tuple<bool, byte[]>(false, new byte[0]);
             }
 
-            using System.IO.MemoryStream memory = new System.IO.MemoryStream();
-            using (System.IO.Compression.GZipStream gzip = new System.IO.Compression.GZipStream(memory, System.IO.Compression.CompressionMode.Compress, true))
+            using System.IO.MemoryStream memory = new();
+            using (System.IO.Compression.GZipStream gzip = new(memory, System.IO.Compression.CompressionMode.Compress, true))
             {
                 gzip.Write(input, 0, input.Length);
             }
@@ -60,10 +60,10 @@ namespace LiTools.Helpers.IO
                 return new Tuple<bool, byte[]>(false, new byte[0]);
             }
 
-            using System.IO.Compression.GZipStream stream = new System.IO.Compression.GZipStream(new System.IO.MemoryStream(input), System.IO.Compression.CompressionMode.Decompress);
+            using System.IO.Compression.GZipStream stream = new(new System.IO.MemoryStream(input), System.IO.Compression.CompressionMode.Decompress);
             const int size = 4096;
             byte[] buffer = new byte[size];
-            using System.IO.MemoryStream memory = new System.IO.MemoryStream();
+            using System.IO.MemoryStream memory = new();
             int count = 0;
             do
             {

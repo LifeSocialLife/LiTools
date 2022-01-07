@@ -35,10 +35,14 @@ namespace ExampleCode
         /// <param name="backgroundWorkService">BackgroundWorkService.</param>
         public Worker(ILogger<Worker> logger, TaskService taskService, BackgroundWorkService backgroundWorkService)
         {
+            this.zzDebug = "Worker";
+
             this._logger = logger;
             this._task = taskService;
             this._bgwork = backgroundWorkService;
         }
+
+        private string zzDebug { get; set; }
 
         /// <summary>
         /// ConfigureServices.
@@ -69,6 +73,8 @@ namespace ExampleCode
 
         private void Sleep()
         {
+            this.zzDebug = "sleep()";
+
             while (true)
             {
                 System.Threading.Thread.Sleep(1000);

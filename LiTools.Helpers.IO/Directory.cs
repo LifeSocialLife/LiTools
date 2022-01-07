@@ -30,7 +30,7 @@ namespace LiTools.Helpers.IO
             try
             {
                 // string[] folders;
-                List<string> folderList = new List<string>();
+                List<string> folderList = new();
 
                 if (recursive)
                 {
@@ -67,7 +67,7 @@ namespace LiTools.Helpers.IO
         {
             try
             {
-                DirectoryInfo info = new DirectoryInfo(directory);
+                DirectoryInfo info = new(directory);
                 FileInfo[] files = info.GetFiles().OrderBy(p => p.CreationTime).ToArray();
                 List<string> fileList = new();
 
@@ -229,7 +229,7 @@ namespace LiTools.Helpers.IO
                 return 0;
             }
 
-            System.IO.DirectoryInfo info = new System.IO.DirectoryInfo(dir);
+            System.IO.DirectoryInfo info = new(dir);
 
             ulong totalSize = DirectorySize(info, followChildren);
 

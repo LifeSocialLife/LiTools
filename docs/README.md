@@ -1,11 +1,6 @@
 # LiTools
 
-
-
-
 ## Projects
-
-
 
 ### LiTools.Helpers.Generate
 
@@ -14,17 +9,21 @@
 
 ### LiTools.Helpers.IO
 
-[Project documentation](/IO/README.md)   
+[Project documentation](/IO/README.md)
 [xmldoc](/xmldocmd/LiTools.Helpers.IO.md)
 
 ### LiTools.Helpers.Organize
 
+Helps you organize work.
+Current version supports organize
+
+* Task (background works)
+* Time event.
+
 [Project documentation](/Organize/README.md)  
 [xmldoc](/xmldocmd/LiTools.Helpers.Organize.md)
 
-
 ## Project that only have xmldoc
-
 
 ### LiTools.Helpers.Check
 
@@ -37,4 +36,3 @@
 ### LiTools.Helpers.Encoding
 
 [Project documentation](/xmldocmd/LiTools.Helpers.Encoding.md)
-

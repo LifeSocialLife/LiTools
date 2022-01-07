@@ -1,0 +1,5 @@
+# Time helper
+
+## Functions
+
+### TimeShodTrigger

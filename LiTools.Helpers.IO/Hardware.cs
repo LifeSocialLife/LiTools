@@ -118,23 +118,14 @@ namespace LiTools.Helpers.IO
         /// <returns>ArchitectureEnum.</returns>
         public static ArchitectureEnum GetOSArchitecture()
         {
-            switch (System.Runtime.InteropServices.RuntimeInformation.OSArchitecture)
+            return System.Runtime.InteropServices.RuntimeInformation.OSArchitecture switch
             {
-                case System.Runtime.InteropServices.Architecture.X64:
-                    return ArchitectureEnum.X64;
-
-                case System.Runtime.InteropServices.Architecture.X86:
-                    return ArchitectureEnum.X86;
-
-                case System.Runtime.InteropServices.Architecture.Arm:
-                    return ArchitectureEnum.Arm;
-
-                case System.Runtime.InteropServices.Architecture.Arm64:
-                    return ArchitectureEnum.Arm64;
-
-                default:
-                    return ArchitectureEnum.None;
-            }
+                System.Runtime.InteropServices.Architecture.X64 => ArchitectureEnum.X64,
+                System.Runtime.InteropServices.Architecture.X86 => ArchitectureEnum.X86,
+                System.Runtime.InteropServices.Architecture.Arm => ArchitectureEnum.Arm,
+                System.Runtime.InteropServices.Architecture.Arm64 => ArchitectureEnum.Arm64,
+                _ => ArchitectureEnum.None,
+            };
         }
 
         /// <summary>
@@ -152,23 +143,14 @@ namespace LiTools.Helpers.IO
         /// <returns>ArchitectureEnum.</returns>
         public static ArchitectureEnum GetProcessorArchitecture()
         {
-            switch (System.Runtime.InteropServices.RuntimeInformation.ProcessArchitecture)
+            return System.Runtime.InteropServices.RuntimeInformation.ProcessArchitecture switch
             {
-                case System.Runtime.InteropServices.Architecture.X64:
-                    return ArchitectureEnum.X64;
-
-                case System.Runtime.InteropServices.Architecture.X86:
-                    return ArchitectureEnum.X86;
-
-                case System.Runtime.InteropServices.Architecture.Arm:
-                    return ArchitectureEnum.Arm;
-
-                case System.Runtime.InteropServices.Architecture.Arm64:
-                    return ArchitectureEnum.Arm64;
-
-                default:
-                    return ArchitectureEnum.None;
-            }
+                System.Runtime.InteropServices.Architecture.X64 => ArchitectureEnum.X64,
+                System.Runtime.InteropServices.Architecture.X86 => ArchitectureEnum.X86,
+                System.Runtime.InteropServices.Architecture.Arm => ArchitectureEnum.Arm,
+                System.Runtime.InteropServices.Architecture.Arm64 => ArchitectureEnum.Arm64,
+                _ => ArchitectureEnum.None,
+            };
         }
     }
 }

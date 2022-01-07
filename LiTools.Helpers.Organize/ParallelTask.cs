@@ -24,7 +24,7 @@ namespace LiTools.Helpers.Organize
         /// <summary>
         /// Token.
         /// </summary>
-        public static CancellationTokenSource Token = new CancellationTokenSource();
+        public static CancellationTokenSource Token = new();
 
         // private static Dictionary<string, Task> tasks = new();
 
