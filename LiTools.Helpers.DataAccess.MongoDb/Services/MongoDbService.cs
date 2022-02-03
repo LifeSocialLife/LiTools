@@ -13,12 +13,42 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Services
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
+    using LiTools.Helpers.DataAccess.MongoDb.Helpers;
+    using LiTools.Helpers.DataAccess.MongoDb.Models;
     using MongoDB.Bson;
     using MongoDB.Driver;
 
+    /// <summary>
+    /// Mongodb Runtime service.
+    /// </summary>
     public class MongoDbService
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MongoDbService"/> class.
+        /// </summary>
+        public MongoDbService()
+        {
+            this.zzDebug = "MongoDbService";
+            this.Servers = new ServerHelper();
+        }
+
+        private ServerHelper Servers { get; set; }
+
         private string zzDebug { get; set; }
+
+        /// <summary>
+        /// Add new database server to nodes.
+        /// </summary>
+        /// <param name="data">ServerRegisterModel.</param>
+        public void RegisterServerNode(ServerRegisterModel data)
+        {
+            if (data == null)
+            {
+                return;
+            }
+
+            this.Servers.NodeAdd(data);
+        }
 
         /// <summary>
         /// Get size of model.
