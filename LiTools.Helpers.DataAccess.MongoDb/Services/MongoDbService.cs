@@ -23,18 +23,105 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Services
     /// </summary>
     public class MongoDbService
     {
+        private readonly ServerHelper servers;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="MongoDbService"/> class.
         /// </summary>
         public MongoDbService()
         {
             this.zzDebug = "MongoDbService";
-            this.Servers = new ServerHelper();
+            this.servers = new ServerHelper();
         }
 
-        private ServerHelper Servers { get; set; }
+        #region Connectionstrings and database name.
+
+        /// <summary>
+        /// Gets ConnectionString.
+        /// </summary>
+        public string ConnectionString => this.servers.ConnectionString;
+
+        /// <summary>
+        /// Gets ConnectionStringWrite.
+        /// </summary>
+        public string ConnectionStringWrite => this.servers.ConnectionStringWrite;
+
+        /// <summary>
+        /// Gets or sets database name of the connection.
+        /// </summary>
+        public string DatabaseName
+        {
+            get
+            {
+                return this.servers.DatabaseName;
+            }
+
+            set
+            {
+                this.servers.DatabaseName = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets Appname of this sortware.
+        /// </summary>
+        public string Appname
+        {
+            get
+            {
+                return this.servers.Appname;
+            }
+
+            set
+            {
+                this.servers.Appname = value;
+            }
+        }
+
+        #endregion
 
         private string zzDebug { get; set; }
+
+        /// <summary>
+        /// Collect logs.
+        /// </summary>
+        public void CollectLogs()
+        {
+            _ = this.zzDebug;
+        }
+
+        public IMongoDatabase GetDatabaseToUse()
+        {
+            var nodeToUse = this.servers.GetDatabaseToUse();
+            if (nodeToUse == null)
+            {
+                // TODO Generate error.
+                if (System.Diagnostics.Debugger.IsAttached)
+                {
+                    System.Diagnostics.Debugger.Break();
+                }
+
+                this.zzDebug = "dfdsf";
+            }
+
+            return nodeToUse;
+        }
+
+        /// <summary>
+        /// Do init on all database connections.
+        /// </summary>
+        /// <param name="foreRebuild">Shod we force the database connection build.</param>
+        public void Init(bool foreRebuild = false)
+        {
+            this.servers.Init();
+        }
+
+        public async Task MgnWork()
+        {
+            await this.servers.Rebuild(true);
+            this.zzDebug = "sdfd";
+
+        }
 
         /// <summary>
         /// Add new database server to nodes.
@@ -47,8 +134,54 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Services
                 return;
             }
 
-            this.Servers.NodeAdd(data);
+            this.servers.NodeAdd(data);
         }
+
+        #region Error handling
+
+        /// <summary>
+        /// ErrorHandlingWriteException.
+        /// </summary>
+        /// <param name="ex">MongoWriteException.</param>
+        public void ErrorHandlingWriteException(MongoWriteException ex)
+        {
+            if (System.Diagnostics.Debugger.IsAttached)
+            {
+                System.Diagnostics.Debugger.Break();
+            }
+
+            this.zzDebug = "dfdsf";
+        }
+
+        /// <summary>
+        /// ErrorHandlingCommandException.
+        /// </summary>
+        /// <param name="ex">MongoCommandException.</param>
+        public void ErrorHandlingCommandException(MongoCommandException ex)
+        {
+            if (System.Diagnostics.Debugger.IsAttached)
+            {
+                System.Diagnostics.Debugger.Break();
+            }
+
+            this.zzDebug = "sdfdsf";
+        }
+
+        /// <summary>
+        /// ErrorHandling.
+        /// </summary>
+        /// <param name="ex">Exception.</param>
+        public void ErrorHandling(Exception ex)
+        {
+            if (System.Diagnostics.Debugger.IsAttached)
+            {
+                System.Diagnostics.Debugger.Break();
+            }
+
+            this.zzDebug = "sdfdsf";
+        }
+
+        #endregion
 
         /// <summary>
         /// Get size of model.
@@ -59,7 +192,6 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Services
         {
             int bytesSize = data.ToBson().Length;
             return bytesSize;
-
         }
 
         /// <summary>

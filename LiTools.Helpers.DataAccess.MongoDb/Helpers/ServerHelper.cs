@@ -15,6 +15,8 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Helpers
     using System.Text;
     using System.Threading.Tasks;
     using LiTools.Helpers.DataAccess.MongoDb.Models;
+    using MongoDB.Bson;
+    using MongoDB.Driver;
 
     /// <summary>
     /// Server "node" helper.
@@ -24,6 +26,8 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Helpers
         private string _connectionString;
         private string _connectionStringWrite;
         private string _databaseName;
+        private string _appnName;
+        private bool _rebuldForceFull;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ServerHelper"/> class.
@@ -35,45 +39,158 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Helpers
             this._connectionStringWrite = string.Empty;
             this._connectionString = string.Empty;
             this._databaseName = string.Empty;
+            this._appnName = "noname";
+            this._rebuldForceFull = false;
         }
+
+        #region Connectionstrings and database name, appname
+
+        /// <summary>
+        /// Gets ConnectionString.
+        /// </summary>
+        public string ConnectionString
+        {
+            get
+            {
+                return this._connectionString;
+            }
+        }
+
+        /// <summary>
+        /// Gets ConnectionStringWrite.
+        /// </summary>
+        public string ConnectionStringWrite
+        {
+            get
+            {
+                return this._connectionStringWrite;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets database name of the connection.
+        /// </summary>
+        public string DatabaseName
+        {
+            get
+            {
+                return this._databaseName;
+            }
+
+            set
+            {
+                this._databaseName = value;
+                this._rebuldForceFull = true;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets Appname for this application.
+        /// </summary>
+        public string Appname
+        {
+            get
+            {
+                return this._appnName;
+            }
+
+            set
+            {
+                this._appnName = value;
+                this._rebuldForceFull = true;
+            }
+        }
+
+        #endregion
 
         private string zzDebug { get; set; }
 
         private ConcurrentDictionary<string, ServerHelperNodeModel> Nodes { get; set; }
 
-        private void Init(bool foreRebuild = false)
+        /// <summary>
+        /// Collect logs.
+        /// </summary>
+        public void CollectLogs()
         {
-            if (this.Nodes == null)
-            {
-                return;
-            }
-
-            if (this.Nodes.Count() == 0)
-            {
-                return;
-            }
-
-            if (this.Nodes.Count() == 1)
-            {
-                if (string.IsNullOrEmpty(this._connectionString) || foreRebuild)
-                {
-                    this._connectionString = this.NodeBuildConnectionString();
-                    this._connectionStringWrite = this.NodeBuildConnectionString();
-                }
-            }
+            _ = this.zzDebug;
         }
 
-        private string NodeBuildConnectionString(string nodeName = null)
+        /// <summary>
+        /// Rebuild database connections.
+        /// </summary>
+        /// <param name="force">shod we force the rebuild.</param>
+        /// <returns><placeholder>A <see cref="Task"/> representing the asynchronous operation.</placeholder></returns>
+        public async Task Rebuild(bool force)
         {
-            if (nodeName == null)
+            if (this._rebuldForceFull || force)
             {
-                // Nodename is null. Get first nodename from dict.
-                nodeName = this.Nodes.Keys.First();
+                // todo fix this.
+
+                foreach (var node in this.Nodes)
+                {
+                    var tmpServer = node.Value.MdbClient;
+
+                    // var connectionString = "mongodb://localhost";
+
+                    //var client = new MongoClient(connectionString);
+                    //var database = client.GetDatabase(this.DatabaseName);
+
+                    var database = node.Value.MdbDatabase;
+
+                    node.Value.StatusMgnRunning = true;
+
+                    var hej = await database.RunCommandAsync((Command<BsonDocument>)"{ping:1}");
+                    
+                    //var hej1 = hej.Take(1);
+                    node.Value.StatusMgnRunning = false;
+                    // https://stackoverflow.com/questions/28835833/how-to-check-connection-to-mongodb
+
+                    if (hej.ElementCount == 1)
+                    {
+                        foreach (var dd in hej.Elements)
+                        {
+                            if (dd.Name == "ok")
+                            {
+                                if (dd.Value.ToString() == "1")
+                                {
+
+                                }
+                                this.zzDebug = "sddf";
+                                
+                            }
+                            else
+                            {
+                                this.zzDebug = "sdfd";
+                            }
+                            
+                        }
+                    }
+                    
+
+                    this.zzDebug = "sdfdsf";
+                   
+                    
+                    //if (!node.Value.InitIsDone || foreRebuild)
+                    //{
+                    //    node.Value.MdbConnectionString = this.NodeBuildConnectionString(node.Key);
+                    //    this.zzDebug = "sfd";
+
+                    //    node.Value.MdbClient = new MongoClient(node.Value.MdbConnectionString);
+                    //    this.zzDebug = "22f";
+
+                    //    node.Value.MdbDatabase = node.Value.MdbClient.GetDatabase(this.DatabaseName);
+                    //    this.zzDebug = "sdfdf";
+
+                    //    node.Value.InitIsDone = true;
+
+                    //    // TODO do init of nodes that is note done.
+                    //}
+                }
+
+
             }
 
-            this.zzDebug = "sdfdf";
-
-            return "";
+            this._rebuldForceFull = false;
         }
 
         /// <summary>
@@ -112,35 +229,97 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Helpers
                 return;
             }
 
+            if (string.IsNullOrEmpty(data.AuthSource) && !string.IsNullOrEmpty(this._databaseName))
+            {
+                data.AuthSource = this._databaseName;
+            }
+
             this.Nodes.TryAdd(data.Name, new ServerHelperNodeModel()
             {
                 RegData = data,
+                InitIsDone = false,
             });
 
             this.Init();
         }
-    }
-
-    /// <summary>
-    /// ServerHelperNodeModel.
-    /// </summary>
-    public class ServerHelperNodeModel
-    {
-        /// <summary>
-        /// Gets or sets serverRegisterModel information.
-        /// </summary>
-        public ServerRegisterModel RegData { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether is init done on this server.
+        /// Do init on all database connections.
         /// </summary>
-        public bool InitIsDone { get; set; }
-
-        public ServerHelperNodeModel()
+        /// <param name="foreRebuild">Shod we force the database connection build.</param>
+        public void Init(bool foreRebuild = false)
         {
-            this.RegData = null;
-            this.InitIsDone = false;
+            if (this.Nodes == null)
+            {
+                return;
+            }
 
+            if (this.Nodes.IsEmpty)
+            {
+                return;
+            }
+
+            foreach (var node in this.Nodes)
+            {
+                if (!node.Value.InitIsDone || foreRebuild)
+                {
+                    node.Value.MdbConnectionString = this.NodeBuildConnectionString(node.Key);
+                    this.zzDebug = "sfd";
+
+                    node.Value.MdbClient = new MongoClient(node.Value.MdbConnectionString);
+                    this.zzDebug = "22f";
+
+                    node.Value.MdbDatabase = node.Value.MdbClient.GetDatabase(this.DatabaseName);
+                    this.zzDebug = "sdfdf";
+
+                    node.Value.InitIsDone = true;
+
+                    // TODO do init of nodes that is note done.
+                }
+            }
+
+            if (this.Nodes.Count == 1)
+            {
+                if (string.IsNullOrEmpty(this._connectionString) || foreRebuild)
+                {
+                    this._connectionString = this.NodeBuildConnectionString();
+                }
+
+                if (string.IsNullOrEmpty(this._connectionStringWrite) || foreRebuild)
+                {
+                    this._connectionStringWrite = this.NodeBuildConnectionString();
+                }
+            }
+
+            this.zzDebug = "sdfdf";
+        }
+
+        public IMongoDatabase GetDatabaseToUse()
+        {
+            var nodeToUseKey = this.Nodes.Keys.FirstOrDefault();
+            return this.Nodes[nodeToUseKey].MdbDatabase;
+        }
+
+        private string NodeBuildConnectionString(string nodeName = null)
+        {
+            if (string.IsNullOrEmpty(nodeName))
+            {
+                // Nodename is null. Get first nodename from dict.
+                nodeName = this.Nodes.Keys.First();
+            }
+
+            this.zzDebug = "sdfdf";
+            if (string.IsNullOrEmpty(nodeName))
+            {
+                return string.Empty;
+            }
+
+            var tmpConData = this.Nodes[nodeName];
+
+            this.zzDebug = "sdfd";
+
+            // TODO Fix support for readpreference from node regdata.
+            return $"mongodb://{tmpConData.RegData.Username}:{tmpConData.RegData.Password}@{tmpConData.RegData.Hostname}:{tmpConData.RegData.Port}/?authSource={tmpConData.RegData.AuthSource}&readPreference=primary&appname={this.Appname}&ssl={tmpConData.RegData.UseSsl.ToString().ToLower()}";
         }
     }
 }

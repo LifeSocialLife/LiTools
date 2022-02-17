@@ -33,6 +33,7 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Models
             this.AuthSource = string.Empty;
             this.ReadPreference = true;
             this.UseSsl = false;
+            this.Prio = 5;
         }
 
         /// <summary>
@@ -79,5 +80,10 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Models
         /// Gets or sets a value indicating whether gets or sets usessl, shod connection use ssl.
         /// </summary>
         public bool UseSsl { get; set; }
+
+        /// <summary>
+        /// Gets or sets prio of this connection.
+        /// </summary>
+        public int Prio { get; set; }
     }
 }
