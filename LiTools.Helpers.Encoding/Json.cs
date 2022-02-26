@@ -1,5 +1,5 @@
 ﻿// <summary>
-// Rundata Service.
+// Json convert helper.
 // </summary>
 // <copyright file="Json.cs" company="LiSoLi">
 // Copyright (c) LiSoLi. All rights reserved.
