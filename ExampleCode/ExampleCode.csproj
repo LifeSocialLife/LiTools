@@ -22,6 +22,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\LiTools.Helpers.Check\LiTools.Helpers.Check.csproj" />
+    <ProjectReference Include="..\LiTools.Helpers.Convert\LiTools.Helpers.Convert.csproj" />
+    <ProjectReference Include="..\LiTools.Helpers.DataAccess.MongoDb\LiTools.Helpers.DataAccess.MongoDb.csproj" />
+    <ProjectReference Include="..\LiTools.Helpers.Encoding\LiTools.Helpers.Encoding.csproj" />
+    <ProjectReference Include="..\LiTools.Helpers.Generate\LiTools.Helpers.Generate.csproj" />
+    <ProjectReference Include="..\LiTools.Helpers.IO\LiTools.Helpers.IO.csproj" />
     <ProjectReference Include="..\LiTools.Helpers.Organize\LiTools.Helpers.Organize.csproj" />
   </ItemGroup>
   
