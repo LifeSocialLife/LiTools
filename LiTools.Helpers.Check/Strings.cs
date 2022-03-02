@@ -61,7 +61,22 @@ namespace LiTools.Helpers.Check
             return false;
         }
 
-        #region Contains Number, Lower and Upper Casts.
+        #region Contains Number, Lower and Upper Casts or only numbers.
+
+        /// <summary>
+        /// Contains only numbers?.
+        /// </summary>
+        /// <param name="input">string.</param>
+        /// <returns>true or false.</returns>
+        public static bool ContainsOnlyNumbers(string input)
+        {
+            if (string.IsNullOrEmpty(input) || string.IsNullOrWhiteSpace(input))
+            {
+                return false;
+            }
+
+            return input.All(char.IsDigit);
+        }
 
         /// <summary>
         /// Contains numbers?.
