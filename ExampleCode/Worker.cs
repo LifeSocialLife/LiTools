@@ -13,6 +13,7 @@ namespace ExampleCode
     using System.Linq;
     using System.Threading;
     using System.Threading.Tasks;
+    using ExampleCode.DemoTests;
     using LiTools.Helpers.Organize;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
@@ -26,6 +27,7 @@ namespace ExampleCode
         private readonly ILogger<Worker> _logger;
         private readonly TaskService _task;
         private readonly BackgroundWorkService _bgwork;
+        private readonly EncodingDemo _encodingDemo;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Worker"/> class.
@@ -33,11 +35,12 @@ namespace ExampleCode
         /// <param name="logger">ILogger.</param>
         /// <param name="taskService">TaskService.</param>
         /// <param name="backgroundWorkService">BackgroundWorkService.</param>
-        public Worker(ILogger<Worker> logger, TaskService taskService, BackgroundWorkService backgroundWorkService)
+        public Worker(ILogger<Worker> logger, TaskService taskService, BackgroundWorkService backgroundWorkService, EncodingDemo encodingDemo)
         {
             this.zzDebug = "Worker";
 
             this._logger = logger;
+            this._encodingDemo = encodingDemo;
             this._task = taskService;
             this._bgwork = backgroundWorkService;
         }
@@ -59,12 +62,13 @@ namespace ExampleCode
         {
             this._logger.LogInformation("Worker Starting at: {time}", DateTimeOffset.Now);
 
-            this.OrganizeTaskServiceTest();
-            this.OrganizeBackgroundServiceTest();
-
+            // this._task.StartNew(_encodingDemo.Menu, TaskRunTypeEnum.Long, "taskname1", true);
+            // this.OrganizeTaskServiceTest();
+            // this.OrganizeBackgroundServiceTest();
             while (!stoppingToken.IsCancellationRequested)
             {
                 // this._logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
+                await this._encodingDemo.Menu();
                 await Task.Delay(1000, stoppingToken);
             }
 

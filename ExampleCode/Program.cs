@@ -29,8 +29,14 @@ namespace ExampleCode
             Host.CreateDefaultBuilder(args)
                 .ConfigureServices((hostContext, services) =>
                 {
+                    services.AddSingleton<LiTools.Helpers.Organize.MenuHelperService>();
+
                     services.AddSingleton<LiTools.Helpers.Organize.BackgroundWorkService>();
                     services.AddSingleton<LiTools.Helpers.Organize.TaskService>();
+
+                    // Encoding project.
+                    services.AddSingleton<DemoTests.EncodingDemo>();
+                    services.AddSingleton<LiTools.Helpers.Encoding.Cryptography.RsaCryptoService>();
                     services.AddHostedService<Worker>();
                 });
     }

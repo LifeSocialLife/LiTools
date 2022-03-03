@@ -18,7 +18,7 @@ namespace LiTools.Helpers.Check
     public static class BitsChecks
     {
         /// <summary>
-        /// Check if int is power of 8.
+        /// Check if int is power of 8. DONT UDR THIS. it is not working.
         /// </summary>
         /// <param name="n">bits count.</param>
         /// <returns>true or false.</returns>
