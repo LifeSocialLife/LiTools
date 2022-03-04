@@ -35,6 +35,7 @@ namespace ExampleCode
         /// <param name="logger">ILogger.</param>
         /// <param name="taskService">TaskService.</param>
         /// <param name="backgroundWorkService">BackgroundWorkService.</param>
+        /// <param name="encodingDemo">EncodingDemo.</param>
         public Worker(ILogger<Worker> logger, TaskService taskService, BackgroundWorkService backgroundWorkService, EncodingDemo encodingDemo)
         {
             this.zzDebug = "Worker";

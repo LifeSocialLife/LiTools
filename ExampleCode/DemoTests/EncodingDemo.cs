@@ -332,7 +332,6 @@ namespace ExampleCode.DemoTests
 
         private async Task EncryptionRsaKeys_CreateMany(int count = 0, int bits = 0)
         {
-
             this._menu.DrawTextLines(new List<string>()
             {
                 "---------------------",
@@ -349,7 +348,7 @@ namespace ExampleCode.DemoTests
                 // Enter how many keys shod be created.
                 while (true)
                 {
-                    var tmpReturn = this._menu.DrawQuestion("How many do you want to create: ", false,false);
+                    var tmpReturn = this._menu.DrawQuestion("How many do you want to create: ", false, false);
 
                     if (!LiTools.Helpers.Check.Strings.ContainsOnlyNumbers(tmpReturn))
                     {
@@ -434,6 +433,7 @@ namespace ExampleCode.DemoTests
                     {
                         this._menu.DrawTextLines("Keysize need to be in increments of 8 bits.");
                     }
+
                     this.zzDebug = "dsfdsf";
                 }
             }
@@ -454,7 +454,7 @@ namespace ExampleCode.DemoTests
             });
 
             // Generate a storage name to use as base.
-            var tmpStorageNameToUse = LiTools.Helpers.Generate.StringLines.RandomString(5, true,false,false);
+            var tmpStorageNameToUse = LiTools.Helpers.Generate.StringLines.RandomString(5, true, false, false);
 
             this.zzDebug = "sdfdsf";
 

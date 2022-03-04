@@ -8,6 +8,7 @@
 
 using System.Diagnostics.CodeAnalysis;
 
+[assembly: SuppressMessage("StyleCop.CSharp.NamingRules", "SA1309:FieldNamesMustNotBeginWithUnderscore", Justification = "Reviewed.")]
 [assembly: SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1124:Do not use regions", Justification = "Reviewed.", Scope = "member", Target = "~M:ExampleCode.Worker.OrganizeTaskServiceTest")]
 [assembly: SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1600:Elements should be documented", Justification = "Reviewed.", Scope = "member", Target = "~M:ExampleCode.Program.Main(System.String[])")]
 [assembly: SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1600:Elements should be documented", Justification = "Reviewed.", Scope = "member", Target = "~M:ExampleCode.Program.CreateHostBuilder(System.String[])~Microsoft.Extensions.Hosting.IHostBuilder")]

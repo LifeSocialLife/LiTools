@@ -17,7 +17,20 @@ namespace LiTools.Helpers.Encoding.Cryptography
     using System.Text;
     using System.Threading.Tasks;
 
-    public enum KeyTypesInStorage { All, Private, Public }
+    /// <summary>
+    /// Key types that exists.
+    /// </summary>
+    public enum KeyTypesInStorage
+    {
+        /// <summary>All key types.</summary>
+        All,
+
+        /// <summary>private key types.</summary>
+        Private,
+
+        /// <summary>public key types.</summary>
+        Public,
+    }
 
     /// <summary>
     /// RSA Crypto service.
@@ -127,14 +140,13 @@ namespace LiTools.Helpers.Encoding.Cryptography
             return tmpReturn;
         }
 
-
-
-        public async Task<bool> GenerateKey(string storage = "default")
-        {
-            return await this.GenerateKey(storage, 2048);
-        }
-
-        public async Task<bool> GenerateKey(string storage, int keysize)
+        /// <summary>
+        /// Generate rsa crypto keys.
+        /// </summary>
+        /// <param name="storage">Storage name where the key shod be saved. If null it will be saved in default.</param>
+        /// <param name="keysize">Size of the key. Default is 2048 bits.</param>
+        /// <returns>true or false.</returns>
+        public async Task<bool> GenerateKey(string storage = "default", int keysize = 2048)
         {
             #region Storage exist or not create storage.
 
@@ -154,6 +166,7 @@ namespace LiTools.Helpers.Encoding.Cryptography
                     Debugger.Break();
                 }
 
+                this.zzDebug = ex.Message;
                 return false;
             }
             catch (ArgumentNullException ex)
@@ -163,6 +176,7 @@ namespace LiTools.Helpers.Encoding.Cryptography
                     Debugger.Break();
                 }
 
+                this.zzDebug = ex.Message;
                 return false;
             }
             catch (Exception ex)
@@ -172,7 +186,7 @@ namespace LiTools.Helpers.Encoding.Cryptography
                     Debugger.Break();
                 }
 
-                this.zzDebug = "sdfdf";
+                this.zzDebug = ex.Message;
                 return false;
             }
 
@@ -208,6 +222,7 @@ namespace LiTools.Helpers.Encoding.Cryptography
                 return false;
             }
 
+            await Task.Delay(1);
             return true;
         }
 
@@ -238,7 +253,7 @@ namespace LiTools.Helpers.Encoding.Cryptography
         /// <summary>
         /// Get public key as RSA parameters.
         /// </summary>
-        /// <param name="storage">storage id</param>
+        /// <param name="storage">storage id.</param>
         /// <returns>RSAParameters.</returns>
         public RSAParameters? GetKeyPublicAsRsaParameter(string storage)
         {
@@ -263,7 +278,7 @@ namespace LiTools.Helpers.Encoding.Cryptography
         /// <summary>
         /// Get private key as RSA parameters.
         /// </summary>
-        /// <param name="storage">storage id</param>
+        /// <param name="storage">storage id.</param>
         /// <returns>RSAParameters.</returns>
         public RSAParameters? GetKeyPrivateAsRsaParameter(string storage)
         {
@@ -288,7 +303,7 @@ namespace LiTools.Helpers.Encoding.Cryptography
         /// <summary>
         /// Get private key as string.
         /// </summary>
-        /// <param name="storage">storage id</param>
+        /// <param name="storage">storage id.</param>
         /// <returns>key as string.</returns>
         public string GetKeyPrivateAsString(string storage)
         {
@@ -305,7 +320,7 @@ namespace LiTools.Helpers.Encoding.Cryptography
         /// <summary>
         /// Get public key as string.
         /// </summary>
-        /// <param name="storage">storage id</param>
+        /// <param name="storage">storage id.</param>
         /// <returns>key as string.</returns>
         public string GetKeyPublicAsString(string storage)
         {
