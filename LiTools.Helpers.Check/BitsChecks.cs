@@ -22,6 +22,7 @@ namespace LiTools.Helpers.Check
         /// </summary>
         /// <param name="n">bits count.</param>
         /// <returns>true or false.</returns>
+        [Obsolete("Method is not working as it shod!!", true)]
         public static bool CheckPowerof8(int n)
         {
             // calculate log8(n) */
