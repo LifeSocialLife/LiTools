@@ -345,6 +345,8 @@ namespace LiTools.Helpers.Encoding.Cryptography
             // serialize the key into the stream
             xs.Serialize(sw, par);
 
+            this.zzDebug = "dsfds";
+
             // get the string from the stream
             string pubKeyString = sw.ToString();
 

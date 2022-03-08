@@ -125,6 +125,7 @@ namespace ExampleCode.DemoTests
                                        "c. Create new key",
                                        "m. Create 50 keys whit 2048bits encryption.",
                                        "x. Create X keys whit X bits encryption.",
+                                       "d. Get private and public key from default key.",
                                        "b. Back to encryption.",
                     },
                     new List<string>()
@@ -133,6 +134,7 @@ namespace ExampleCode.DemoTests
                                     "c",
                                     "m",
                                     "x",
+                                    "d",
                                     "b",
                    });
 
@@ -141,9 +143,6 @@ namespace ExampleCode.DemoTests
                     case "l":
                         await this.EncryptionRsaKeys_ListAll();
                         break;
-                    case "b":
-                        whileRun = false;
-                        return;
                     case "c":
                         await this.EncryptionRsaKeys_CreateKeyOne();
                         break;
@@ -153,6 +152,12 @@ namespace ExampleCode.DemoTests
                     case "x":
                         await this.EncryptionRsaKeys_CreateMany(0, 0);
                         break;
+                    case "d":
+                        await this.EncryptionRSAKeys_GetKeys("default");
+                        break;
+                    case "b":
+                        whileRun = false;
+                        return;
                 }
             }
 
@@ -337,9 +342,13 @@ namespace ExampleCode.DemoTests
                 "---------------------",
                 "-- Create many key --",
                 "---------------------",
-                $"Create {count.ToString()} whit {bits.ToString()} bits encryption",
-                "------------------------------------------------------------",
             });
+
+            // Allow maxe 999 item to be created.
+            if (count > 200)
+            {
+                count = 0;
+            }
 
             #region Input Count - How many keys to you want to create.
 
@@ -451,10 +460,71 @@ namespace ExampleCode.DemoTests
                 "------------------------------------------------------------",
                 $"Create {count.ToString()} keys, whit {bits.ToString()} bits encryption",
                 "------------------------------------------------------------",
+                "------------------------------------------------------------",
             });
 
-            // Generate a storage name to use as base.
-            var tmpStorageNameToUse = LiTools.Helpers.Generate.StringLines.RandomString(5, true, false, false);
+            string tmpStorageNameToUse = string.Empty;
+
+            #region Generate storagename and check that is not already in use.
+
+            while (true)
+            {
+
+                // Generate a storage name to use as base.
+                tmpStorageNameToUse = LiTools.Helpers.Generate.StringLines.RandomString(5, true, false, false);
+
+                // Check if it alread is in use.
+                if (!this.rsaCrypto.StorageExist(tmpStorageNameToUse + "001"))
+                {
+                    break;
+                }
+
+                await Task.Delay(1000);
+            }
+
+            #endregion
+
+            int countDone = 0;
+            int countFaild = 0;
+
+            #region Create keys.
+
+            for (int i = 1; i <= count; i++)
+            {
+                string tmpStgName = tmpStorageNameToUse;
+
+                if (i.ToString().Length == 2)
+                {
+                    tmpStgName += "0";
+                }
+                else if (i.ToString().Length == 1)
+                {
+                    tmpStgName += "00";
+                }
+
+                tmpStgName += i.ToString();
+
+                this.zzDebug = "SDfdf";
+
+                if (await this.rsaCrypto.GenerateKey(tmpStgName, bits))
+                {
+                    countDone++;
+                }
+                else
+                {
+                    countFaild++;
+                }
+
+                this._menu.DrawTextLines(new List<string>()
+                {
+                    $"{i} of {count} done. {countDone} successful and {countFaild} failed.",
+                });
+
+                await Task.Delay(100);
+
+            }
+
+            #endregion
 
             this.zzDebug = "sdfdsf";
 
@@ -462,6 +532,81 @@ namespace ExampleCode.DemoTests
 
             await Task.Delay(1);
         }
+
+        private async Task EncryptionRSAKeys_GetKeys(string storageId)
+        {
+            this._menu.DrawTextLines(new List<string>()
+            {
+                "==============================================",
+                "--------------",
+                "-- Get keys --",
+                "--------------",
+                $"storage: {storageId}",
+            });
+
+            // check if storage exist.
+            while (true)
+            {
+                if (this.rsaCrypto.StorageExist(storageId))
+                {
+                    // storage exist.
+                    break;
+                }
+
+                // Dont exist. do we want to create it.
+                var selected = this._menu.DrawMenuSelectList(
+                    new List<string>()
+                    {
+                                       "Storage don’t exist. Do you want to create it?",
+                                       "---------------------------",
+                                       "c. Create storage.",
+                                       "a. Abort, return to menu.",
+                    },
+                    new List<string>()
+                   {
+                                    "c",
+                                    "a",
+                   });
+
+                if (selected == "a")
+                {
+                    return;
+                }
+                else if (selected == "c")
+                {
+                    this._menu.DrawTextLines(new List<string>()
+                    {
+                        "Creating new key.",
+                    });
+
+                    if (await this.rsaCrypto.GenerateKey(storageId, 2048))
+                    {
+                        break;
+                    }
+
+                    this._menu.DrawTextLines(new List<string>()
+                    {
+                        "Error creating key.",
+                    });
+                    this._menu.DrawPressKeyToContinue();
+                }
+
+                this.zzDebug = "dsfd";
+            }
+
+            this.zzDebug = "sdfdf";
+
+            // Get private key if it exist.
+            var tmpPrivateKey = this.rsaCrypto.GetKeyPrivateAsString(storageId);
+            var tmpPublicKey = this.rsaCrypto.GetKeyPublicAsString(storageId);
+
+            this.zzDebug = "sdfdf";
+
+            this._menu.DrawPressKeyToContinue();
+
+            await Task.Delay(1);
+        }
+
         #endregion
 
         private void OuputDebug()
