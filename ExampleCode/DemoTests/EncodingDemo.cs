@@ -600,10 +600,93 @@ namespace ExampleCode.DemoTests
             var tmpPrivateKey = this.rsaCrypto.GetKeyPrivateAsString(storageId);
             var tmpPublicKey = this.rsaCrypto.GetKeyPublicAsString(storageId);
 
+            var tmpSelectText = new List<string>()
+            {
+                "Do you want to save keys to folder?",
+                "-----------------------------------",
+            };
+
+            var tmpSelectOptions = new List<string>();
+
+            this._menu.DrawTextLines(new List<string>()
+            {
+                "----------------------------------------------",
+            });
+
+            if (string.IsNullOrEmpty(tmpPrivateKey))
+            {
+                this._menu.DrawTextLines(new List<string>()
+                {
+                    "No private key exists.",
+                });
+            }
+            else
+            {
+                tmpSelectText.Add("1. Save private key to folder.");
+                tmpSelectOptions.Add("1");
+
+                this._menu.DrawTextLines(new List<string>()
+                {
+                    "-- Private key: --",
+                    tmpPrivateKey,
+                });
+            }
+
+            this._menu.DrawTextLines(new List<string>()
+            {
+                "----------------------------------------------",
+            });
+
+            if (string.IsNullOrEmpty(tmpPublicKey))
+            {
+                this._menu.DrawTextLines(new List<string>()
+                {
+                    "No public key exists.",
+                });
+            }
+            else
+            {
+                tmpSelectText.Add("2. Save public key to folder.");
+                tmpSelectOptions.Add("2");
+
+                this._menu.DrawTextLines(new List<string>()
+                {
+                    "-- Public key: --",
+                    tmpPublicKey,
+                });
+            }
+
+            tmpSelectText.Add("c. Return to menu.");
+            tmpSelectOptions.Add("c");
+
+            bool whileRun = true;
+            while (whileRun)
+            {
+                this._menu.DrawTextLines(new List<string>()
+                {
+                    "----------------------------------------------",
+                    "----------------------------------------------",
+                });
+
+                var selected = this._menu.DrawMenuSelectList(tmpSelectText, tmpSelectOptions);
+
+                switch (selected)
+                {
+                    case "c":
+                        whileRun = false;
+                        break;
+                    case "1":
+                        // save private key.
+                        break;
+                    case "2":
+                        // Save public key.
+                        break;
+                }
+            }
+
             this.zzDebug = "sdfdf";
 
-            this._menu.DrawPressKeyToContinue();
-
+            // this._menu.DrawPressKeyToContinue();
             await Task.Delay(1);
         }
 
