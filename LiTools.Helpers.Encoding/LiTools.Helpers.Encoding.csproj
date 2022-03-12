@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>NETSTANDARD2.0</TargetFramework>
+    <TargetFramework>NETSTANDARD2.1</TargetFramework>
     <!--<TargetFrameworks>NETSTANDARD2.1;NETSTANDARD2.0;NET5.0;NET6.0</TargetFrameworks>-->
     <Nullable>enable</Nullable>
     <LangVersion>preview</LangVersion>
@@ -26,12 +26,22 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup Condition="'$(Configuration)' == 'Debug'">
+    <ProjectReference Include="..\LiTools.Helpers.IO\LiTools.Helpers.IO.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(Configuration)' == 'Release'">
+    <PackageReference Include="LiTools.Helpers.IO" Version="0.0.1" />
+  </ItemGroup>
+    
   <ItemGroup>
-  <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
   
   <ItemGroup>
     <AdditionalFiles Include="../stylecop.json" />
   </ItemGroup>
+  
+
 
 </Project>

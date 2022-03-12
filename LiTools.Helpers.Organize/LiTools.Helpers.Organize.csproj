@@ -24,9 +24,12 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <ProjectReference Include="..\LiTools.Helpers.Generate\LiTools.Helpers.Generate.csproj" />
   </ItemGroup>
 
+  <ItemGroup Condition="'$(Configuration)' == 'Debug'">
+    <ProjectReference Include="..\LiTools.Helpers.Generate\LiTools.Helpers.Generate.csproj" />
+  </ItemGroup>
+    
   <ItemGroup Condition="'$(Configuration)' == 'Release'">
     <PackageReference Include="LiTools.Helpers.Generate" Version="0.0.1" />
   </ItemGroup>

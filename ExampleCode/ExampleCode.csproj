@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Worker">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <UserSecretsId>dotnet-ExampleCode-98B9857E-0417-4D6F-9815-569ECC5EF358</UserSecretsId>
     <Nullable>enable</Nullable>
     <LangVersion>preview</LangVersion>
