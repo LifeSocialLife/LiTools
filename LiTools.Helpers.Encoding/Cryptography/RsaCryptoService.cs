@@ -33,6 +33,30 @@ namespace LiTools.Helpers.Encoding.Cryptography
     }
 
     /// <summary>
+    /// Key Save to File return status.
+    /// </summary>
+    public enum KeySaveToFileReturnEnum
+    {
+        /// <summary>File is saved.</summary>
+        Saved,
+
+        /// <summary>Error when saving file.</summary>
+        ErrorSavingFile,
+
+        /// <summary>Filename alrady exist.</summary>
+        ErrorFileAlreadyExist,
+
+        /// <summary>File folder dont exist.</summary>
+        ErrorDirectoryDontExist,
+
+        /// <summary>Encryption key to exist in storage.</summary>
+        KeyDontExist,
+
+        /// <summary>call input data error.</summary>
+        ErrorInput,
+    }
+
+    /// <summary>
     /// RSA Crypto service.
     /// </summary>
     public class RsaCryptoService
@@ -334,6 +358,87 @@ namespace LiTools.Helpers.Encoding.Cryptography
             return this.ParameterIntoString((RSAParameters)tmpData);
         }
 
+        /// <summary>
+        /// Save a RSA crypto key to a file.
+        /// </summary>
+        /// <param name="keyid">Storage id where the key is stored.</param>
+        /// <param name="pathAndFileName">Filename to where it shod be saved.</param>
+        /// <param name="keyToSave">KeyTypesInStorage - Key to save.</param>
+        /// <returns>enum KeySaveToFileReturnEnum.</returns>
+        public async Task<KeySaveToFileReturnEnum> KeySaveToFile(string keyid, string pathAndFileName, KeyTypesInStorage keyToSave = KeyTypesInStorage.Private)
+        {
+            // Check starting variables.
+            if (keyToSave != KeyTypesInStorage.Private && keyToSave != KeyTypesInStorage.Public)
+            {
+                // Dont know key to save.
+                return KeySaveToFileReturnEnum.ErrorInput;
+            }
+
+            if (string.IsNullOrEmpty(keyid) || string.IsNullOrEmpty(pathAndFileName))
+            {
+                return KeySaveToFileReturnEnum.ErrorInput;
+            }
+
+            // Check if storageid exist. (keyId).
+            if (this.StorageExist(keyid))
+            {
+                return KeySaveToFileReturnEnum.KeyDontExist;
+            }
+
+            // Get folder from filepath
+            string tmpFolder = LiTools.Helpers.IO.File.GetFolderFromFilePath(pathAndFileName);
+            if (string.IsNullOrEmpty(tmpFolder))
+            {
+                return KeySaveToFileReturnEnum.ErrorInput;
+            }
+
+            // Check if directory exist.
+            if (!LiTools.Helpers.IO.Directory.Exist(tmpFolder))
+            {
+                // Dont exist. return error.
+                return KeySaveToFileReturnEnum.ErrorDirectoryDontExist;
+            }
+
+            if (LiTools.Helpers.IO.File.Exist(pathAndFileName))
+            {
+                return KeySaveToFileReturnEnum.ErrorFileAlreadyExist;
+            }
+
+            // Get Key as string that we shod save to file.
+            string tmpKeyData = string.Empty;
+            if (keyToSave == KeyTypesInStorage.Private)
+            {
+                tmpKeyData = this.GetKeyPrivateAsString(keyid);
+            }
+            else if (keyToSave == KeyTypesInStorage.Public)
+            {
+                tmpKeyData = this.GetKeyPublicAsString(keyid);
+            }
+
+            if (string.IsNullOrEmpty(tmpKeyData))
+            {
+                return KeySaveToFileReturnEnum.KeyDontExist;
+            }
+
+            // Save key to file.
+            if (!LiTools.Helpers.IO.File.WriteFile(pathAndFileName, tmpKeyData, false))
+            {
+                // Error saving file.
+                return KeySaveToFileReturnEnum.ErrorSavingFile;
+            }
+
+            /*
+            // https://www.delftstack.com/howto/csharp/csharp-get-executable-path/
+            string execPath = AppDomain.CurrentDomain.BaseDirectory;
+            */
+
+            this.zzDebug = "sdfdsf";
+            await Task.Delay(1);
+            return KeySaveToFileReturnEnum.Saved;
+        }
+
+        #endregion
+
         private string ParameterIntoString(RSAParameters par)
         {
             // we need some buffer
@@ -357,7 +462,5 @@ namespace LiTools.Helpers.Encoding.Cryptography
 
             return pubKeyString;
         }
-
-        #endregion
     }
 }

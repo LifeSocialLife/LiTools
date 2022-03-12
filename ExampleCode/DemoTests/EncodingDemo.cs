@@ -469,7 +469,6 @@ namespace ExampleCode.DemoTests
 
             while (true)
             {
-
                 // Generate a storage name to use as base.
                 tmpStorageNameToUse = LiTools.Helpers.Generate.StringLines.RandomString(5, true, false, false);
 
@@ -521,7 +520,6 @@ namespace ExampleCode.DemoTests
                 });
 
                 await Task.Delay(100);
-
             }
 
             #endregion
