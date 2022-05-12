@@ -37,7 +37,7 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Models
         public ServerRegisterModel RegData { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether management werk is running.
+        /// Gets or sets a value indicating whether management work is running.
         /// </summary>
         public bool StatusMgnRunning { get; set; }
 

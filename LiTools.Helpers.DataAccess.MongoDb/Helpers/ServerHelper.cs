@@ -140,7 +140,7 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Helpers
                     node.Value.StatusMgnRunning = true;
 
                     var hej = await database.RunCommandAsync((Command<BsonDocument>)"{ping:1}");
-                    
+
                     //var hej1 = hej.Take(1);
                     node.Value.StatusMgnRunning = false;
                     // https://stackoverflow.com/questions/28835833/how-to-check-connection-to-mongodb
@@ -153,23 +153,22 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Helpers
                             {
                                 if (dd.Value.ToString() == "1")
                                 {
-
+                                    node.Value.StatusHasError = false;
                                 }
+
                                 this.zzDebug = "sddf";
-                                
                             }
                             else
                             {
+                                node.Value.StatusHasError = true;
                                 this.zzDebug = "sdfd";
                             }
-                            
                         }
                     }
-                    
 
                     this.zzDebug = "sdfdsf";
-                   
-                    
+
+                    /*
                     //if (!node.Value.InitIsDone || foreRebuild)
                     //{
                     //    node.Value.MdbConnectionString = this.NodeBuildConnectionString(node.Key);
@@ -185,9 +184,8 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Helpers
 
                     //    // TODO do init of nodes that is note done.
                     //}
+                    */
                 }
-
-
             }
 
             this._rebuldForceFull = false;
@@ -294,13 +292,27 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Helpers
             this.zzDebug = "sdfdf";
         }
 
-        public IMongoDatabase GetDatabaseToUse()
+        /// <summary>
+        /// Get database node to use.
+        /// </summary>
+        /// <returns>IMongoDatabase or null if node dont exist.</returns>
+        public IMongoDatabase? GetDatabaseToUse()
         {
             var nodeToUseKey = this.Nodes.Keys.FirstOrDefault();
+            if (nodeToUseKey == null)
+            {
+                return null;
+            }
+
             return this.Nodes[nodeToUseKey].MdbDatabase;
         }
 
-        private string NodeBuildConnectionString(string nodeName = null)
+        /// <summary>
+        /// Build connectionstring using MongoUrlBuilder.
+        /// </summary>
+        /// <param name="nodeName">node to use.</param>
+        /// <returns>MongoUrlBuilder.tostring().</returns>
+        private string NodeBuildConnectionString(string? nodeName = null)
         {
             if (string.IsNullOrEmpty(nodeName))
             {
@@ -308,18 +320,39 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Helpers
                 nodeName = this.Nodes.Keys.First();
             }
 
-            this.zzDebug = "sdfdf";
-            if (string.IsNullOrEmpty(nodeName))
+            if (string.IsNullOrEmpty(nodeName) || string.IsNullOrEmpty(this.DatabaseName))
             {
                 return string.Empty;
             }
 
             var tmpConData = this.Nodes[nodeName];
 
-            this.zzDebug = "sdfd";
+            var mongoUrlBuilder = new MongoUrlBuilder();
+
+            mongoUrlBuilder.Username = tmpConData.RegData.Username;
+            mongoUrlBuilder.Password = tmpConData.RegData.Password;
+            mongoUrlBuilder.Server = MongoServerAddress.Parse(tmpConData.RegData.Hostname);
+            mongoUrlBuilder.DatabaseName = this.DatabaseName;
+            mongoUrlBuilder.AuthenticationSource = tmpConData.RegData.AuthSource;
+            mongoUrlBuilder.UseTls = tmpConData.RegData.UseSsl;
+            mongoUrlBuilder.AllowInsecureTls = true;
+
+            if (!string.IsNullOrEmpty(this.Appname))
+            {
+                mongoUrlBuilder.ApplicationName = this.Appname;
+            }
+
+            return mongoUrlBuilder.ToString();
+
+            /*  Old code. dont use this.
+            var fff = mongoUrlBuilder.ToMongoUrl();
+            var ff2 = mongoUrlBuilder.ToString();
+
+            this.zzDebug = "sdfdsf";
 
             // TODO Fix support for readpreference from node regdata.
             return $"mongodb://{tmpConData.RegData.Username}:{tmpConData.RegData.Password}@{tmpConData.RegData.Hostname}:{tmpConData.RegData.Port}/?authSource={tmpConData.RegData.AuthSource}&readPreference=primary&appname={this.Appname}&ssl={tmpConData.RegData.UseSsl.ToString().ToLower()}";
+            */
         }
     }
 }
