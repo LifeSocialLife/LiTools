@@ -93,6 +93,24 @@ namespace LiTools.Helpers.IO
             return new Tuple<bool, string>(false, string.Empty);
         }
 
+        /// <summary>
+        /// Read All lines in file as strings.
+        /// </summary>
+        /// <param name="filename">filename to file to read.</param>
+        /// <returns>true if file is read | data as string.</returns>
+        public static Tuple<bool, string[]> ReadTextFileAllLines(string filename)
+        {
+            try
+            {
+                return new Tuple<bool, string[]>(true, System.IO.File.ReadAllLines(@filename));
+            }
+            catch (Exception)
+            {
+            }
+
+            return new Tuple<bool, string[]>(false, new string[0]);
+        }
+
         #endregion
 
         #region Write
