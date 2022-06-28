@@ -18,17 +18,14 @@ namespace LiTools.Helpers.IO.Mail
     /// </summary>
     public class MailSmtpHelper
     {
-
         /// <summary>
         /// Initializes a new instance of the <see cref="MailSmtpHelper"/> class.
         /// </summary>
         public MailSmtpHelper()
         {
             this.zzDebug = "MailSmtpHelper";
-
         }
 
         private string zzDebug { get; set; }
-
     }
 }
