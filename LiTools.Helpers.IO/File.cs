@@ -14,10 +14,11 @@ namespace LiTools.Helpers.IO
     using System.Diagnostics.CodeAnalysis;
     using System.IO;
     using System.Text;
+    using static System.Net.WebRequestMethods;
 
-    /// <summary>
-    /// File helper.
-    /// </summary>
+/// <summary>
+/// File helper.
+/// </summary>
     public static class File
     {
         #region Read
@@ -311,6 +312,28 @@ namespace LiTools.Helpers.IO
             }
 
             return tmpFolder;
+        }
+
+        /// <summary>
+        /// Get file name from file path.
+        /// </summary>
+        /// <param name="path">folder to extract file from.</param>
+        /// <returns>filename as string.</returns>
+        public static string GetFilenameFromFolder(string path)
+        {
+            if (string.IsNullOrEmpty(path))
+            {
+                return string.Empty;
+            }
+
+            var tmpFile = Path.GetFileName(path);
+
+            if (string.IsNullOrEmpty(tmpFile))
+            {
+                return string.Empty;
+            }
+
+            return tmpFile;
         }
 
         /// <summary>
