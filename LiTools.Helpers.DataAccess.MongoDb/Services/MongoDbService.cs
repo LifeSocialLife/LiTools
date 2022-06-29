@@ -90,6 +90,10 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Services
             _ = this.zzDebug;
         }
 
+        /// <summary>
+        /// Get database to use.
+        /// </summary>
+        /// <returns>IMongoDatabase.</returns>
         public IMongoDatabase GetDatabaseToUse()
         {
             var nodeToUse = this.servers.GetDatabaseToUse();
@@ -116,6 +120,10 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Services
             this.servers.Init();
         }
 
+        /// <summary>
+        /// Run mgn work.
+        /// </summary>
+        /// <returns>task done.</returns>
         public async Task MgnWork()
         {
             await this.servers.Rebuild(true);
