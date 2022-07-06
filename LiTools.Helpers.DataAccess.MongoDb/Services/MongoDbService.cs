@@ -6,6 +6,23 @@
 // </copyright>
 // <author>Lennie Wennerlund (lempa)</author>
 
+#region Help information.
+/*  Mongo help information.
+
+            var filter = Builders<Book>.Filter.Or(
+            Builders<Book>.Filter.Where(p=>p.Title.ToLower().Contains(queryText.ToLower())),
+            Builders<Book>.Filter.Where(p => p.Publisher.ToLower().Contains(queryText.ToLower())),
+            Builders<Book>.Filter.Where(p => p.Description.ToLower().Contains(queryText.ToLower())));
+            List<Book> books = Collection.Find(filter).ToList();
+
+
+            use ReplaceOne when you are inserting or updating whole documents
+            use UpdateOne when you need to update only a few properties/fields
+
+
+ * */
+#endregion
+
 namespace LiTools.Helpers.DataAccess.MongoDb.Services
 {
     using System;

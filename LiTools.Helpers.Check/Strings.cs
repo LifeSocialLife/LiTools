@@ -61,6 +61,7 @@ namespace LiTools.Helpers.Check
             return false;
         }
 
+
         #region Contains Number, Lower and Upper Casts or only numbers.
 
         /// <summary>
