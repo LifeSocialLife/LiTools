@@ -42,5 +42,36 @@ namespace LiTools.Helpers.Check
 
             return false;
         }
+
+        /// <summary>
+        /// is this date Sunday.
+        /// </summary>
+        /// <param name="date">datetime to check.</param>
+        /// <returns>trur or false.</returns>
+        public static bool DateIsSunday(DateTime date)
+        {
+            if (date.DayOfWeek == DayOfWeek.Sunday)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Is this date Saturday.
+        /// </summary>
+        /// <param name="date">datetime to check.</param>
+        /// <returns>trur or false.</returns>
+        public static bool DateIsSaturday(DateTime date)
+        {
+            if (date.DayOfWeek == DayOfWeek.Saturday)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
     }
 }
