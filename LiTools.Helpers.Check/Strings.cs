@@ -22,6 +22,29 @@ namespace LiTools.Helpers.Check
     /// </summary>
     public static class Strings
     {
+        private static readonly Regex sWhitespace = new Regex(@"\s+");
+
+        /// <summary>
+        /// Replace whitspaces whit somthing else. 
+        /// </summary>
+        /// <param name="input">string to check.</param>
+        /// <param name="replacement">replace whit this.</param>
+        /// <returns>string whit whitespaces replaced.</returns>
+        public static string WhitespaceReplaced(string input, string replacement)
+        {
+            return sWhitespace.Replace(input, replacement);
+        }
+
+        /// <summary>
+        /// Remove whitespaces from string.
+        /// </summary>
+        /// <param name="input">string that we shod remove whitespaces from.</param>
+        /// <returns>string whitout whitespaces.</returns>
+        public static string WhitespaceRemoved(string input)
+        {
+            return WhitespaceReplaced(input, string.Empty);
+        }
+
         /// <summary>
         /// Check if input string is an ipaddress. Can check both v4 and v6.
         /// </summary>
