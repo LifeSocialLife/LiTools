@@ -72,6 +72,5 @@ namespace LiTools.Helpers.Check
 
             return false;
         }
-
     }
 }
