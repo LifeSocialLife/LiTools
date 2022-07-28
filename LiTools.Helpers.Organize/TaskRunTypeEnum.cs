@@ -21,5 +21,8 @@ namespace LiTools.Helpers.Organize
 
         /// <summary>This is a long running work.</summary>
         Long,
+
+        /// <summary>This shod only be run once.</summary>
+        OnlyOnce,
     }
 }

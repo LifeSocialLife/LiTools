@@ -13,6 +13,7 @@ namespace LiTools.Helpers.Organize
     using System.Diagnostics;
     using System.Diagnostics.CodeAnalysis;
     using System.Reflection;
+    using System.Runtime;
     using System.Text;
     using System.Threading;
     using System.Threading.Tasks;
@@ -156,9 +157,24 @@ namespace LiTools.Helpers.Organize
 
                 TaskCreationOptions tmpdatatasktype = TaskCreationOptions.None;
 
-                if (data.TaskType == TaskRunTypeEnum.Long)
+                switch (data.TaskType)
                 {
-                    tmpdatatasktype = TaskCreationOptions.LongRunning;
+                    case TaskRunTypeEnum.Long:
+                        tmpdatatasktype = TaskCreationOptions.LongRunning;
+                        break;
+                    case TaskRunTypeEnum.Short:
+                        tmpdatatasktype = TaskCreationOptions.None;
+                        break;
+                    case TaskRunTypeEnum.OnlyOnce:
+                        tmpdatatasktype = TaskCreationOptions.None;
+                        break;
+                    default:
+                        if (Debugger.IsAttached)
+                        {
+                            Debugger.Break();
+                        }
+
+                        throw new NotImplementedException();
                 }
 
                 this.tasks[data.Name].Taskwork = Task.Factory.StartNew(() => this.StartNewInsideWhileRunner(data), data.Token.Token, tmpdatatasktype, TaskScheduler.Default)
@@ -186,6 +202,11 @@ namespace LiTools.Helpers.Organize
 
             while (!data.Token.IsCancellationRequested)
             {
+                if (!data.BackgroundTaskShodbeRunning)
+                {
+                    break;
+                }
+
                 data.DtWhileLastRun = DateTime.UtcNow;
                 data.BackgroundTaskRunning = true;
                 this.zzDebug = "sdfdsf";
@@ -200,12 +221,22 @@ namespace LiTools.Helpers.Organize
 
                 this.zzDebug = "sdfdsf";
 
+                if (data.TaskType == TaskRunTypeEnum.OnlyOnce || !data.BackgroundTaskShodbeRunning)
+                {
+                    break;
+                }
+
                 try
                 {
                     await Task.Delay(data.WhileInterval, data.Token.Token);
                 }
                 catch (OperationCanceledException)
                 {
+                    if (Debugger.IsAttached)
+                    {
+                        Debugger.Break();
+                    }
+
                     continue;
                 }
 
@@ -217,11 +248,12 @@ namespace LiTools.Helpers.Organize
                 this.zzDebug = "sdfdsf";
             }
 
+            /*
             if (Debugger.IsAttached)
             {
                 Debugger.Break();
             }
-
+            */
             this.zzDebug = "sdfdsf";
 
             data.BackgroundTaskRunning = false;
@@ -285,8 +317,6 @@ namespace LiTools.Helpers.Organize
             this.TaskType = TaskRunTypeEnum.None;
             this.AutoDeleteWhenDone = true;
 
-            this.BackgroundTaskRunning = false;
-            this.BackgroundTaskShodbeRunning = false;
             this.WhileInterval = 5000;
             this.WhileIntervalNoticInSek = 0;           // 0 min = not active.
             this.WhileIntervalWarningInSek = 0;   // 0 min = not active.
