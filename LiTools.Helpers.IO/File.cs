@@ -234,8 +234,52 @@ namespace LiTools.Helpers.IO
 
                 return true;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Move file to new location.
+        /// </summary>
+        /// <param name="from">path to file.</param>
+        /// <param name="to">path to move the file info.</param>
+        /// <param name="message">if error exist. error message.</param>
+        /// <returns>true or false.</returns>
+        public static bool Move(string from, string to, out string message)
+        {
+            message = string.Empty;
+
+            try
+            {
+                if (string.IsNullOrEmpty(from))
+                {
+                    message = "from is null or empty";
+                    return false;
+                }
+
+                if (string.IsNullOrEmpty(to))
+                {
+                    message = "to is null or empty";
+                    return false;
+                }
+
+                if (string.Compare(from, to) == 0)
+                {
+                    message = "from and to are the same";
+                    return false;
+                }
+
+                // File.Move(from, to);
+                System.IO.File.Move(from, to);
+
+                message = "file moved";
+                return true;
+            }
+            catch (Exception e)
+            {
+                message = e.Message;
                 return false;
             }
         }
