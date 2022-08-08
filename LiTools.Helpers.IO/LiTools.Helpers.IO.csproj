@@ -29,20 +29,22 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup Condition="'$(Configuration)' == 'Debug'">
+  <!--<ItemGroup Condition="'$(Configuration)' == 'Debug'">
     <ProjectReference Include="..\LiTools.Helpers.Convert\LiTools.Helpers.Convert.csproj" />
   </ItemGroup>
   
   <ItemGroup Condition="'$(Configuration)' == 'Release'">
     <PackageReference Include="LiTools.Helpers.Convert" Version="0.0.4" />
-  </ItemGroup>
+  </ItemGroup>-->
 
   <ItemGroup>
     <AdditionalFiles Include="../stylecop.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="System.Threading.Tasks" Version="4.3.0" />
+    <ProjectReference Include="..\LiTools.Helpers.Convert\LiTools.Helpers.Convert.csproj" />
   </ItemGroup>
 
 </Project>
