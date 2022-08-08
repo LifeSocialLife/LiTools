@@ -10,8 +10,8 @@
 
 
   <ItemGroup Condition="'$(Configuration)' == 'Debug'">
-    <PackageReference Include="Microsoft.CodeAnalysis" Version="4.3.0-2.final" />
-    <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.3.0-2.final" />
+    <PackageReference Include="Microsoft.CodeAnalysis" Version="4.3.0-3.final" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.3.0-3.final" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.435">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -19,8 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MongoDB.Driver" Version="2.17.0" />
-    <PackageReference Include="MongoDB.Driver.Core" Version="2.17.0" />
+    <PackageReference Include="MongoDB.Driver" Version="2.17.1" />
+    <PackageReference Include="MongoDB.Driver.Core" Version="2.17.1" />
   </ItemGroup>
   
   <ItemGroup>
