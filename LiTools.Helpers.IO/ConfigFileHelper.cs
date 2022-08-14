@@ -12,6 +12,7 @@ namespace LiTools.Helpers.IO
     using System.Collections.Generic;
     using System.IO;
     using System.Text;
+    using Microsoft.CodeAnalysis.CSharp.Syntax;
     using Newtonsoft.Json;
 
     /// <summary>
@@ -19,6 +20,11 @@ namespace LiTools.Helpers.IO
     /// </summary>
     public static class ConfigFileHelper
     {
+        /// <summary>
+        /// Gets or sets latest debug message.
+        /// </summary>
+        public static string? zzDebug { get; set; }
+
         /// <summary>
         /// Writes the given object instance to a Json file.
         /// <para>Object type must have a parameterless constructor.</para>
@@ -29,15 +35,27 @@ namespace LiTools.Helpers.IO
         /// <param name="filePath">The file path to write the object instance to.</param>
         /// <param name="objectToWrite">The object instance to write to the file.</param>
         /// <param name="append">If false the file will be overwritten if it already exists. If true the contents will be appended to the file.</param>
-        public static void WriteToJsonFile<T>(string filePath, T objectToWrite, bool append = false)
+        /// <returns>True if write of file was done.</returns>
+        public static bool WriteToJsonFile<T>(string filePath, T objectToWrite, bool append = false)
             where T : new()
         {
             TextWriter? writer = null;
+            bool tmpReturn = false;
             try
             {
                 var contentsToWriteToFile = JsonConvert.SerializeObject(objectToWrite);
                 writer = new StreamWriter(filePath, append);
                 writer.Write(contentsToWriteToFile);
+            }
+            catch (Exception ex)
+            {
+                tmpReturn = false;
+                zzDebug = ex.Message;
+
+                if (System.Diagnostics.Debugger.IsAttached)
+                {
+                    System.Diagnostics.Debugger.Break();
+                }
             }
             finally
             {
@@ -45,7 +63,11 @@ namespace LiTools.Helpers.IO
                 {
                     writer.Close();
                 }
+
+                tmpReturn = true;
             }
+
+            return tmpReturn;
         }
 
         /// <summary>
