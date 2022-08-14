@@ -242,7 +242,43 @@ namespace LiTools.Helpers.IO
         /// <param name="from">path to file.</param>
         /// <param name="to">path to move the file info.</param>
         /// <returns>true or false.</returns>
-        public static bool Move(string from, string to)
+        public static (bool Done, string Message) Move(string from, string to)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(from))
+                {
+                    return (false, string.Empty);
+                }
+
+                if (string.IsNullOrEmpty(to))
+                {
+                    return (false, string.Empty);
+                }
+
+                if (string.Compare(from, to) == 0)
+                {
+                    return (false, string.Empty);
+                }
+
+                // File.Move(from, to);
+                System.IO.File.Move(from, to);
+
+                return (true, string.Empty);
+            }
+            catch (Exception e)
+            {
+                return (false, e.Message);
+            }
+        }
+
+        /// <summary>
+        /// Move file to new location. dont use this. use move insted.
+        /// </summary>
+        /// <param name="from">path to file.</param>
+        /// <param name="to">path to move the file info.</param>
+        /// <returns>true or false.</returns>
+        public static bool MoveOld(string from, string to)
         {
             try
             {
@@ -266,20 +302,20 @@ namespace LiTools.Helpers.IO
 
                 return true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }
         }
 
         /// <summary>
-        /// Move file to new location.
+        /// Move file to new location. dont use this. use move insted.
         /// </summary>
         /// <param name="from">path to file.</param>
         /// <param name="to">path to move the file info.</param>
         /// <param name="message">if error exist. error message.</param>
         /// <returns>true or false.</returns>
-        public static bool Move(string from, string to, out string message)
+        public static bool MoveOld(string from, string to, out string message)
         {
             message = string.Empty;
 
