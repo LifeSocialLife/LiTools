@@ -117,6 +117,38 @@ namespace LiTools.Helpers.IO
         #region Write
 
         /// <summary>
+        /// Write all lines to file.
+        /// </summary>
+        /// <param name="filename">Filname (and path) to write to.</param>
+        /// <param name="lines">lines to write.</param>
+        /// <param name="encoding">Enocding to use.</param>
+        /// <returns>True if fale was saved.</returns>
+        public static (bool Done, string Message) WriteAllLines(string filename, List<string> lines, Encoding encoding)
+        {
+            return WriteAllLines(filename, lines.ToArray(), encoding);
+        }
+
+        /// <summary>
+        /// Write all lines to file.
+        /// </summary>
+        /// <param name="filename">Filname (and path) to write to.</param>
+        /// <param name="lines">lines to write.</param>
+        /// <param name="encoding">Enocding to use.</param>
+        /// <returns>True if fale was saved.</returns>
+        public static (bool Done, string Message) WriteAllLines(string filename, string[] lines, Encoding encoding)
+        {
+            try
+            {
+                System.IO.File.WriteAllLines(@filename, lines, encoding);
+                return (true, string.Empty);
+            }
+            catch (Exception ex)
+            {
+                return (false, ex.Message);
+            }
+        }
+
+        /// <summary>
         /// Write file.
         /// </summary>
         /// <param name="filename">Name of file.</param>
