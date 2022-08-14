@@ -155,6 +155,17 @@ namespace LiTools.Helpers.IO
             return LiTools.Helpers.IO.Directory.Move(from, to);
         }
 
+        /// <summary>
+        /// Combines two strings into a path.
+        /// </summary>
+        /// <param name="path1">The first path to combine.</param>
+        /// <param name="path2">The second path to combine.</param>
+        /// <returns> The combined paths. If one of the specified paths is a zero-length string, this method returns the other path. If path2 contains an absolute path, this method returns path2.</returns>
+        public static string Combine(string path1, string path2)
+        {
+            return System.IO.Path.Combine(path1, path2);
+        }
+
         /// <summary>.
         /// Directory exist or not.
         /// </summary>
