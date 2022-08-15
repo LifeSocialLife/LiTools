@@ -72,5 +72,54 @@ namespace LiTools.Helpers.Check
 
             return false;
         }
+
+        /// <summary>
+        /// Is this string a date?.
+        /// </summary>
+        /// <param name="date">date as string (yyyyMMdd).</param>
+        /// <returns>true or false.</returns>
+        public static bool StringIsDate(string date)
+        {
+            try
+            {
+                DateTime tmpFileCreatedAsDt = DateTime.ParseExact(date, "yyyyMMdd", null);
+                return true;
+            }
+            catch
+            {
+                if (System.Diagnostics.Debugger.IsAttached)
+                {
+                    System.Diagnostics.Debugger.Break();
+                }
+
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Is this string a dateTime (yyyyMMdd-HHmmss).
+        /// </summary>
+        /// <param name="date">date as string (yyyyMMdd-HHmmss).</param>
+        /// <returns>true or false.</returns>
+        public static bool StringIsDateTime(string date)
+        {
+            try
+            {
+                DateTime tmpFileCreatedAsDt = DateTime.ParseExact(date, "yyyyMMdd-HHmmss", null);
+                return true;
+            }
+            catch
+            {
+                if (System.Diagnostics.Debugger.IsAttached)
+                {
+                    System.Diagnostics.Debugger.Break();
+                }
+
+                return false;
+            }
+        }
+
+        // DateTime tmpFileCreatedAsDt = DateTime.ParseExact(date, "yyyyMMdd", null);
+        // DateTime tmpFileCreatedAsDt = DateTime.ParseExact(tmpFileDateAsString, "yyyyMMdd-HHmmss", null);
     }
 }
