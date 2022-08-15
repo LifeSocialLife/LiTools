@@ -63,6 +63,7 @@ namespace LiTools.Helpers.IO
         /// <param name="directory">Directory to scan.</param>
         /// <param name="returnCompletPath">Return whit directory information or not.</param>
         /// <returns>true if try work or false if catch happends. filelist as list.</returns>
+        [Obsolete("GetFilesInsideDirectory is deprecated, please use GetFiles instead.", false)]
         public static Tuple<bool, List<string>> GetFilesInsideDirectory(string directory, bool returnCompletPath)
         {
             try
@@ -88,6 +89,44 @@ namespace LiTools.Helpers.IO
             catch (Exception)
             {
                 return new Tuple<bool, List<string>>(false, new List<string>());
+            }
+        }
+
+        /// <summary>
+        /// Get files from a directory.
+        /// </summary>
+        /// <param name="directory">Directory to scan.</param>
+        /// <param name="returnCompletePath">Return whit directory information or not.</param>
+        /// <param name="orderbyFileCreationTime">Order files by creating time = true. if false it will be by name of file.</param>
+        /// <returns>bool Success, string Message, List string FileList.</returns>
+        public static (bool Success, string Message, List<string> FileList) GetFiles(string directory, bool returnCompletePath, bool orderbyFileCreationTime)
+        {
+            try
+            {
+                DirectoryInfo info = new(directory);
+                FileInfo[] files; // = info.GetFiles().OrderBy(p => p.CreationTime).ToArray();
+
+                if (orderbyFileCreationTime)
+                {
+                    files = info.GetFiles().OrderBy(p => p.CreationTime).ToArray();
+                }
+                else
+                {
+                    files = info.GetFiles().OrderBy(p => p.Name).ToArray();
+                }
+
+                if (returnCompletePath)
+                {
+                    return new(true, string.Empty, files.Select(p => directory + "/" + p.Name).ToList());
+                }
+                else
+                {
+                    return new(true, string.Empty, files.Select(p => p.Name).ToList());
+                }
+            }
+            catch (Exception ex)
+            {
+                return (false, ex.Message, new List<string>());
             }
         }
 
