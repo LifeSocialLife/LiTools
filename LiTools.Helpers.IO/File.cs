@@ -8,12 +8,14 @@
 
 namespace LiTools.Helpers.IO
 {
+    using Microsoft.CodeAnalysis.CSharp.Syntax;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.Design;
     using System.Diagnostics.CodeAnalysis;
     using System.IO;
     using System.Text;
+    using System.Threading.Tasks;
     using static System.Net.WebRequestMethods;
 
 /// <summary>
@@ -99,6 +101,7 @@ namespace LiTools.Helpers.IO
         /// </summary>
         /// <param name="filename">filename to file to read.</param>
         /// <returns>true if file is read | data as string.</returns>
+        [Obsolete("dont use this. use ReadFileReturnLinesAsArray insted.", false)]
         public static Tuple<bool, string[]> ReadTextFileAllLines(string filename)
         {
             try
@@ -111,6 +114,41 @@ namespace LiTools.Helpers.IO
 
             return new Tuple<bool, string[]>(false, new string[0]);
         }
+
+        /// <summary>
+        /// Read All lines in file as strings.
+        /// </summary>
+        /// <param name="filename">filename to file to read.</param>
+        /// <returns>bool Done, string Message, string[] Data.</returns>
+        public static (bool Done, string Message, string[] Data) ReadFileReturnLinesAsArray(string filename)
+        {
+            return ReadFileReturnLinesAsArray(filename, Encoding.Default);
+        }
+
+        /// <summary>
+        /// Read All lines in file as strings.
+        /// </summary>
+        /// <param name="filename">filename to file to read.</param>
+        /// <param name="encoding">Encoding to use for reading the lines.</param>
+        /// <returns>bool ErrorReadingFile, string Message, string[] Data.</returns>
+        public static (bool ErrorReadingFile, string Message, string[] Data) ReadFileReturnLinesAsArray(string filename, Encoding encoding)
+        {
+            try
+            {
+                return (false, "done", System.IO.File.ReadAllLines(@filename, encoding));
+            }
+            catch (Exception e)
+            {
+                return (true, e.Message, new string[0]);
+            }
+        }
+
+        /*
+        public static async Task<(bool Done, string Message, string[] Data)> ReadFileReturnLinesAsArray(string dd)
+        {
+
+        }
+        */
 
         #endregion
 
