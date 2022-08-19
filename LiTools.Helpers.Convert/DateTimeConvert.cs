@@ -18,15 +18,15 @@ namespace LiTools.Helpers.Convert
     public static class DateTimeConvert
     {
         /// <summary>
-        /// Convert Datetime value to string. Only return date.
+        /// Convert Datetime value to string. Only return date as yyyyMMdd.
         /// </summary>
         /// <param name="dt">datetime value.</param>
-        /// <returns>date as string.</returns>
+        /// <returns>date as string yyyyMMdd.</returns>
         public static (bool Error, string DateAsString) DateToString(DateTime dt)
         {
             try
             {
-                string tmpDate = dt.ToString("yyyMMdd");
+                string tmpDate = dt.ToString("yyyyMMdd");
                 return (false, tmpDate);
             }
             catch
