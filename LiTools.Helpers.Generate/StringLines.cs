@@ -46,7 +46,7 @@ namespace LiTools.Helpers.Generate
                 tmpString += CharsLower;
             }
 
-            if (!includeNumbers)
+            if (includeNumbers)
             {
                 tmpString += CharsNumber;
             }
