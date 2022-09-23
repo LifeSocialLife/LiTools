@@ -119,8 +119,8 @@ namespace LiTools.Helpers.IO
         /// Read All lines in file as strings.
         /// </summary>
         /// <param name="filename">filename to file to read.</param>
-        /// <returns>bool Done, string Message, string[] Data.</returns>
-        public static (bool Done, string Message, string[] Data) ReadFileReturnLinesAsArray(string filename)
+        /// <returns>bool ErrorReading, string Message, string[] Data.</returns>
+        public static (bool ErrorReading, string Message, string[] Data) ReadFileReturnLinesAsArray(string filename)
         {
             return ReadFileReturnLinesAsArray(filename, Encoding.Default);
         }
