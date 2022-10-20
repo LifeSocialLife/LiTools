@@ -34,5 +34,36 @@ namespace LiTools.Helpers.Convert
                 return (false, string.Empty);
             }
         }
+
+        public static (bool Error, DateTime Date) StringToDateUtcFirstTimeOfDay(string year, string mounth, string day)
+        {
+            try
+            {
+                DateTime tmpDate = Convert.ToDateTime($"{year}-{mounth}-{day}T00:00:00.000+00:00");
+                return (false, tmpDate);
+            }
+            catch
+            {
+                return (true, DateTime.UtcNow);
+            }
+        }
+
+        //public static (bool Error, DateTime DateTime) StringToDateTimeUtc(string dt)
+        //{
+        //    try
+        //    {
+        //        DateTime tmpDate = Convert.ToDateTime("2000-01-01T00:00:00.000+00:00");
+        //        return (false, tmpDate);
+        //    }
+        //    catch
+        //    {
+        //        return (true, DateTime.UtcNow);
+        //    }
+        //}
+
+        /*
+         *             this.DtFirstDataExist = Convert.ToDateTime("2000-01-01T00:00:00.000+00:00"); // DateTime.UtcNow;
+            this.DtLastDataExist = Convert.ToDateTime("2000-01-01T00:00:00.000+00:00"); // DateTime.UtcNow;
+         * */
     }
 }
