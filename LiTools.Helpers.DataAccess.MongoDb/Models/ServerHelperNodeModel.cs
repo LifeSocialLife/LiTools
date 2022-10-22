@@ -29,12 +29,13 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Models
             this.InitIsDone = false;
             this.StatusMgnRunning = false;
             this.StatusHasError = false;
+            this.MdbConnectionString = string.Empty;
         }
 
         /// <summary>
         /// Gets or sets serverRegisterModel information.
         /// </summary>
-        public ServerRegisterModel RegData { get; set; }
+        public ServerRegisterModel? RegData { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether management work is running.
@@ -70,12 +71,12 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Models
         /// <summary>
         /// Gets or sets mongodb Client Connection.
         /// </summary>
-        public IMongoClient MdbClient { get; set; }
+        public IMongoClient? MdbClient { get; set; }
 
         /// <summary>
         /// Gets or sets mongoDb Database connection.
         /// </summary>
-        public IMongoDatabase MdbDatabase { get; set; }
+        public IMongoDatabase? MdbDatabase { get; set; }
 
         /// <summary>
         /// Gets or sets connection string.

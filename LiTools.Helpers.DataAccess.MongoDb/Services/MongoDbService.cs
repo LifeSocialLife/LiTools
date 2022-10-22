@@ -145,7 +145,6 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Services
         {
             await this.servers.Rebuild(true);
             this.zzDebug = "sdfd";
-
         }
 
         /// <summary>

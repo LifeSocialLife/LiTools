@@ -11,6 +11,7 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Helpers
     using System;
     using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
@@ -119,31 +120,29 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Helpers
         /// Rebuild database connections.
         /// </summary>
         /// <param name="force">shod we force the rebuild.</param>
-        /// <returns><placeholder>A <see cref="Task"/> representing the asynchronous operation.</placeholder></returns>
+        /// <returns>Task status.</returns>
         public async Task Rebuild(bool force)
         {
             if (this._rebuldForceFull || force)
             {
-                // todo fix this.
-
                 foreach (var node in this.Nodes)
                 {
                     var tmpServer = node.Value.MdbClient;
 
-                    // var connectionString = "mongodb://localhost";
-
-                    //var client = new MongoClient(connectionString);
-                    //var database = client.GetDatabase(this.DatabaseName);
-
                     var database = node.Value.MdbDatabase;
+
+                    if (database == null)
+                    {
+                        return;
+                    }
 
                     node.Value.StatusMgnRunning = true;
 
                     var hej = await database.RunCommandAsync((Command<BsonDocument>)"{ping:1}");
 
-                    //var hej1 = hej.Take(1);
-                    node.Value.StatusMgnRunning = false;
+                    // var hej1 = hej.Take(1);
                     // https://stackoverflow.com/questions/28835833/how-to-check-connection-to-mongodb
+                    node.Value.StatusMgnRunning = false;
 
                     if (hej.ElementCount == 1)
                     {
@@ -249,6 +248,11 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Helpers
         {
             if (this.Nodes == null)
             {
+                if (Debugger.IsAttached)
+                {
+                    Debugger.Break();
+                }
+
                 return;
             }
 
@@ -326,6 +330,16 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Helpers
             }
 
             var tmpConData = this.Nodes[nodeName];
+
+            if (tmpConData.RegData == null)
+            {
+                if (Debugger.IsAttached)
+                {
+                    Debugger.Break();
+                }
+
+                return string.Empty;
+            }
 
             var mongoUrlBuilder = new MongoUrlBuilder();
 

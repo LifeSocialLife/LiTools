@@ -25,7 +25,7 @@ namespace LiTools.Helpers.Check
         private static readonly Regex sWhitespace = new Regex(@"\s+");
 
         /// <summary>
-        /// Replace whitspaces whit somthing else. 
+        /// Replace whitspaces whit somthing else.
         /// </summary>
         /// <param name="input">string to check.</param>
         /// <param name="replacement">replace whit this.</param>
@@ -83,7 +83,6 @@ namespace LiTools.Helpers.Check
 
             return false;
         }
-
 
         #region Contains Number, Lower and Upper Casts or only numbers.
 
