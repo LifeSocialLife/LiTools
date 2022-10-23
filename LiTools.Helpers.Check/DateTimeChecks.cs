@@ -44,6 +44,15 @@ namespace LiTools.Helpers.Check
         }
 
         /// <summary>
+        /// is this date Sunday - use datetime.utcnow.
+        /// </summary>
+        /// <returns>trur or false.</returns>
+        public static bool DateIsSunday()
+        {
+            return DateIsSunday(DateTime.UtcNow);
+        }
+
+        /// <summary>
         /// is this date Sunday.
         /// </summary>
         /// <param name="date">datetime to check.</param>
@@ -59,10 +68,19 @@ namespace LiTools.Helpers.Check
         }
 
         /// <summary>
+        /// Is this date Saturday - use datetime.utcnow.
+        /// </summary>
+        /// <returns>true or false.</returns>
+        public static bool DateIsSaturday()
+        {
+            return DateIsSaturday(DateTime.UtcNow);
+        }
+
+        /// <summary>
         /// Is this date Saturday.
         /// </summary>
         /// <param name="date">datetime to check.</param>
-        /// <returns>trur or false.</returns>
+        /// <returns>true or false.</returns>
         public static bool DateIsSaturday(DateTime date)
         {
             if (date.DayOfWeek == DayOfWeek.Saturday)
