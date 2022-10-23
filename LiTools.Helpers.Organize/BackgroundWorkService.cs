@@ -39,7 +39,7 @@ namespace LiTools.Helpers.Organize
         {
             this.tasks = new Dictionary<string, BackgroundWorkModel>();
 
-            this.zzDebug = "StoragePoolService";
+            this.zzDebug = "BackgroundWorkService";
 
             this._lockKey = new object();
         }
