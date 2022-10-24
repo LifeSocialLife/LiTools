@@ -111,7 +111,7 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Services
         /// Get database to use.
         /// </summary>
         /// <returns>IMongoDatabase.</returns>
-        public IMongoDatabase GetDatabaseToUse()
+        public IMongoDatabase? GetDatabaseToUse()
         {
             var nodeToUse = this.servers.GetDatabaseToUse();
             if (nodeToUse == null)
@@ -123,6 +123,7 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Services
                 }
 
                 this.zzDebug = "dfdsf";
+                return null;
             }
 
             return nodeToUse;
