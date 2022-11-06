@@ -162,6 +162,21 @@ namespace LiTools.Helpers.Convert
             return Convert.ToDateTime($"2000-01-01T00:00:00.000+00:00");
         }
 
+        public static DateTime GetDefaultDateAsUtc(string h, string m)
+        {
+            if (h.Length == 1)
+            {
+                h = $"0{h}";
+            }
+
+            if (m.Length == 1)
+            {
+                m = $"0{m}";
+            }
+
+            return Convert.ToDateTime($"2000-01-01T{h}:{m}:00.000+00:00");
+        }
+
         /*
         this.DtFirstDataExist = Convert.ToDateTime("2000-01-01T00:00:00.000+00:00"); // DateTime.UtcNow;
         this.DtLastDataExist = Convert.ToDateTime("2000-01-01T00:00:00.000+00:00"); // DateTime.UtcNow;
