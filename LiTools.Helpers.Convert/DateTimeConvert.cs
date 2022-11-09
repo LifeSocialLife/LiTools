@@ -162,6 +162,12 @@ namespace LiTools.Helpers.Convert
             return Convert.ToDateTime($"2000-01-01T00:00:00.000+00:00");
         }
 
+        /// <summary>
+        /// Get default date 2000-01-01 whit own hour and min data. Return as UTC datetime.
+        /// </summary>
+        /// <param name="h">Hour.</param>
+        /// <param name="m">Minutes.</param>
+        /// <returns>Datetime UTC.</returns>
         public static DateTime GetDefaultDateAsUtc(string h, string m)
         {
             if (h.Length == 1)
