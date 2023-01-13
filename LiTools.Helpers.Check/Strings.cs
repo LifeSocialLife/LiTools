@@ -148,6 +148,28 @@ namespace LiTools.Helpers.Check
 
         #endregion
 
+        #region Guid
+
+        /// <summary>
+        /// Check if a string is Guid.
+        /// </summary>
+        /// <param name="input">string to check.</param>
+        /// <returns>true or false.</returns>
+        public static bool IsGuId(string input)
+        {
+            if (Guid.TryParse(input, out _))
+            {
+                // input is a valid Guid
+                return true;
+            }
+            else
+            {
+                // input is not a valid Guid
+                return false;
+            }
+        }
+        #endregion
+
         /// <summary>
         /// string contains sql injections code.
         /// </summary>
@@ -162,6 +184,8 @@ namespace LiTools.Helpers.Check
 
             return true;
         }
+
+        #region Mail checks
 
         /// <summary>
         /// Check if email adress is a email adress.
@@ -267,5 +291,7 @@ namespace LiTools.Helpers.Check
                 return false;
             }
         }
+
+        #endregion
     }
 }
