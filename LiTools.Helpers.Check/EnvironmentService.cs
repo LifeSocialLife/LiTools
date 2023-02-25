@@ -71,9 +71,11 @@ namespace LiTools.Helpers.Check
                 this.EnvironmentInfo.ProcessId = Process.GetCurrentProcess().Id;
                 this.EnvironmentInfo.ProcessorAffinity = Process.GetCurrentProcess().ProcessorAffinity.ToString();
                 this.EnvironmentInfo.WorkingSet = Environment.WorkingSet;
+                this.EnvironmentInfo.ApplicationCommandArgs = Environment.GetCommandLineArgs();
 
-                // Get information about the application domain
+                // Get information about the application domain (folders).
                 this.EnvironmentInfo.ApplicationBaseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                this.EnvironmentInfo.ApplicationStartingDirectory = Path.GetDirectoryName(Environment.CurrentDirectory);
 
                 // Get the path to the local AppData folder
                 this.EnvironmentInfo.LocalAppDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
@@ -107,7 +109,22 @@ namespace LiTools.Helpers.Check
             public int ProcessId { get; set; }
             public string ProcessorAffinity { get; set; }
             public long WorkingSet { get; set; }
+
+            /// <summary>
+            /// Where is the application stored.
+            /// </summary>
             public string ApplicationBaseDirectory { get; set; }
+
+            /// <summary>
+            /// From folder where application is started.
+            /// </summary>
+            public string ApplicationStartingDirectory { get; set; }
+
+            /// <summary>
+            /// starting command whit args.
+            /// </summary>
+            public string[] ApplicationCommandArgs { get; set; }
+
             public string LocalAppDataFolder { get; set; }
             public IDictionary<string, string> EnvironmentVariables { get; set; }
         }
