@@ -14,8 +14,6 @@ namespace LiTools.Helpers.IO
     using System.Diagnostics.CodeAnalysis;
     using System.IO;
     using System.Text;
-    using System.Threading.Tasks;
-    using Microsoft.CodeAnalysis.CSharp.Syntax;
     using static System.Net.WebRequestMethods;
 
 /// <summary>
