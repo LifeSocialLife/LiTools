@@ -31,4 +31,22 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Enums
         /// <summary>Query has zero returns.</summary>
         ZeroReturn,
     }
+
+    /// <summary>
+    /// Document exist return enum.
+    /// </summary>
+    public enum DocumentExistReturnStatusEnum
+    {
+        /// <summary>Query has error.</summary>
+        Error,
+
+        /// <summary>Input data has error.</summary>
+        InputDataError,
+
+        /// <summary>Document exist in database.</summary>
+        Exist,
+
+        /// <summary>Document dont exist in database..</summary>
+        DontExist,
+    }
 }

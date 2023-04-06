@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>NETSTANDARD2.0</TargetFramework>
+    <TargetFramework>NETSTANDARD2.1</TargetFramework>
     <!--<TargetFrameworks>NETSTANDARD2.1;NETSTANDARD2.0;NET5.0;NET6.0</TargetFrameworks>-->
     <Nullable>enable</Nullable>
     <LangVersion>preview</LangVersion>
