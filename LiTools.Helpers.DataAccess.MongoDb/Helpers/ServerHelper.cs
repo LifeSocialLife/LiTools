@@ -312,7 +312,7 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Helpers
         }
 
         /// <summary>
-        /// Build connectionstring using MongoUrlBuilder.
+        /// Build connection string using MongoUrlBuilder.
         /// </summary>
         /// <param name="nodeName">node to use.</param>
         /// <returns>MongoUrlBuilder.tostring().</returns>

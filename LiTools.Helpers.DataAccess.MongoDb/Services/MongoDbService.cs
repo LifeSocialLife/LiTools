@@ -113,20 +113,34 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Services
         /// <returns>IMongoDatabase.</returns>
         public IMongoDatabase GetDatabaseToUse()
         {
-            var nodeToUse = this.servers.GetDatabaseToUse();
-            if (nodeToUse == null)
+            int count = 0;
+            while (true)
             {
-                // TODO Generate error.
-                if (System.Diagnostics.Debugger.IsAttached)
+                var nodeToUse = this.servers.GetDatabaseToUse();
+                if (nodeToUse == null)
                 {
-                    System.Diagnostics.Debugger.Break();
+                    // TODO Generate error.
+                    if (System.Diagnostics.Debugger.IsAttached)
+                    {
+                        System.Diagnostics.Debugger.Break();
+                    }
+
+                    if (count > 10)
+                    {
+                        // more then 5 sek. what shod we do now.
+                        throw new InvalidOperationException("Failed to get a valid IMongoDatabase instance after multiple attempts.");
+                    }
+
+                    this.zzDebug = "aa";
+
+                    Task.Delay(500);
+                    count++;
+
+                    continue;
                 }
 
-                this.zzDebug = "dfdsf";
-                return null;
+                return nodeToUse;
             }
-
-            return nodeToUse;
         }
 
         /// <summary>
