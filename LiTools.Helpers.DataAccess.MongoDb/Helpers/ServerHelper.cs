@@ -27,7 +27,7 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Helpers
         private string _connectionString;
         private string _connectionStringWrite;
         private string _databaseName;
-        private string _appnName;
+        private string _appName;
         private bool _rebuldForceFull;
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Helpers
             this._connectionStringWrite = string.Empty;
             this._connectionString = string.Empty;
             this._databaseName = string.Empty;
-            this._appnName = "noname";
+            this._appName = "noname";
             this._rebuldForceFull = false;
         }
 
@@ -92,12 +92,12 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Helpers
         {
             get
             {
-                return this._appnName;
+                return this._appName;
             }
 
             set
             {
-                this._appnName = value;
+                this._appName = value;
                 this._rebuldForceFull = true;
             }
         }
