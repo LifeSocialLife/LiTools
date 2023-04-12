@@ -207,6 +207,20 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Services
         }
 
         /// <summary>
+        /// ErrorHandlingMongoException - MongoException.
+        /// </summary>
+        /// <param name="ex">MongoException.</param>
+        public void ErrorHandlingMongoException(MongoException ex)
+        {
+            if (System.Diagnostics.Debugger.IsAttached)
+            {
+                System.Diagnostics.Debugger.Break();
+            }
+
+            this.zzDebug = ex.ToString();
+        }
+
+        /// <summary>
         /// ErrorHandling.
         /// </summary>
         /// <param name="ex">Exception.</param>
