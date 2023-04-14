@@ -28,6 +28,7 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Services
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Runtime.CompilerServices;
     using System.Text;
     using System.Threading.Tasks;
     using LiTools.Helpers.DataAccess.MongoDb.Helpers;
@@ -179,9 +180,62 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Services
         #region Error handling
 
         /// <summary>
+        /// Catch all function.
+        /// </summary>
+        /// <param name="ex">Exception.</param>
+        /// <param name="callerMemberName">CallerMemberName.</param>
+        /// <param name="callerFilePath">CallerFilePath.</param>
+        /// <param name="callerLineNumber">CallerLineNumber.</param>
+        /// <returns>Task done.</returns>
+        public async Task CatchAll(
+                Exception ex,
+                [CallerMemberName] string callerMemberName = "",
+                [CallerFilePath] string callerFilePath = "",
+                [CallerLineNumber] int callerLineNumber = -1)
+        {
+            var callStack = ex?.StackTrace;
+
+            if (ex is MongoWriteException e)
+            {
+                this.zzDebug = "MongoWriteException";
+                if (System.Diagnostics.Debugger.IsAttached)
+                {
+                    System.Diagnostics.Debugger.Break();
+                }
+            }
+            else if (ex is MongoCommandException e1)
+            {
+                this.zzDebug = "MongoCommandException";
+                if (System.Diagnostics.Debugger.IsAttached)
+                {
+                    System.Diagnostics.Debugger.Break();
+                }
+            }
+            else if (ex is MongoException e2)
+            {
+                this.zzDebug = "MongoException";
+                if (System.Diagnostics.Debugger.IsAttached)
+                {
+                    System.Diagnostics.Debugger.Break();
+                }
+            }
+            else
+            {
+                this.zzDebug = "Exception";
+                if (System.Diagnostics.Debugger.IsAttached)
+                {
+                    System.Diagnostics.Debugger.Break();
+                }
+            }
+
+            await Task.Delay(1);
+        }
+
+        /// <summary>
         /// ErrorHandlingWriteException.
         /// </summary>
         /// <param name="ex">MongoWriteException.</param>
+        [Obsolete("use CatchAll()")]
         public void ErrorHandlingWriteException(MongoWriteException ex)
         {
             if (System.Diagnostics.Debugger.IsAttached)
@@ -196,6 +250,7 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Services
         /// ErrorHandlingCommandException.
         /// </summary>
         /// <param name="ex">MongoCommandException.</param>
+        [Obsolete("use CatchAll()")]
         public void ErrorHandlingCommandException(MongoCommandException ex)
         {
             if (System.Diagnostics.Debugger.IsAttached)
@@ -210,6 +265,7 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Services
         /// ErrorHandlingMongoException - MongoException.
         /// </summary>
         /// <param name="ex">MongoException.</param>
+        [Obsolete("use CatchAll()")]
         public void ErrorHandlingMongoException(MongoException ex)
         {
             if (System.Diagnostics.Debugger.IsAttached)
@@ -224,6 +280,7 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Services
         /// ErrorHandling.
         /// </summary>
         /// <param name="ex">Exception.</param>
+        [Obsolete("use CatchAll()")]
         public void ErrorHandling(Exception ex)
         {
             if (System.Diagnostics.Debugger.IsAttached)
