@@ -50,10 +50,12 @@ namespace LiTools.Helpers.IO
                 tmpReturn = false;
                 zzDebug = ex.Message;
 
+#if DEBUG
                 if (System.Diagnostics.Debugger.IsAttached)
                 {
                     System.Diagnostics.Debugger.Break();
                 }
+#endif
             }
             finally
             {

@@ -65,10 +65,12 @@ namespace LiTools.Helpers.Organize
                 time != TimeValuesEnum.Seconds &&
                 time != TimeValuesEnum.Milliseconds)
             {
+#if DEBUG
                 if (System.Diagnostics.Debugger.IsAttached)
                 {
                     System.Diagnostics.Debugger.Break();
                 }
+#endif
 
                 throw new NotImplementedException();
             }
@@ -114,10 +116,12 @@ namespace LiTools.Helpers.Organize
                 reportMax != TimeValuesEnum.Seconds)
             {
                 // We dont support this.
+#if DEBUG
                 if (System.Diagnostics.Debugger.IsAttached)
                 {
                     System.Diagnostics.Debugger.Break();
                 }
+#endif
 
                 throw new NotImplementedException();
             }
@@ -205,9 +209,9 @@ namespace LiTools.Helpers.Organize
         }
 
         /// <summary>
-        /// Turn stringRepport into nice text return  ex: 0 Weeks 0 Days 0 Hours 5 Min 0 Sec.
+        /// Turn string Report into nice text return  ex: 0 Weeks 0 Days 0 Hours 5 Min 0 Sec.
         /// </summary>
-        /// <param name="stringRepport">Input time data as string repport.</param>
+        /// <param name="stringRepport">Input time data as string report.</param>
         /// <param name="repportEmpty">Include allzero values also.</param>
         /// <returns>0 Weeks 0 Days 0 Hours 5 Min 0 Sec.</returns>
         /// <exception cref="NotImplementedException">Error.</exception>
@@ -267,10 +271,12 @@ namespace LiTools.Helpers.Organize
             else
             {
                 // We dont support this.
+#if DEBUG
                 if (System.Diagnostics.Debugger.IsAttached)
                 {
                     System.Diagnostics.Debugger.Break();
                 }
+#endif
 
                 throw new NotImplementedException();
             }

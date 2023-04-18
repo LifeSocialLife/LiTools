@@ -105,10 +105,12 @@ namespace LiTools.Helpers.Check
             }
             catch
             {
+#if DEBUG
                 if (System.Diagnostics.Debugger.IsAttached)
                 {
                     System.Diagnostics.Debugger.Break();
                 }
+#endif
 
                 return false;
             }
@@ -128,10 +130,12 @@ namespace LiTools.Helpers.Check
             }
             catch
             {
+#if DEBUG
                 if (System.Diagnostics.Debugger.IsAttached)
                 {
                     System.Diagnostics.Debugger.Break();
                 }
+#endif
 
                 return false;
             }

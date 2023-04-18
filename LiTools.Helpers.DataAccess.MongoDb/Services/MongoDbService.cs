@@ -121,10 +121,12 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Services
                 if (nodeToUse == null)
                 {
                     // TODO Generate error.
+#if DEBUG
                     if (System.Diagnostics.Debugger.IsAttached)
                     {
                         System.Diagnostics.Debugger.Break();
                     }
+#endif
 
                     if (count > 10)
                     {
@@ -198,34 +200,42 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Services
             if (ex is MongoWriteException e)
             {
                 this.zzDebug = "MongoWriteException";
+#if DEBUG
                 if (System.Diagnostics.Debugger.IsAttached)
                 {
                     System.Diagnostics.Debugger.Break();
                 }
+#endif
             }
             else if (ex is MongoCommandException e1)
             {
                 this.zzDebug = "MongoCommandException";
+#if DEBUG
                 if (System.Diagnostics.Debugger.IsAttached)
                 {
                     System.Diagnostics.Debugger.Break();
                 }
+#endif
             }
             else if (ex is MongoException e2)
             {
                 this.zzDebug = "MongoException";
+#if DEBUG
                 if (System.Diagnostics.Debugger.IsAttached)
                 {
                     System.Diagnostics.Debugger.Break();
                 }
+#endif
             }
             else
             {
                 this.zzDebug = "Exception";
+#if DEBUG
                 if (System.Diagnostics.Debugger.IsAttached)
                 {
                     System.Diagnostics.Debugger.Break();
                 }
+#endif
             }
 
             await Task.Delay(1);
@@ -238,10 +248,12 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Services
         [Obsolete("use CatchAll()")]
         public void ErrorHandlingWriteException(MongoWriteException ex)
         {
+#if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)
             {
                 System.Diagnostics.Debugger.Break();
             }
+#endif
 
             this.zzDebug = "dfdsf";
         }
@@ -253,10 +265,12 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Services
         [Obsolete("use CatchAll()")]
         public void ErrorHandlingCommandException(MongoCommandException ex)
         {
+#if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)
             {
                 System.Diagnostics.Debugger.Break();
             }
+#endif
 
             this.zzDebug = "sdfdsf";
         }
@@ -268,10 +282,12 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Services
         [Obsolete("use CatchAll()")]
         public void ErrorHandlingMongoException(MongoException ex)
         {
+#if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)
             {
                 System.Diagnostics.Debugger.Break();
             }
+#endif
 
             this.zzDebug = ex.ToString();
         }
@@ -283,10 +299,12 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Services
         [Obsolete("use CatchAll()")]
         public void ErrorHandling(Exception ex)
         {
+#if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)
             {
                 System.Diagnostics.Debugger.Break();
             }
+#endif
 
             this.zzDebug = "sdfdsf";
         }

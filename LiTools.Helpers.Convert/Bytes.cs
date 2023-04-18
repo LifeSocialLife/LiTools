@@ -68,10 +68,12 @@ namespace LiTools.Helpers.Convert
                     return ToMegabytes(bytes);
 
                 default:
+#if DEBUG
                     if (System.Diagnostics.Debugger.IsAttached)
                     {
                         System.Diagnostics.Debugger.Break();
                     }
+#endif
 
                     throw new NotImplementedException();
             }
