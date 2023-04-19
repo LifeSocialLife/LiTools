@@ -205,31 +205,31 @@ namespace LiTools.Helpers.Organize
         public static string MillisecondsStringRepportIntoNiceTextReturn(TimeValuesEnum reportMax, double millisec, bool repportEmpty = false)
         {
             var aa = MillisecondsSplitIntoStringRepport(reportMax, millisec);
-            return MillisecondsStringRepportIntoNiceTextReturn(aa, repportEmpty);
+            return MillisecondsStringReportIntoNiceTextReturn(aa, repportEmpty);
         }
 
         /// <summary>
         /// Turn string Report into nice text return  ex: 0 Weeks 0 Days 0 Hours 5 Min 0 Sec.
         /// </summary>
-        /// <param name="stringRepport">Input time data as string report.</param>
-        /// <param name="repportEmpty">Include allzero values also.</param>
+        /// <param name="stringReport">Input time data as string report.</param>
+        /// <param name="reportEmpty">Include allzero values also.</param>
         /// <returns>0 Weeks 0 Days 0 Hours 5 Min 0 Sec.</returns>
         /// <exception cref="NotImplementedException">Error.</exception>
-        public static string MillisecondsStringRepportIntoNiceTextReturn(string stringRepport, bool repportEmpty = false)
+        public static string MillisecondsStringReportIntoNiceTextReturn(string stringReport, bool reportEmpty = false)
         {
-            if (stringRepport == null)
+            if (stringReport == null)
             {
                 return "Error NULL";
             }
 
-            if (!stringRepport.Contains(":"))
+            if (!stringReport.Contains(":"))
             {
                 return "Error :";
             }
 
-            var data = stringRepport.Split(":", StringSplitOptions.RemoveEmptyEntries);
+            var data = stringReport.Split(":", StringSplitOptions.RemoveEmptyEntries);
 
-            zzDebug = "dfsdf";
+            zzDebug = "aa";
 
             string tmpReturn = string.Empty;
             string tmpWeekCount = "0";
@@ -281,27 +281,27 @@ namespace LiTools.Helpers.Organize
                 throw new NotImplementedException();
             }
 
-            if ((!string.IsNullOrEmpty(tmpWeekCount) && tmpWeekCount != "0") || repportEmpty)
+            if ((!string.IsNullOrEmpty(tmpWeekCount) && tmpWeekCount != "0") || reportEmpty)
             {
                 tmpReturn += $" {tmpWeekCount} Weeks";
             }
 
-            if ((!string.IsNullOrEmpty(tmpDayCount) && tmpDayCount != "0") || repportEmpty)
+            if ((!string.IsNullOrEmpty(tmpDayCount) && tmpDayCount != "0") || reportEmpty)
             {
                 tmpReturn += $" {tmpDayCount} Days";
             }
 
-            if ((!string.IsNullOrEmpty(tmpHoursCount) && tmpHoursCount != "0") || repportEmpty)
+            if ((!string.IsNullOrEmpty(tmpHoursCount) && tmpHoursCount != "0") || reportEmpty)
             {
                 tmpReturn += $" {tmpHoursCount} Hours";
             }
 
-            if ((!string.IsNullOrEmpty(tmpMinutesCount) && tmpMinutesCount != "0") || repportEmpty)
+            if ((!string.IsNullOrEmpty(tmpMinutesCount) && tmpMinutesCount != "0") || reportEmpty)
             {
                 tmpReturn += $" {tmpMinutesCount} Min";
             }
 
-            if ((!string.IsNullOrEmpty(tmpSecondsCount) && tmpSecondsCount != "0") || repportEmpty)
+            if ((!string.IsNullOrEmpty(tmpSecondsCount) && tmpSecondsCount != "0") || reportEmpty)
             {
                 tmpReturn += $" {tmpSecondsCount} Sec";
             }
