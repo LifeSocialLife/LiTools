@@ -16,9 +16,10 @@ namespace LiTools.Helpers.Check
     using System.Net;
     using System.Text;
     using System.Text.RegularExpressions;
+    using System.Xml.Linq;
 
     /// <summary>
-    /// Check string for diffrent data.
+    /// Check string for different data.
     /// </summary>
     public static class Strings
     {
@@ -183,6 +184,57 @@ namespace LiTools.Helpers.Check
             }
 
             return true;
+        }
+
+        /// <summary>
+        /// String shortened to the length of input max length.
+        /// </summary>
+        /// <param name="input">string to shortened.</param>
+        /// <param name="maxLength">string max length.</param>
+        /// <returns>string as right length.</returns>
+        public static string StringShortened(string input, int maxLength)
+        {
+            if (string.IsNullOrEmpty(input))
+            {
+                return "no input text";
+            }
+
+            if (maxLength <= 0)
+            {
+                return "Error - StringShortened max length";
+            }
+
+            if (input.Length <= maxLength)
+            {
+                return input;
+            }
+
+            string[] words = input.Split(' ');
+
+            if (words.Length == 1)
+            {
+                // If there are no spaces, split at index maxLength.
+                // return input.Substring(0, maxLength);
+                return input[..maxLength];
+            }
+            else
+            {
+                string result = string.Empty;
+                int lengthCount = 0;
+
+                foreach (string word in words)
+                {
+                    if (lengthCount + word.Length > maxLength)
+                    {
+                        break;
+                    }
+
+                    result += word + " ";
+                    lengthCount += word.Length + 1; // +1 for the space character
+                }
+
+                return result.Trim();
+            }
         }
 
         #region Mail checks
