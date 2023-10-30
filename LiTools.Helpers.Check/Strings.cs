@@ -345,5 +345,33 @@ namespace LiTools.Helpers.Check
         }
 
         #endregion
+
+        #region Http web adress checks
+
+        /// <summary>
+        /// Check if string is an url path.
+        /// </summary>
+        /// <param name="input">url as string</param>
+        /// <returns>true or false.</returns>
+        public static bool IsHttpOrHttpsUrl(string input)
+        {
+            if (Uri.TryCreate(input, UriKind.Absolute, out Uri uriResult))
+            {
+                if (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps)
+                {
+                    return true;
+                }
+
+                // If the scheme is missing, you can assume HTTP by default:
+                if (uriResult.IsAbsoluteUri)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        #endregion
     }
 }
