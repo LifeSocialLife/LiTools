@@ -8,6 +8,7 @@
 
 namespace LiTools.Helpers.Check
 {
+    using Microsoft.CodeAnalysis.CSharp.Syntax;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -353,6 +354,7 @@ namespace LiTools.Helpers.Check
         /// </summary>
         /// <param name="input">url as string</param>
         /// <returns>true or false.</returns>
+        [Obsolete("Use UrlIsValid instead.", false)]
         public static bool IsHttpOrHttpsUrl(string input)
         {
             if (Uri.TryCreate(input, UriKind.Absolute, out Uri uriResult))
@@ -372,6 +374,70 @@ namespace LiTools.Helpers.Check
             return false;
         }
 
+
+        public static bool UrlIsValid(string input)
+        {
+            // if (input.ToLower().StartsWith("http://") || input.ToLower().StartsWith("http://")
+            bool containsHttpOrHttps = UrlIsValidScheme(input);
+            if (!containsHttpOrHttps)
+            {
+                input = "http://" + input;
+            }
+
+            // Use Uri.TryCreate to check if the string is a valid URL
+            if (Uri.TryCreate(input, UriKind.RelativeOrAbsolute, out Uri uriResult))
+            {
+                // Additional checks if needed
+                return UrlIsValidScheme(uriResult.Scheme) && UrlIsValidDomain(uriResult.Host);
+            }
+
+            return false;
+            /*
+            if (Uri.TryCreate(input, UriKind.RelativeOrAbsolute, out Uri uriResult))
+            {
+                // Ensure it's an absolute URI and has either "http" or "https" scheme
+                return uriResult.IsAbsoluteUri && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
+            }
+
+            return false;
+            */
+        }
+
+        private static bool UrlIsValidScheme(string scheme)
+        {
+            // Optional: Check if the URL has a valid scheme (http or https)
+            return scheme.Equals(Uri.UriSchemeHttp, StringComparison.OrdinalIgnoreCase) ||
+                   scheme.Equals(Uri.UriSchemeHttps, StringComparison.OrdinalIgnoreCase);
+        }
+
+        private static bool UrlIsValidDomain(string host)
+        {
+            if (string.IsNullOrWhiteSpace(host))
+            {
+                return false;
+            }
+
+            // Check for a minimum and maximum length of the domain
+            if (host.Length < 3 || host.Length > 255)
+            {
+                return false;
+            }
+
+            // Check if the domain contains a dot for subdomains
+            if (!host.Contains('.'))
+            {
+                return false;
+            }
+
+            // Check if the domain starts and ends with a letter or digit
+            if (!char.IsLetterOrDigit(host[0]) || !char.IsLetterOrDigit(host[host.Length - 1]))
+            {
+                return false;
+            }
+
+            // Add more specific checks based on your requirements
+            return true;
+        }
         #endregion
     }
 }
