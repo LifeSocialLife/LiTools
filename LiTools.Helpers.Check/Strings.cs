@@ -8,16 +8,17 @@
 
 namespace LiTools.Helpers.Check
 {
-    using Microsoft.CodeAnalysis.CSharp.Syntax;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.Diagnostics.CodeAnalysis;
     using System.Globalization;
     using System.Linq;
     using System.Net;
     using System.Text;
     using System.Text.RegularExpressions;
     using System.Xml.Linq;
+    using Microsoft.CodeAnalysis.CSharp.Syntax;
 
     /// <summary>
     /// Check string for different data.
@@ -27,7 +28,7 @@ namespace LiTools.Helpers.Check
         private static readonly Regex sWhitespace = new Regex(@"\s+");
 
         /// <summary>
-        /// Replace whitspaces whit somthing else.
+        /// Replace whitespaces whit something else.
         /// </summary>
         /// <param name="input">string to check.</param>
         /// <param name="replacement">replace whit this.</param>
@@ -41,17 +42,17 @@ namespace LiTools.Helpers.Check
         /// Remove whitespaces from string.
         /// </summary>
         /// <param name="input">string that we shod remove whitespaces from.</param>
-        /// <returns>string whitout whitespaces.</returns>
+        /// <returns>string whiteout whitespaces.</returns>
         public static string WhitespaceRemoved(string input)
         {
             return WhitespaceReplaced(input, string.Empty);
         }
 
         /// <summary>
-        /// Check if input string is an ipaddress. Can check both v4 and v6.
+        /// Check if input string is an ip address. Can check both v4 and v6.
         /// </summary>
         /// <param name="input">string data.</param>
-        /// <returns>True if it is an ipadress as input.</returns>
+        /// <returns>True if it is an ip adress as input.</returns>
         public static bool IsIpAddress(string input)
         {
             // System.Net.IPAddress? ip;
@@ -59,11 +60,11 @@ namespace LiTools.Helpers.Check
         }
 
         /// <summary>
-        /// Check if input string is an ipaddress. Can check both v4 and v6.
+        /// Check if input string is an ip address. Can check both v4 and v6.
         /// </summary>
         /// <param name="input">string data.</param>
         /// <param name="address">input string as output IpAddress.</param>
-        /// <returns>True if it is an ipadress as input.</returns>
+        /// <returns>True if it is an ip adress as input.</returns>
         public static bool IsIpAddress(string input, out System.Net.IPAddress? address)
         {
             if (System.Net.IPAddress.TryParse(input, out address))
@@ -352,9 +353,10 @@ namespace LiTools.Helpers.Check
         /// <summary>
         /// Check if string is an url path.
         /// </summary>
-        /// <param name="input">url as string</param>
+        /// <param name="input">url as string.</param>
         /// <returns>true or false.</returns>
         [Obsolete("Use UrlIsValid instead.", false)]
+        [SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1202:ElementsMustBeOrderedByAccess", Justification = "Reviewed.")]
         public static bool IsHttpOrHttpsUrl(string input)
         {
             if (Uri.TryCreate(input, UriKind.Absolute, out Uri uriResult))
@@ -374,7 +376,11 @@ namespace LiTools.Helpers.Check
             return false;
         }
 
-
+        /// <summary>
+        /// Check if string is an url path.
+        /// </summary>
+        /// <param name="input">url as string.</param>
+        /// <returns>True or False.</returns>
         public static bool UrlIsValid(string input)
         {
             // if (input.ToLower().StartsWith("http://") || input.ToLower().StartsWith("http://")
