@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>NETSTANDARD2.1</TargetFramework>
-    <!--<TargetFrameworks>NETSTANDARD2.1;NETSTANDARD2.0;NET5.0;NET6.0;NET48</TargetFrameworks>-->
+    <!--<TargetFramework>NETSTANDARD2.1</TargetFramework>-->
+    <TargetFrameworks>NETSTANDARD2.1;NET8.0</TargetFrameworks>
     <Nullable>enable</Nullable>
     <LangVersion>preview</LangVersion>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
