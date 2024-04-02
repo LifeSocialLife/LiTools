@@ -18,7 +18,7 @@ namespace LiTools.Helpers.Check
     using System.Text;
     using System.Text.RegularExpressions;
     using System.Xml.Linq;
-    using Microsoft.CodeAnalysis.CSharp.Syntax;
+    // using Microsoft.CodeAnalysis.CSharp.Syntax;
 
     /// <summary>
     /// Check string for different data.
