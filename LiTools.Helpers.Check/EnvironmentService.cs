@@ -23,20 +23,25 @@ namespace LiTools.Helpers.Check
         /// </summary>
         public EnvironmentService()
         {
-            if (!this.Collected) {
+            if (!this.Collected)
+            {
                 this.CollectData();
             }
         }
+
+        /// <summary>
+        /// Gets a value indicating whether error collecting information.
+        /// </summary>
+        public bool HasErrors { get; private set; } = false;
 
         private bool Collected { get; set; } = false;
 
         private EnvironmentInfoModel EnvironmentInfo { get; set; } = new();
 
         /// <summary>
-        /// Error collecting information.
+        /// Get the model.
         /// </summary>
-        public bool HasErrors { get; private set; } = false;
-
+        /// <returns>EnvironmentInfoModel.</returns>
         public EnvironmentInfoModel GetModel()
         {
             if (!this.Collected)
@@ -81,9 +86,18 @@ namespace LiTools.Helpers.Check
                 this.EnvironmentInfo.LocalAppDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
 
                 // Get all environment variables
-                IDictionary<string, string> envVars = Environment.GetEnvironmentVariables() as IDictionary<string, string>;
-                this.EnvironmentInfo.EnvironmentVariables = envVars;
+                if (Environment.GetEnvironmentVariables() is IDictionary<string, string> envVars)
+                {
+                    this.EnvironmentInfo.EnvironmentVariables = envVars;
+                }
 
+                /* Old code. remove later when we know new code is working
+                IDictionary<string, string>? envVars = Environment.GetEnvironmentVariables() as IDictionary<string, string>;
+                if (envVars != null)
+                {
+                    this.EnvironmentInfo.EnvironmentVariables = envVars;
+                }
+                */
                 this.HasErrors = false;
             }
             catch
@@ -94,39 +108,100 @@ namespace LiTools.Helpers.Check
             this.Collected = true;
         }
 
+        /// <summary>
+        /// Environment information model.
+        /// </summary>
         public class EnvironmentInfoModel
         {
-            public string OSVersion { get; set; }
-            public string Platform { get; set; }
-            public string ServicePack { get; set; }
-            public string VersionString { get; set; }
-            public string UserName { get; set; }
-            public string UserDomainName { get; set; }
-            public string MachineName { get; set; }
-            public int ProcessorCount { get; set; }
-            public string SystemDirectory { get; set; }
+            /// <summary>
+            /// Gets or sets os version.
+            /// </summary>
+            public string OSVersion { get; set; } = string.Empty;
+
+            /// <summary>
+            /// Gets or sets platsform we are running on.
+            /// </summary>
+            public string Platform { get; set; } = string.Empty;
+
+            /// <summary>
+            /// Gets or sets service pack if any.
+            /// </summary>
+            public string ServicePack { get; set; } = string.Empty;
+
+            /// <summary>
+            /// Gets or sets version.
+            /// </summary>
+            public string VersionString { get; set; } = string.Empty;
+
+            /// <summary>
+            /// Gets or sets username.
+            /// </summary>
+            public string UserName { get; set; } = string.Empty;
+
+            /// <summary>
+            /// Gets or sets domain user name.
+            /// </summary>
+            public string UserDomainName { get; set; } = string.Empty;
+
+            /// <summary>
+            /// Gets or sets machine name.
+            /// </summary>
+            public string MachineName { get; set; } = string.Empty;
+
+            /// <summary>
+            /// Gets or sets processor count.
+            /// </summary>
+            public int ProcessorCount { get; set; } = 0;
+
+            /// <summary>
+            /// Gets or sets system directory.
+            /// </summary>
+            public string SystemDirectory { get; set; } = string.Empty;
+
+            /// <summary>
+            /// Gets or sets system page size.
+            /// </summary>            public string SystemDirectory { get; set; } = string.Empty;
             public int SystemPageSize { get; set; }
+
+            /// <summary>
+            /// Gets or sets process id.
+            /// </summary>
             public int ProcessId { get; set; }
-            public string ProcessorAffinity { get; set; }
+
+            /// <summary>
+            /// Gets or sets processor affinity.
+            /// </summary>
+            public string ProcessorAffinity { get; set; } = string.Empty;
+
+            /// <summary>
+            /// Gets or sets working set.
+            /// </summary>
             public long WorkingSet { get; set; }
 
             /// <summary>
-            /// Where is the application stored.
+            /// Gets or sets where is the application stored.
             /// </summary>
-            public string ApplicationBaseDirectory { get; set; }
+            public string ApplicationBaseDirectory { get; set; } = string.Empty;
 
             /// <summary>
-            /// From folder where application is started.
+            /// Gets or sets from folder where application is started.
             /// </summary>
-            public string ApplicationStartingDirectory { get; set; }
+            public string ApplicationStartingDirectory { get; set; } = string.Empty;
 
             /// <summary>
-            /// starting command whit args.
+            /// Gets or sets starting command whit args.
             /// </summary>
-            public string[] ApplicationCommandArgs { get; set; }
+            public string[] ApplicationCommandArgs { get; set; } = Array.Empty<string>();
 
-            public string LocalAppDataFolder { get; set; }
-            public IDictionary<string, string> EnvironmentVariables { get; set; }
+            /// <summary>
+            /// Gets or sets local app data folder.
+            /// </summary>
+            public string LocalAppDataFolder { get; set; } = string.Empty;
+
+            /// <summary>
+            /// Gets or sets environment variables.
+            /// </summary>
+            public IDictionary<string, string> EnvironmentVariables { get; set; } = new Dictionary<string, string>();
         }
     }
 }
