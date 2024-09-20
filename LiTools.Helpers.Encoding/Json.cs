@@ -4,16 +4,16 @@
 // <copyright file="Json.cs" company="LiSoLi">
 // Copyright (c) LiSoLi. All rights reserved.
 // </copyright>
-// <author>Lennie Wennerlund (lempa)</author>
+// <author>Lennie Wennerlund (Lempa)</author>
 
 namespace LiTools.Helpers.Encoding
 {
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
     using System;
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
     using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Linq;
 
     /// <summary>
     /// Json helper.
@@ -34,7 +34,6 @@ namespace LiTools.Helpers.Encoding
             }
 
             string tmpjson;
-
             if (pretty)
             {
                 tmpjson = JsonConvert.SerializeObject(
