@@ -4,7 +4,7 @@
 // <copyright file="StringLines.cs" company="LiSoLi">
 // Copyright (c) LiSoLi. All rights reserved.
 // </copyright>
-// <author>Lennie Wennerlund (lempa)</author>
+// <author>Lennie Wennerlund (Lempa)</author>
 
 namespace LiTools.Helpers.Generate
 {
@@ -26,7 +26,7 @@ namespace LiTools.Helpers.Generate
         private static Random random = new Random();
 
         /// <summary>
-        /// Generate random string. dont use this to generate passwords.
+        /// Generate random string. don't use this to generate passwords.
         /// </summary>
         /// <param name="length">Length of string.</param>
         /// <param name="includeUpperLetters">Shod be use upper letters.</param>
@@ -61,6 +61,41 @@ namespace LiTools.Helpers.Generate
             // return new string(Enumerable.Repeat(chars, length).Select(s => s[random.Next(s.Length)]).ToArray());
             // return new string(Enumerable.Range(1, length).Select(_ => chars[random.Next(chars.Length)]).ToArray());
             return new string(Enumerable.Range(1, length).Select(_ => tmpString[random.Next(tmpString.Length)]).ToArray());
+        }
+
+        /// <summary>
+        /// Generate random string. using RandomNumberGenerator.
+        /// </summary>
+        /// <param name="length">Length of string.</param>
+        /// <param name="includeUpperLetters">Include Upper Letters.</param>
+        /// <param name="includeLowerLetters">Include Lower Letters.</param>
+        /// <param name="includeNumbers">Include Numbers.</param>
+        /// <returns>string.</returns>
+        public static string Random(int length, bool includeUpperLetters = true, bool includeLowerLetters = true, bool includeNumbers = true)
+        {
+            string tmpString = string.Empty;
+
+            if (includeUpperLetters)
+            {
+                tmpString = CharsUpper;
+            }
+
+            if (includeLowerLetters)
+            {
+                tmpString += CharsLower;
+            }
+
+            if (includeNumbers)
+            {
+                tmpString += CharsNumber;
+            }
+
+            if (string.IsNullOrEmpty(tmpString))
+            {
+                tmpString = CharsUpper + CharsLower + CharsNumber;
+            }
+
+            return Random(length, tmpString);
         }
 
         /// <summary>
