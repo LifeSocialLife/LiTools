@@ -20,16 +20,19 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Enums
     public enum QueryReturnStatusEnum
     {
         /// <summary>Qyery was corrct.</summary>
-        Ok,
+        Ok = 10,
 
         /// <summary>Qyery has error.</summary>
-        Error,
+        Error = 30,
 
         /// <summary>Input data has error.</summary>
-        InputDataError,
+        InputDataError = 60,
 
         /// <summary>Query has zero returns.</summary>
-        ZeroReturn,
+        ZeroReturn = 80,
+
+        /// <summary> Request is cancellated. </summary>
+        Cancellation = 100,
     }
 
     /// <summary>
