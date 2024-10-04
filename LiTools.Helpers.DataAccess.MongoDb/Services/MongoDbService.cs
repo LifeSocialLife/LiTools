@@ -4,7 +4,7 @@
 // <copyright file="MongoDbService.cs" company="LiSoLi">
 // Copyright (c) LiSoLi. All rights reserved.
 // </copyright>
-// <author>Lennie Wennerlund (lempa)</author>
+// <author>Lennie Wennerlund (Lempa)</author>
 
 #region Help information.
 /*  Mongo help information.
@@ -26,19 +26,15 @@
 namespace LiTools.Helpers.DataAccess.MongoDb.Services
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Runtime.CompilerServices;
-    using System.Text;
-    using System.Threading;
     using System.Threading.Tasks;
+    using System.Runtime.CompilerServices;
     using LiTools.Helpers.DataAccess.MongoDb.Helpers;
     using LiTools.Helpers.DataAccess.MongoDb.Models;
     using MongoDB.Bson;
     using MongoDB.Driver;
 
     /// <summary>
-    /// Mongodb Runtime service.
+    /// Mongo db Runtime service.
     /// </summary>
     public class MongoDbService
     {
