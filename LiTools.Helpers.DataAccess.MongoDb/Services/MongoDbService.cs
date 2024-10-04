@@ -30,6 +30,7 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Services
     using System.Linq;
     using System.Runtime.CompilerServices;
     using System.Text;
+    using System.Threading;
     using System.Threading.Tasks;
     using LiTools.Helpers.DataAccess.MongoDb.Helpers;
     using LiTools.Helpers.DataAccess.MongoDb.Models;
@@ -227,6 +228,20 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Services
                 }
 #endif
             }
+            else if (ex is OperationCanceledException oce)
+            {
+                // Handle cancellation scenario
+                if (oce.CancellationToken.IsCancellationRequested)
+                {
+                    this.zzDebug = "Task was canceled";
+#if DEBUG
+                    if (System.Diagnostics.Debugger.IsAttached)
+                    {
+                        System.Diagnostics.Debugger.Break();
+                    }
+#endif
+                }
+            }
             else
             {
                 this.zzDebug = "Exception";
@@ -238,7 +253,7 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Services
 #endif
             }
 
-            await Task.Delay(1);
+            await Task.Delay(1).ConfigureAwait(false);
         }
 
         /// <summary>
