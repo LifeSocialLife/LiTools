@@ -11,6 +11,7 @@ namespace LiTools.Helpers.Convert
     using System;
     using System.Collections.Generic;
     using System.Diagnostics;
+    using System.Globalization;
     using System.Text;
 
     /// <summary>
@@ -59,6 +60,47 @@ namespace LiTools.Helpers.Convert
 
                 return (true, DateTime.UtcNow);
             }
+        }
+
+        /// <summary>
+        /// Pnr as string to datetime UTC. return null if error. format '1900-01-01' or '19000101' or '19000101-0000'.
+        /// </summary>
+        /// <param name="input">pnr as string in this format, '1900-01-01' or '19000101' or '19000101-0000'.</param>
+        /// <returns>datetime or null.</returns>
+        public static DateTime? PnrAsStringToDateTimeUtc(string input)
+        {
+            /*
+            DateTime? parsedDate = PnrAsStringToDateTimeUtc("1979-07-30");
+
+            if (parsedDate.HasValue)
+            {
+                Console.WriteLine($"The parsed UTC date is: {parsedDate.Value:yyyy-MM-ddTHH:mm:ssZ}");
+            }
+            else
+            {
+                Console.WriteLine("Invalid date format.");
+            }
+            */
+
+            // Extract the date part based on the format
+            string datePart = input.Contains("-") && input.Length == 10
+                ? input.Substring(0, 10) // Extract YYYY-MM-DD
+                : input.Length >= 8
+                    ? input.Substring(0, 8) // Extract YYYYMMDD
+                    : string.Empty;
+
+            // Validate the extracted date
+            if (DateTime.TryParseExact(
+                datePart,
+                new[] { "yyyy-MM-dd", "yyyyMMdd" },
+                CultureInfo.InvariantCulture,
+                DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal,
+                out DateTime parsedDate))
+            {
+                return parsedDate;
+            }
+
+            return null; // Return null if the date is invalid
         }
 
         /// <summary>
