@@ -10,6 +10,7 @@ namespace LiTools.Helpers.Check
 {
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
     using System.Text;
 
     /// <summary>
@@ -114,6 +115,34 @@ namespace LiTools.Helpers.Check
 
                 return false;
             }
+        }
+
+        /// <summary>
+        /// Check if pnr as string is date in format yyyyMMdd or yyyy-MM-dd.
+        /// </summary>
+        /// <param name="input">pnr as string.</param>
+        /// <returns>True or False.</returns>
+        public static bool PnrAsStringIsDate(string input)
+        {
+            // Extract the date part based on the format
+            string datePart = input.Contains("-") && input.Length == 10
+                ? input.Substring(0, 10) // Extract YYYY-MM-DD
+                : input.Length >= 8
+                    ? input.Substring(0, 8) // Extract YYYYMMDD
+                    : string.Empty;
+
+            // Validate the extracted date
+            if (DateTime.TryParseExact(
+                datePart,
+                new[] { "yyyy-MM-dd", "yyyyMMdd" },
+                CultureInfo.InvariantCulture,
+                DateTimeStyles.None,
+                out _))
+            {
+                return true;
+            }
+
+            return false;
         }
 
         /// <summary>
