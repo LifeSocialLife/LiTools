@@ -12,13 +12,87 @@ namespace LiTools.Helpers.Convert
     using System.Collections.Generic;
     using System.Diagnostics;
     using System.Globalization;
+    using System.Linq;
+    using System.Runtime.Serialization;
     using System.Text;
+    using TimeZoneConverter;
 
     /// <summary>
     /// DateTime Convert.
     /// </summary>
     public static class DateTimeConvert
     {
+        /// <summary>
+        /// Get time zone from Iana zones.
+        /// </summary>
+        /// <param name="zone">IanaTimeZonesEnum.</param>
+        /// <returns>TimeZoneInfo.</returns>
+        public static TimeZoneInfo GetTimeZoneByIana(IanaTimeZonesEnum zone)
+        {
+            /*
+                var timeZoneData = TZConvert.GetTimeZoneInfo(zone.ToString());
+                return timeZoneData;
+                var timeZoneData = TZConvert.GetTimeZoneInfo("Europe/Stockholm");
+            */
+            try
+            {
+                var ianaString = zone.GetIanaString();
+                return TZConvert.GetTimeZoneInfo(ianaString);
+            }
+            catch (TimeZoneNotFoundException)
+            {
+                // If the IANA time zone is not found, return UTC as a fallback
+#if DEBUG
+                if (System.Diagnostics.Debugger.IsAttached)
+                {
+                    System.Diagnostics.Debugger.Break();
+                }
+#endif
+                return TimeZoneInfo.Utc;
+            }
+            catch (InvalidTimeZoneException)
+            {
+                // If the IANA time zone is invalid, return UTC as a fallback
+#if DEBUG
+                if (System.Diagnostics.Debugger.IsAttached)
+                {
+                    System.Diagnostics.Debugger.Break();
+                }
+#endif
+                return TimeZoneInfo.Utc;
+            }
+        }
+
+        /// <summary>
+        /// Get Utc time from local time whit datetime and TimeZoneInfo.
+        /// </summary>
+        /// <param name="dateTime">DateTime.</param>
+        /// <param name="timeZone">TimeZoneInfo.</param>
+        /// <returns>UTC time.</returns>
+        public static DateTime ToUtcFromTimeZone(DateTime dateTime, TimeZoneInfo timeZone)
+        {
+            // Convert the local time to UTC
+            return TimeZoneInfo.ConvertTimeToUtc(dateTime, timeZone);
+        }
+
+        /// <summary>
+        /// Turn Iana zone into Display name. ex America_New_York into America/New York.
+        /// </summary>
+        /// <param name="zone">IanaTimeZonesEnum.</param>
+        /// <returns>ex America_New_York into America/New York.</returns>
+        public static string IanaToDisplayName(this IanaTimeZonesEnum zone)
+        {
+            // Convert enum name like America_New_York → "America/New York"
+            var parts = zone.ToString().Split('_');
+            if (parts.Length == 1)
+            {
+                return parts[0];
+            }
+
+            var display = string.Join('/', parts[..^1]) + " " + parts[^1];
+            return display;
+        }
+
         /// <summary>
         /// Convert Datetime value to string. Only return date as yyyyMMdd.
         /// </summary>

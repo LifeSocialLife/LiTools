@@ -28,6 +28,9 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Enums
         /// <summary>Input data has error.</summary>
         InputDataError = 60,
 
+        /// <summary>DuplicateKey, already exists.</summary>
+        AlreadyExists = 70,
+
         /// <summary>Query has zero returns.</summary>
         ZeroReturn = 80,
 
