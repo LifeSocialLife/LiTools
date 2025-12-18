@@ -16,13 +16,12 @@ namespace LiTools.Helpers.VersionHandling
     /// <summary>
     /// Version handling service.
     /// </summary>
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1202:Elements should be ordered by access", Justification = "Private property VersionLock is logically grouped with the backing field _versionData for clarity.")]
     public sealed class VersionService
     {
         /// <summary>
         /// Backing storage for per-software version entries.
         /// </summary>
-        private List<VersionModel> versionData = new();
+        private readonly List<VersionModel> versionData = [];
 
         /// <summary>
         /// Gets synchronization root used for thread-safe access to <see cref="versionData"/>.

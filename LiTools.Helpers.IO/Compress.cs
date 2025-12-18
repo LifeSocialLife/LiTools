@@ -26,12 +26,12 @@ namespace LiTools.Helpers.IO
         {
             if (input == null)
             {
-                return new Tuple<bool, byte[]>(false, new byte[0]);
+                return new Tuple<bool, byte[]>(false, []);
             }
 
             if (input.Length < 1)
             {
-                return new Tuple<bool, byte[]>(false, new byte[0]);
+                return new Tuple<bool, byte[]>(false, []);
             }
 
             using System.IO.MemoryStream memory = new();
@@ -52,12 +52,12 @@ namespace LiTools.Helpers.IO
         {
             if (input == null)
             {
-                return new Tuple<bool, byte[]>(false, new byte[0]);
+                return new Tuple<bool, byte[]>(false, []);
             }
 
             if (input.Length < 1)
             {
-                return new Tuple<bool, byte[]>(false, new byte[0]);
+                return new Tuple<bool, byte[]>(false, []);
             }
 
             using System.IO.Compression.GZipStream stream = new(new System.IO.MemoryStream(input), System.IO.Compression.CompressionMode.Decompress);

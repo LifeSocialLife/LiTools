@@ -24,7 +24,7 @@ namespace LiTools.Helpers.Check
     /// </summary>
     public static class Strings
     {
-        private static readonly Regex sWhitespace = new Regex(@"\s+");
+        private static readonly Regex sWhitespace = new(@"\s+");
 
         /// <summary>
         /// Replace whitespaces whit something else.

@@ -126,15 +126,15 @@ namespace LiTools.Helpers.Check
         {
             // Extract the date part based on the format
             string datePart = input.Contains("-") && input.Length == 10
-                ? input.Substring(0, 10) // Extract YYYY-MM-DD
+                ? input[..10] // Extract YYYY-MM-DD
                 : input.Length >= 8
-                    ? input.Substring(0, 8) // Extract YYYYMMDD
+                    ? input[..8] // Extract YYYYMMDD
                     : string.Empty;
 
             // Validate the extracted date
             if (DateTime.TryParseExact(
                 datePart,
-                new[] { "yyyy-MM-dd", "yyyyMMdd" },
+                ["yyyy-MM-dd", "yyyyMMdd"],
                 CultureInfo.InvariantCulture,
                 DateTimeStyles.None,
                 out _))

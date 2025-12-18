@@ -293,10 +293,10 @@ namespace ExampleCode.DemoTests
                                     "n",
                        });
 
-                this._menu.DrawTextLines(new List<string>()
-                        {
+                this._menu.DrawTextLines(
+                        [
                             " ",
-                        });
+                        ]);
 
                 switch (selected)
                 {
@@ -310,10 +310,10 @@ namespace ExampleCode.DemoTests
 
             this.zzDebug = "sdfdf";
 
-            this._menu.DrawTextLines(new List<string>()
-                        {
+            this._menu.DrawTextLines(
+                        [
                             "Generating 4096 bits key.",
-                        });
+                        ]);
 
             var keyResault = await this.rsaCrypto.GenerateKey(stgName, 4096);
 
@@ -337,12 +337,12 @@ namespace ExampleCode.DemoTests
 
         private async Task EncryptionRsaKeys_CreateMany(int count = 0, int bits = 0)
         {
-            this._menu.DrawTextLines(new List<string>()
-            {
+            this._menu.DrawTextLines(
+            [
                 "---------------------",
                 "-- Create many key --",
                 "---------------------",
-            });
+            ]);
 
             // Allow maxe 999 item to be created.
             if (count > 200)
@@ -455,13 +455,13 @@ namespace ExampleCode.DemoTests
                 return;
             }
 
-            this._menu.DrawTextLines(new List<string>()
-            {
+            this._menu.DrawTextLines(
+            [
                 "------------------------------------------------------------",
                 $"Create {count.ToString()} keys, whit {bits.ToString()} bits encryption",
                 "------------------------------------------------------------",
                 "------------------------------------------------------------",
-            });
+            ]);
 
             string tmpStorageNameToUse = string.Empty;
 
@@ -470,8 +470,9 @@ namespace ExampleCode.DemoTests
             while (true)
             {
                 // Generate a storage name to use as base.
-                tmpStorageNameToUse = LiTools.Helpers.Generate.StringLines.RandomString(5, true, false, false);
-
+                // tmpStorageNameToUse = LiTools.Helpers.Generate.StringLines.RandomString(5, true, false, false);
+                tmpStorageNameToUse = LiTools.Helpers.Generate.StringLines.Random(5, true, false, false);
+                
                 // Check if it alread is in use.
                 if (!this.rsaCrypto.StorageExist(tmpStorageNameToUse + "001"))
                 {
@@ -553,13 +554,12 @@ namespace ExampleCode.DemoTests
 
                 // Dont exist. do we want to create it.
                 var selected = this._menu.DrawMenuSelectList(
-                    new List<string>()
-                    {
+                    [
                                        "Storage don’t exist. Do you want to create it?",
                                        "---------------------------",
                                        "c. Create storage.",
                                        "a. Abort, return to menu.",
-                    },
+                    ],
                     new List<string>()
                    {
                                     "c",

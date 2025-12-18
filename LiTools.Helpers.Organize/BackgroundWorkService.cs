@@ -30,7 +30,7 @@ namespace LiTools.Helpers.Organize
         /// <summary>
         /// Token.
         /// </summary>
-        private readonly Dictionary<string, BackgroundWorkModel> tasks = new();
+        private readonly Dictionary<string, BackgroundWorkModel> tasks = [];
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BackgroundWorkService"/> class.

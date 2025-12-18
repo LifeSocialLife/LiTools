@@ -23,9 +23,9 @@ namespace LiTools.Helpers.IO.Mail
         /// </summary>
         public MailSmtpHelper()
         {
-            this.zzDebug = "MailSmtpHelper";
+            this.ZzDebug = "MailSmtpHelper";
         }
 
-        private string zzDebug { get; set; }
+        private string ZzDebug { get; set; }
     }
 }

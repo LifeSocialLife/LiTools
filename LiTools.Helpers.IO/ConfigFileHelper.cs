@@ -59,10 +59,7 @@ namespace LiTools.Helpers.IO
             }
             finally
             {
-                if (writer != null)
-                {
-                    writer.Close();
-                }
+                writer?.Close();
 
                 tmpReturn = true;
             }
@@ -98,10 +95,7 @@ namespace LiTools.Helpers.IO
             }
             finally
             {
-                if (reader != null)
-                {
-                    reader.Close();
-                }
+                reader?.Close();
             }
         }
     }

@@ -191,7 +191,7 @@ namespace LiTools.Helpers.Check
             /// <summary>
             /// Gets or sets starting command whit args.
             /// </summary>
-            public string[] ApplicationCommandArgs { get; set; } = Array.Empty<string>();
+            public string[] ApplicationCommandArgs { get; set; } = []; // Array.Empty<string>();
 
             /// <summary>
             /// Gets or sets local app data folder.

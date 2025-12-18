@@ -53,12 +53,12 @@ namespace LiTools.Helpers.IO
             {
                 if (len < 1)
                 {
-                    return new Tuple<bool, byte[]>(false, new byte[0]);
+                    return new Tuple<bool, byte[]>(false, []);
                 }
 
                 if (from < 0)
                 {
-                    return new Tuple<bool, byte[]>(false, new byte[0]);
+                    return new Tuple<bool, byte[]>(false, []);
                 }
 
                 byte[] ret = new byte[len];
@@ -72,7 +72,7 @@ namespace LiTools.Helpers.IO
             }
             catch (Exception)
             {
-                return new Tuple<bool, byte[]>(false, new byte[0]);
+                return new Tuple<bool, byte[]>(false, []);
             }
         }
 
@@ -110,7 +110,7 @@ namespace LiTools.Helpers.IO
             {
             }
 
-            return new Tuple<bool, string[]>(false, new string[0]);
+            return new Tuple<bool, string[]>(false, []);
         }
 
         /// <summary>
@@ -193,10 +193,8 @@ namespace LiTools.Helpers.IO
         /// <returns>true if everthing was ok.</returns>
         public static bool WriteFile(string filename, string content, bool append)
         {
-            using (StreamWriter writer = new(filename, append))
-            {
-                writer.WriteLine(content);
-            }
+            using StreamWriter writer = new(filename, append);
+            writer.WriteLine(content);
 
             return true;
         }
@@ -242,11 +240,9 @@ namespace LiTools.Helpers.IO
         /// <returns>true if everthing was ok.</returns>
         public static bool WriteFile(string filename, byte[] content, int pos)
         {
-            using (Stream stream = new FileStream(filename, System.IO.FileMode.OpenOrCreate))
-            {
-                stream.Seek(pos, SeekOrigin.Begin);
-                stream.Write(content, 0, content.Length);
-            }
+            using Stream stream = new FileStream(filename, System.IO.FileMode.OpenOrCreate);
+            stream.Seek(pos, SeekOrigin.Begin);
+            stream.Write(content, 0, content.Length);
 
             return true;
         }
@@ -353,8 +349,6 @@ namespace LiTools.Helpers.IO
         /// <returns>true or false.</returns>
         public static bool MoveOld(string from, string to, out string message)
         {
-            message = string.Empty;
-
             try
             {
                 if (string.IsNullOrEmpty(from))

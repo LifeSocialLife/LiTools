@@ -30,17 +30,17 @@ namespace LiTools.Helpers.IO
             try
             {
                 // string[] folders;
-                List<string> folderList = new();
+                List<string> folderList = [];
 
                 if (recursive)
                 {
-                    folderList = System.IO.Directory.GetDirectories(@directory, "*", System.IO.SearchOption.AllDirectories).ToList();
+                    folderList = [.. System.IO.Directory.GetDirectories(@directory, "*", System.IO.SearchOption.AllDirectories)];
 
                     // folders = System.IO.Directory.GetDirectories(@directory, "*", System.IO.SearchOption.AllDirectories);
                 }
                 else
                 {
-                    folderList = System.IO.Directory.GetDirectories(@directory, "*", System.IO.SearchOption.TopDirectoryOnly).ToList();
+                    folderList = [.. System.IO.Directory.GetDirectories(@directory, "*", System.IO.SearchOption.TopDirectoryOnly)];
 
                     // folders = System.IO.Directory.GetDirectories(@directory, "*", System.IO.SearchOption.TopDirectoryOnly);
                 }
@@ -53,7 +53,7 @@ namespace LiTools.Helpers.IO
             }
             catch (Exception)
             {
-                return new Tuple<bool, List<string>>(false, new List<string>());
+                return new Tuple<bool, List<string>>(false, []);
             }
         }
 
@@ -69,8 +69,8 @@ namespace LiTools.Helpers.IO
             try
             {
                 DirectoryInfo info = new(directory);
-                FileInfo[] files = info.GetFiles().OrderBy(p => p.CreationTime).ToArray();
-                List<string> fileList = new();
+                FileInfo[] files = [.. info.GetFiles().OrderBy(p => p.CreationTime)];
+                List<string> fileList = [];
 
                 foreach (FileInfo file in files)
                 {
@@ -88,7 +88,7 @@ namespace LiTools.Helpers.IO
             }
             catch (Exception)
             {
-                return new Tuple<bool, List<string>>(false, new List<string>());
+                return new Tuple<bool, List<string>>(false, []);
             }
         }
 
@@ -108,20 +108,20 @@ namespace LiTools.Helpers.IO
 
                 if (orderbyFileCreationTime)
                 {
-                    files = info.GetFiles().OrderBy(p => p.CreationTime).ToArray();
+                    files = [.. info.GetFiles().OrderBy(p => p.CreationTime)];
                 }
                 else
                 {
-                    files = info.GetFiles().OrderBy(p => p.Name).ToArray();
+                    files = [.. info.GetFiles().OrderBy(p => p.Name)];
                 }
 
                 if (returnCompletePath)
                 {
-                    return new(true, string.Empty, files.Select(p => directory + "/" + p.Name).ToList());
+                    return new(true, string.Empty, [.. files.Select(p => directory + "/" + p.Name)]);
                 }
                 else
                 {
-                    return new(true, string.Empty, files.Select(p => p.Name).ToList());
+                    return new(true, string.Empty, [.. files.Select(p => p.Name)]);
                 }
             }
             catch (Exception ex)

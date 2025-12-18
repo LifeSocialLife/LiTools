@@ -24,11 +24,11 @@ namespace LiTools.Helpers.IO.Mail
         /// </summary>
         public MailService()
         {
-            this.zzDebug = "MailService";
+            this.ZzDebug = "MailService";
             this.Servers = new ConcurrentDictionary<string, MailServersModel>();
         }
 
-        private string zzDebug { get; set; }
+        private string ZzDebug { get; set; }
 
         private ConcurrentDictionary<string, MailServersModel> Servers { get; set; }
 
@@ -163,7 +163,7 @@ namespace LiTools.Helpers.IO.Mail
         public async Task MgnWork()
         {
             // await this.servers.Rebuild(true);
-            this.zzDebug = "sdfd";
+            this.ZzDebug = "sdfd";
             await Task.Delay(100);
         }
 
