@@ -6,7 +6,6 @@
 // </copyright>
 // <author>Lennie Wennerlund (lempa)</author>
 
-/*
 using System.Diagnostics.CodeAnalysis;
 
 [assembly: SuppressMessage("StyleCop.CSharp.NamingRules", "SA1300:Element should begin with upper-case letter", Justification = "info", Scope = "member", Target = "~P:LiTools.Helpers.DataAccess.MongoDb.Services.MongoDbService.zzDebug")]
@@ -26,4 +25,3 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("Style", "IDE0060:Remove unused parameter", Justification = "info.", Scope = "member", Target = "~M:LiTools.Helpers.DataAccess.MongoDb.Services.MongoDbService.ErrorHandlingCommandException(MongoDB.Driver.MongoCommandException)")]
 [assembly: SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1124:Do not use regions", Justification = "Info.", Scope = "namespace", Target = "~N:LiTools.Helpers.DataAccess.MongoDb.Services")]
 [assembly: SuppressMessage("StyleCop.CSharp.NamingRules", "SA1309:Field names should not begin with underscore", Justification = "<info>", Scope = "member", Target = "~F:LiTools.Helpers.DataAccess.MongoDb.Helpers.ServerHelper._appName")]
-*/
