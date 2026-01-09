@@ -70,6 +70,46 @@ namespace LiTools.Helpers.VersionHandling
         }
 
         /// <summary>
+        /// Registers or updates a version entry by directly accepting a <see cref="VersionModel"/> instance.
+        /// If an entry with the same <see cref="VersionModel.SoftwareName"/> already exists, it will be replaced.
+        /// Otherwise, a new entry is added. Thread-safe.
+        /// </summary>
+        /// <param name="versionModel">The version model to register. Must not be null and must have a non-empty SoftwareName.</param>
+        public void VersionRegister(VersionModel versionModel)
+        {
+            if (versionModel is null)
+            {
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(versionModel.SoftwareName))
+            {
+                return;
+            }
+
+            lock (this.VersionLock)
+            {
+                var softwareNameLower = versionModel.SoftwareName.ToLower();
+                var idx = this.versionData.FindIndex(v => v.SoftwareName == softwareNameLower);
+                
+                // Clone the incoming model to ensure we store an independent copy
+                var toStore = versionModel.Clone();
+                toStore.SoftwareName = softwareNameLower;
+
+                if (idx >= 0)
+                {
+                    // Replace existing entry
+                    this.versionData[idx] = toStore;
+                }
+                else
+                {
+                    // Add new entry
+                    this.versionData.Add(toStore);
+                }
+            }
+        }
+
+        /// <summary>
         /// Update the version model using a thread-safe mutate action.
         /// The mutate action must set <see cref="VersionModel.SoftwareName"/> to identify which item to update.
         /// If no existing item matches the mutated <see cref="VersionModel.SoftwareName"/>, a new entry is created using
