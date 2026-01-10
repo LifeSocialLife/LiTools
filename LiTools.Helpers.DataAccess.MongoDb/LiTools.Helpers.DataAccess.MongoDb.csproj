@@ -7,6 +7,17 @@
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
     <LangVersion>latest</LangVersion>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<Version>1.0.0-alpha.2</Version>
+		<PackageId>LiTools.Helpers.Check</PackageId>
+		<Company>LiSoLi</Company>
+		<Authors>Lennie Wennerlund</Authors>
+		<Description>Checking tools</Description>
+		<PackageId>LiTools.Helpers.DataAccess.MongoDb</PackageId>
+		<PackageProjectUrl>https://github.com/LifeSocialLife/LiTools</PackageProjectUrl>
+		<RepositoryType>git</RepositoryType>		
   </PropertyGroup>
 
 

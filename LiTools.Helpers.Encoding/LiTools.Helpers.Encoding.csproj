@@ -8,9 +8,10 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Version>0.0.1</Version>
+    <Version>1.0.0-alpha.3</Version>
     <Authors>Lennie Wennerlund</Authors>
     <Description>Encoding tools</Description>
+		<PackageId>LiTools.Helper.Encoding</PackageId>		
     <PackageProjectUrl>https://github.com/LifeSocialLife/LiTools</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>

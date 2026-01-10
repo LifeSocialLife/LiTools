@@ -5,6 +5,11 @@
     <Nullable>enable</Nullable>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<LangVersion>latest</LangVersion>
+		<Version>1.0.0-alpha.2</Version>
+		<Authors>Lennie Wennerlund</Authors>
+		<Company>LiSoLi</Company>
+		<PackageId>LiTools.Helper.VersionHandling</PackageId>
+		<Description>LiTools Version handling</Description>		
 	</PropertyGroup>
 	
 	<ItemGroup Condition="'$(Configuration)' == 'Debug'">

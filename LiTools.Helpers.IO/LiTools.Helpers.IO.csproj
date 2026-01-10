@@ -9,8 +9,10 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Version>0.0.2-rc.1</Version>
+    <Version>1.0.0-rc.1</Version>
     <Authors>Lennie Wennerlund</Authors>
+		<Company>LiSoLi</Company>
+		<PackageId>LiTools.Helper.IO</PackageId>		
     <Description>IO Helper - tools</Description>
     <PackageProjectUrl>https://github.com/LifeSocialLife/LiTools</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
