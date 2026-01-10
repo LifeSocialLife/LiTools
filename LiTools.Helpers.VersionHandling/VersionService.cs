@@ -91,7 +91,7 @@ namespace LiTools.Helpers.VersionHandling
             {
                 var softwareNameLower = versionModel.SoftwareName.ToLower();
                 var idx = this.versionData.FindIndex(v => v.SoftwareName == softwareNameLower);
-                
+
                 // Clone the incoming model to ensure we store an independent copy
                 var toStore = versionModel.Clone();
                 toStore.SoftwareName = softwareNameLower;
