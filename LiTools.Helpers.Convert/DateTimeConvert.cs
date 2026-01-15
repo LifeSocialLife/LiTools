@@ -299,6 +299,23 @@ namespace LiTools.Helpers.Convert
             return Convert.ToDateTime($"2000-01-01T{h}:{m}:00.000+00:00");
         }
 
+        /// <summary>
+        /// Convert string into datetime utc.
+        /// </summary>
+        /// <param name="data">datetime as string.</param>
+        /// <returns>datetime format.</returns>
+        public static DateTime StringToDatetimeUtc(string data)
+        {
+            if (DateTime.TryParse(data, null, System.Globalization.DateTimeStyles.RoundtripKind, out DateTime parsedTime))
+            {
+                return parsedTime.ToUniversalTime();
+            }
+            else
+            {
+                return DateTime.MinValue;
+            }
+        }
+
         /*
         this.DtFirstDataExist = Convert.ToDateTime("2000-01-01T00:00:00.000+00:00"); // DateTime.UtcNow;
         this.DtLastDataExist = Convert.ToDateTime("2000-01-01T00:00:00.000+00:00"); // DateTime.UtcNow;
