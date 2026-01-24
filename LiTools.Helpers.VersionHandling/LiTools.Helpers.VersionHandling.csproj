@@ -8,7 +8,7 @@
 		<Version>1.0.0-alpha.3</Version>
 		<Authors>Lennie Wennerlund</Authors>
 		<Company>LiSoLi</Company>
-		<PackageId>LiTools.Helper.VersionHandling</PackageId>
+		<PackageId>LiTools.Helpers.VersionHandling</PackageId>
 		<Description>LiTools Version handling</Description>		
 	</PropertyGroup>
 	

@@ -11,7 +11,7 @@
     <Version>1.0.0-alpha.2</Version>
     <Authors>Lennie Wennerlund</Authors>
 		<Company>LiSoLi</Company>
-		<PackageId>LiTools.Helper.Generate</PackageId>
+		<PackageId>LiTools.Helpers.Generate</PackageId>
     <Description>LiTools Generate values</Description>
     <PackageProjectUrl>https://github.com/LifeSocialLife/LiTools</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>

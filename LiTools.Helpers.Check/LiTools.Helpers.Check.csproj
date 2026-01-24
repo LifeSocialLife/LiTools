@@ -13,7 +13,7 @@
     <Company>LiSoLi</Company>
     <Authors>Lennie Wennerlund</Authors>
     <Description>Checking tools</Description>
-		<PackageId>LiTools.Helper.Check</PackageId>
+		<PackageId>LiTools.Helpers.Check</PackageId>
     <PackageProjectUrl>https://github.com/LifeSocialLife/LiTools</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>

@@ -11,7 +11,7 @@
     <Version>1.0.0-alpha.2</Version>
     <Authors>Lennie Wennerlund</Authors>
     <Description>Convert tools</Description>
-		<PackageId>LiTools.Helper.Convert</PackageId>
+		<PackageId>LiTools.Helpers.Convert</PackageId>
 		<Company>LiSoLi</Company>
     <PackageProjectUrl>https://github.com/LifeSocialLife/LiTools</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
