@@ -5,7 +5,7 @@
     <Nullable>enable</Nullable>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<LangVersion>latest</LangVersion>
-		<Version>1.0.0-alpha.2</Version>
+		<Version>1.0.0-alpha.3</Version>
 		<Authors>Lennie Wennerlund</Authors>
 		<Company>LiSoLi</Company>
 		<PackageId>LiTools.Helper.VersionHandling</PackageId>
