@@ -38,6 +38,17 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Services
     /// </summary>
     public class MongoDbService
     {
+        /// <summary>
+        /// MongoDB maximum document size in bytes (16 MB).
+        /// </summary>
+        private const int MONGO_MAX_DOCUMENT_SIZE = 16 * 1024 * 1024; // 16,777,216 bytes
+
+        /// <summary>
+        /// Safe threshold for MongoDB document size in bytes (15 MB).
+        /// Provides buffer for metadata and prevents edge-case rejections.
+        /// </summary>
+        private const int MONGO_SAFE_THRESHOLD = 15 * 1024 * 1024; // 15,728,640 bytes
+
         private readonly ServerHelper servers;
 
         /// <summary>
@@ -323,32 +334,120 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Services
         #endregion
 
         /// <summary>
-        /// Get size of model.
+        /// Get size of model as BSON bytes.
         /// </summary>
-        /// <param name="data">the model to get size from.</param>
-        /// <returns>size as bytes.</returns>
+        /// <remarks>
+        /// Converts the model to a BSON document and returns the serialized byte size.
+        /// This accurately reflects how MongoDB will store the document.
+        /// Uses the runtime type of the object to ensure the correct BSON serializer is used.
+        /// </remarks>
+        /// <param name="data">The model to get size from. Cannot be null.</param>
+        /// <returns>Size as bytes.</returns>
+        /// <exception cref="ArgumentNullException">Thrown when <paramref name="data"/> is null.</exception>
         public int GetModelSizeAsBsonAsBytes(object data)
         {
-            int bytesSize = data.ToBson().Length;
+            if (data == null)
+            {
+                throw new ArgumentNullException(nameof(data));
+            }
+
+            // Use runtime type to get the correct BSON serializer
+            // This is necessary because the compile-time type is 'object',
+            // but we need the actual type (CupsMdbModel, etc.) to find the right serializer
+            var runtimeType = data.GetType();
+            var bsonDocument = data.ToBsonDocument(runtimeType);
+            int bytesSize = bsonDocument.ToBson().Length;
             return bytesSize;
         }
 
         /// <summary>
-        /// Can this model be saved to database.
+        /// Determines whether a model can be safely stored in MongoDB.
         /// </summary>
-        /// <param name="data">the model to check if it can be stored in mongo.</param>
-        /// <returns>true or false.</returns>
+        /// <remarks>
+        /// MongoDB has a maximum document size of 16 MB. This method checks if the model's BSON
+        /// representation is below the safe threshold of 15 MB to allow room for metadata.
+        /// </remarks>
+        /// <param name="data">The model to check. Cannot be null.</param>
+        /// <returns>
+        /// <c>true</c> if the model size is below 15 MB and can be stored; otherwise, <c>false</c>.
+        /// </returns>
+        /// <exception cref="ArgumentNullException">Thrown when <paramref name="data"/> is null.</exception>
         public bool ModelSizeFit(object data)
         {
-            int size = this.GetModelSizeAsBsonAsBytes(data);
-
-            // 15,9 mb. Max size to store is 16mb.
-            if (size < 15900000)
+            if (data == null)
             {
-                return true;
+                throw new ArgumentNullException(nameof(data));
             }
 
-            return false;
+            int size = this.GetModelSizeAsBsonAsBytes(data);
+
+            // Safe threshold: 15 MB (leaves 1 MB buffer for metadata and other fields)
+            // MongoDB max document size: 16 MB (16,777,216 bytes)
+            return size < MONGO_SAFE_THRESHOLD;
+        }
+
+        /// <summary>
+        /// Gets the BSON serialized size of a model in bytes.
+        /// </summary>
+        /// <remarks>
+        /// This method serializes the model to BSON format and returns the exact byte size
+        /// that MongoDB will use to store the document.
+        /// </remarks>
+        /// <param name="data">The model to measure. Cannot be null.</param>
+        /// <returns>The size of the model in bytes when serialized as BSON.</returns>
+        /// <exception cref="ArgumentNullException">Thrown when <paramref name="data"/> is null.</exception>
+        public int ModelSizeInBytes(object data)
+        {
+            if (data == null)
+            {
+                throw new ArgumentNullException(nameof(data));
+            }
+
+            return this.GetModelSizeAsBsonAsBytes(data);
+        }
+
+        /// <summary>
+        /// Gets the BSON serialized size of a model in kilobytes (KB).
+        /// </summary>
+        /// <remarks>
+        /// This method serializes the model to BSON format and converts the size to kilobytes.
+        /// One kilobyte = 1,024 bytes.
+        /// </remarks>
+        /// <param name="data">The model to measure. Cannot be null.</param>
+        /// <returns>The size of the model in kilobytes (KB) when serialized as BSON.</returns>
+        /// <exception cref="ArgumentNullException">Thrown when <paramref name="data"/> is null.</exception>
+        public double ModelSizeInKb(object data)
+        {
+            if (data == null)
+            {
+                throw new ArgumentNullException(nameof(data));
+            }
+
+            int sizeInBytes = this.GetModelSizeAsBsonAsBytes(data);
+            double sizeInKb = sizeInBytes / 1024.0;
+            return sizeInKb;
+        }
+
+        /// <summary>
+        /// Gets the BSON serialized size of a model in megabytes (MB).
+        /// </summary>
+        /// <remarks>
+        /// This method serializes the model to BSON format and converts the size to megabytes.
+        /// One megabyte = 1,048,576 bytes (1024 * 1024).
+        /// </remarks>
+        /// <param name="data">The model to measure. Cannot be null.</param>
+        /// <returns>The size of the model in megabytes (MB) when serialized as BSON.</returns>
+        /// <exception cref="ArgumentNullException">Thrown when <paramref name="data"/> is null.</exception>
+        public double ModelSizeInMb(object data)
+        {
+            if (data == null)
+            {
+                throw new ArgumentNullException(nameof(data));
+            }
+
+            int sizeInBytes = this.GetModelSizeAsBsonAsBytes(data);
+            double sizeInMb = sizeInBytes / (1024.0 * 1024.0);
+            return sizeInMb;
         }
     }
 }
