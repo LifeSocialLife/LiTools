@@ -24,7 +24,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="System.Net.Http.Json" Version="10.0.2" />
+	  <PackageReference Include="System.Net.Http.Json" Version="10.0.3" />
 	</ItemGroup>
 
 	<!-- Build info properties (can be overridden on the command line or by CI) -->
