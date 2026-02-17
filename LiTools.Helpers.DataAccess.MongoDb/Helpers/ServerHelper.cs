@@ -18,6 +18,7 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Helpers
     using LiTools.Helpers.DataAccess.MongoDb.Models;
     using MongoDB.Bson;
     using MongoDB.Driver;
+    using MongoDB.Driver.Core.Events;
 
     /// <summary>
     /// Server "node" helper.
@@ -29,6 +30,7 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Helpers
         private string _databaseName;
         private string _appName;
         private bool _rebuldForceFull;
+        private IEventSubscriber? _eventSubscriber;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ServerHelper"/> class.
@@ -107,6 +109,16 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Helpers
         private string zzDebug { get; set; }
 
         private ConcurrentDictionary<string, ServerHelperNodeModel> Nodes { get; set; }
+
+        /// <summary>
+        /// Sets the event subscriber for MongoDB command monitoring (e.g., for performance logging).
+        /// </summary>
+        /// <param name="eventSubscriber">The event subscriber to attach to MongoDB client.</param>
+        public void SetEventSubscriber(IEventSubscriber eventSubscriber)
+        {
+            this._eventSubscriber = eventSubscriber;
+            this._rebuldForceFull = true; // Force rebuild to apply event subscriber
+        }
 
         /// <summary>
         /// Collect logs.
@@ -268,7 +280,18 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Helpers
                     node.Value.MdbConnectionString = this.NodeBuildConnectionString(node.Key);
                     this.zzDebug = "sfd";
 
-                    node.Value.MdbClient = new MongoClient(node.Value.MdbConnectionString);
+                    // Create MongoClient with optional event subscriber for command monitoring
+                    if (this._eventSubscriber != null)
+                    {
+                        var settings = MongoClientSettings.FromConnectionString(node.Value.MdbConnectionString);
+                        settings.ClusterConfigurator = cb => cb.Subscribe(this._eventSubscriber);
+                        node.Value.MdbClient = new MongoClient(settings);
+                    }
+                    else
+                    {
+                        node.Value.MdbClient = new MongoClient(node.Value.MdbConnectionString);
+                    }
+
                     this.zzDebug = "22f";
 
                     node.Value.MdbDatabase = node.Value.MdbClient.GetDatabase(this.DatabaseName);

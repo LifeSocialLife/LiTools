@@ -109,6 +109,16 @@ namespace LiTools.Helpers.DataAccess.MongoDb.Services
         private string zzDebug { get; set; }
 
         /// <summary>
+        /// Sets the event subscriber for MongoDB command monitoring.
+        /// Use this to attach custom logging or monitoring to MongoDB operations.
+        /// </summary>
+        /// <param name="eventSubscriber">The event subscriber (e.g., MongoDbCommandLogger).</param>
+        public void SetEventSubscriber(MongoDB.Driver.Core.Events.IEventSubscriber eventSubscriber)
+        {
+            this.servers.SetEventSubscriber(eventSubscriber);
+        }
+
+        /// <summary>
         /// Collect logs.
         /// </summary>
         public void CollectLogs()
